@@ -2,6 +2,9 @@
 #include <cassert>
 #include <iostream>
 #include <string>
+#ifdef _WIN32
+#include <fstream>
+#endif
 static int storage[4],state=1,paints=0,unlinks=0,timers=0;
 static bool shown=true,exists=true,native_file=true;
 static int native_selection=0;
@@ -14,6 +17,7 @@ extern "C" int AMPreviewWavePosition(char* path,int size,double* f,double* p,dou
 static int peak_reads=0,peak_opens=0,peak_closes=0,build_steps=0;
 static std::vector<int> painted_channels;
 static std::vector<std::string> painted_labels;
+static int requested_font_height=0;
 static int fonts_created=0,fonts_destroyed=0,gdi_created=0,gdi_destroyed=0;
 // Deliberately emulate Windows COLORREF packing even on macOS.
 static std::map<std::string,int> theme={{"col_mi_bg2",0x918171},{"col_tr1_peaks",0x403020},
@@ -21,7 +25,7 @@ static std::map<std::string,int> theme={{"col_mi_bg2",0x918171},{"col_tr1_peaks"
 struct Fill {int x,y,w,h,color;double alpha;std::string mode;};
 static std::vector<Fill> fills;
 static std::vector<int> cleared_colors;
-static int composite_width=0,composite_source_width=0;
+static int composite_width=0,composite_source_width=0,allocated_width=0;
 static int viewport_syncs=0;
 static bool stale_scroll=false;
 #ifndef _WIN32
@@ -58,11 +62,11 @@ static void* api(const char* name) {
   if(!std::strcmp(name,"ColorFromNative"))return reinterpret_cast<void*>(+[](int value,int* r,int* g,int* b){*r=value&255;*g=(value>>8)&255;*b=(value>>16)&255;});
   if(!std::strcmp(name,"JS_LICE_CreateFont"))return reinterpret_cast<void*>(+[]()->void*{++fonts_created;return &storage[3];});
   if(!std::strcmp(name,"JS_LICE_DestroyFont"))return reinterpret_cast<void*>(+[](void*){++fonts_destroyed;});
-  if(!std::strcmp(name,"JS_GDI_CreateFont"))return reinterpret_cast<void*>(+[](int,int,int,bool,bool,bool,const char*)->void*{++gdi_created;return &storage[3];});
+  if(!std::strcmp(name,"JS_GDI_CreateFont"))return reinterpret_cast<void*>(+[](int height,int,int,bool,bool,bool,const char*)->void*{requested_font_height=height;++gdi_created;return &storage[3];});
   if(!std::strcmp(name,"JS_GDI_DeleteObject"))return reinterpret_cast<void*>(+[](void*){++gdi_destroyed;});
   if(!std::strcmp(name,"LICE__SetFromHFont"))return reinterpret_cast<void*>(+[](void*,void*,int flags){assert(flags==0);});
   if(!std::strcmp(name,"LICE__SetTextColor") || !std::strcmp(name,"LICE__SetBkColor"))return reinterpret_cast<void*>(+[](void*,unsigned int)->unsigned int{return 0;});
-  if(!std::strcmp(name,"JS_LICE_DrawText"))return reinterpret_cast<void*>(+[](void*,void*,const char* text,int size,int x,int y,int right,int bottom){assert(x==8*label_scale && right==792*label_scale && bottom>y);painted_labels.emplace_back(text,size);return 12;});
+  if(!std::strcmp(name,"JS_LICE_DrawText"))return reinterpret_cast<void*>(+[](void*,void*,const char* text,int size,int x,int y,int right,int bottom){assert(x==static_cast<int>(std::lround(8*label_dpi/96.0)) && right==allocated_width-x && bottom>y);painted_labels.emplace_back(text,size);return 12;});
   if(!std::strcmp(name,"PCM_Source_CreateFromFile"))return reinterpret_cast<void*>(+[](const char*)->PCM_source*{++peak_opens;return new Peaks;});
   if(!std::strcmp(name,"PCM_Source_Destroy"))return reinterpret_cast<void*>(+[](PCM_source* src){++peak_closes;delete src;});
   if(!std::strcmp(name,"PCM_Source_GetPeaks"))return reinterpret_cast<void*>(+[](PCM_source*,double rate,double start,int channels,int count,int,double* values){
@@ -82,7 +86,7 @@ static void* api(const char* name) {
   if(!std::strcmp(name,"JS_Window_GetScrollInfo"))return reinterpret_cast<void*>(+[](void*,const char*,int* p,int* page,int* min,int* max,int* track){*p=scrollbar_at;*page=scrollbar_page;*max=scrollbar_max;*min=*track=0;return true;});
   if(!std::strcmp(name,"JS_Window_GetTitle"))return reinterpret_cast<void*>(+[](void*,char* out,int size){std::snprintf(out,size,"%s",label.c_str());});
   if(!std::strcmp(name,"JS_Window_SetTitle"))return reinterpret_cast<void*>(+[](void*,const char* t){label=t;return true;});
-  if(!std::strcmp(name,"JS_LICE_CreateBitmap"))return reinterpret_cast<void*>(+[](bool,int,int)->void*{return &storage[2];});
+  if(!std::strcmp(name,"JS_LICE_CreateBitmap"))return reinterpret_cast<void*>(+[](bool,int width,int)->void*{allocated_width=width;return &storage[2];});
   if(!std::strcmp(name,"JS_LICE_DestroyBitmap"))return reinterpret_cast<void*>(+[](void*){});
   if(!std::strcmp(name,"JS_LICE_Clear"))return reinterpret_cast<void*>(+[](void*,int color){cleared_colors.push_back(color);});
   if(!std::strcmp(name,"JS_Composite"))return reinterpret_cast<void*>(+[](void*,int,int,int w,int,void*,int,int,int sw,int,bool automatic){assert(!automatic);composite_width=w;composite_source_width=sw;++paints;return 1;});
@@ -91,7 +95,39 @@ static void* api(const char* name) {
   if(!std::strcmp(name,"GetToggleCommandStateEx"))return reinterpret_cast<void*>(+[](int,int){return 0;});
   return nullptr;
 }
+#ifdef _WIN32
+static void test_font_raster() {
+  // Verify real Windows font metrics as well as the stubbed rendering calls.
+  constexpr int width=1200,height=560;
+  HDC dc=CreateCompatibleDC(nullptr);assert(dc);
+  BITMAPINFO info{};info.bmiHeader.biSize=sizeof(BITMAPINFOHEADER);info.bmiHeader.biWidth=width;
+  info.bmiHeader.biHeight=height;info.bmiHeader.biPlanes=1;info.bmiHeader.biBitCount=32;info.bmiHeader.biCompression=BI_RGB;
+  void* pixels=nullptr;HBITMAP bitmap=CreateDIBSection(dc,&info,DIB_RGB_COLORS,&pixels,nullptr,0);assert(bitmap && pixels);
+  auto old_bitmap=SelectObject(dc,bitmap);std::fill_n(static_cast<unsigned int*>(pixels),width*height,0xffeeeeeeu);
+  SetTextColor(dc,RGB(32,32,32));SetBkColor(dc,RGB(238,238,238));
+  int row=0;
+  for(int dpi:{96,120,144,192,288}) {
+    const int font_pixels=MulDiv(13,dpi,96),box=MulDiv(22,dpi,96),top=20+row++*108;
+    HFONT old_font=CreateFontW(11,0,0,0,400,FALSE,FALSE,FALSE,ANSI_CHARSET,OUT_DEFAULT_PRECIS,CLIP_DEFAULT_PRECIS,ANTIALIASED_QUALITY,DEFAULT_PITCH,L"Yu Gothic UI");
+    HFONT font=CreateFontW(-font_pixels,0,0,0,400,FALSE,FALSE,FALSE,ANSI_CHARSET,OUT_DEFAULT_PRECIS,CLIP_DEFAULT_PRECIS,ANTIALIASED_QUALITY,DEFAULT_PITCH,L"Yu Gothic UI");
+    assert(font && old_font);auto previous=SelectObject(dc,font);TEXTMETRICW metrics{};assert(GetTextMetricsW(dc,&metrics));
+    assert(metrics.tmHeight<=box && metrics.tmHeight-metrics.tmInternalLeading>=font_pixels-1);
+    RECT bounds{500,top,1180,top+box};DrawTextW(dc,L"Mono ch 1  Boom & 風鈴",-1,&bounds,DT_SINGLELINE|DT_NOPREFIX);
+    SelectObject(dc,old_font);bounds={20,top,480,top+30};
+    const std::wstring label=std::to_wstring(MulDiv(dpi,100,96))+L"%  old: Mono ch 1  Boom & 風鈴";
+    DrawTextW(dc,label.c_str(),-1,&bounds,DT_SINGLELINE|DT_NOPREFIX);
+    SelectObject(dc,previous);DeleteObject(old_font);DeleteObject(font);
+  }
+  GdiFlush();BITMAPFILEHEADER header{};header.bfType=0x4d42;header.bfOffBits=sizeof(header)+sizeof(BITMAPINFOHEADER);header.bfSize=header.bfOffBits+width*height*4;
+  std::ofstream out("wave-label-fonts.bmp",std::ios::binary);assert(out);
+  out.write(reinterpret_cast<const char*>(&header),sizeof(header));out.write(reinterpret_cast<const char*>(&info.bmiHeader),sizeof(info.bmiHeader));out.write(static_cast<const char*>(pixels),width*height*4);assert(out);
+  SelectObject(dc,old_bitmap);DeleteObject(bitmap);DeleteDC(dc);
+}
+#endif
 int main() {
+#ifdef _WIN32
+  test_font_raster();
+#endif
   AMCursorRegister(+[](const char* name,void*){timers+=*name=='-'?-1:1;return 1;});
   assert(AMCursorAttach(&storage[0],&storage[1],api));tick();
   assert(paints==1 && last_x==400 && label=="0:06.000  /  0:12.000" && timers==1);
@@ -213,6 +249,25 @@ int main() {
   assert(viewport_syncs==syncs+1 && peak_start==.25 && peak_span==.5 && peak_cursor==400);
   tick();assert(viewport_syncs==syncs+1);
   AMCursorDetach();assert(fonts_created==fonts_destroyed && gdi_created==gdi_destroyed);
+#endif
+#ifdef _WIN32
+  // A monitor change recreates fonts and repaints labels without re-decoding
+  // the waveform. Include fractional desktop scaling and a missing-DPI fallback.
+  assert(AMCursorAttach(&storage[0],&storage[1],api));
+  assert(AMWaveSetChannels("/test.wav",1,1,"dpi"));
+  tick();tick();
+  const auto saved_dpi=window_dpi;
+  for(unsigned int dpi:{96u,120u,144u,192u,288u,0u,96u}) {
+    static unsigned int value;value=dpi;window_dpi=+[](void*){return value;};
+    const int before=peak_reads;tick();
+    assert(requested_font_height==-static_cast<int>(std::lround(13*(dpi?dpi:96)/96.0)));
+    assert(peak_width==800 && composite_width==800 && composite_source_width==800);
+    assert(peak_reads==before);
+    const int made=gdi_created,painted=paints;tick();
+    assert(gdi_created==made && paints==painted);
+  }
+  window_dpi=saved_dpi;AMCursorDetach();
+  assert(fonts_created==fonts_destroyed && gdi_created==gdi_destroyed);
 #endif
   theme.clear();assert(wave_style().background==static_cast<int>(0xffcccccc));
   assert(wave_style().selection_mode==0x26600);

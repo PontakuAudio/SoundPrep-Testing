@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.11.4",
+  "version": "0.11.5",
   "git_history_included": false,
   "runtime_files": [
     "Audition Macro - Diagnostics.lua",
@@ -146,7 +146,7 @@
   ],
   "privacy": {
     "status": "pass",
-    "scanned_files": 303,
+    "scanned_files": 304,
     "findings": [],
     "synthetic_fixture_exceptions": [
       {
@@ -209,13 +209,13 @@
     },
     {
       "path": "Audition Macro.lua",
-      "sha256": "48cf228e3a4090c8247dffb41e94145a97dcd8c8dd4e1302d58375d77a1f33a9",
+      "sha256": "8170211f6e82ab5c34e1a13c1c72424e457bd03df00fa8e901fe89c922711540",
       "bytes": 338
     },
     {
       "path": "CMakeLists.txt",
-      "sha256": "c9f01ef2e2cbee2df87f10f90632a9694652c4e1f2ea209daff7d6c81eaf27d6",
-      "bytes": 4950
+      "sha256": "1167f4e88cd35c3c165d0a6ac560517ada38330f5d41f42b4883199f86c57ba6",
+      "bytes": 5001
     },
     {
       "path": "LICENSE",
@@ -259,7 +259,7 @@
     },
     {
       "path": "SoundPrep.lua",
-      "sha256": "da12e65ee9ee35fe3908abfa2929ed3048e97f663cf846e47a0cbe6ea66bfc22",
+      "sha256": "51b3d7e96d108b01ff6e1a8ac0ba342e823b2a7ff2d79e7e2ad60b041be4e95d",
       "bytes": 1468
     },
     {
@@ -464,12 +464,12 @@
     },
     {
       "path": "docs/channel-selection.md",
-      "sha256": "f8f7580d4ab83d30941c917e4e1cce84047fee3834f867c4c8d155099eabe247",
-      "bytes": 9716
+      "sha256": "cf1d4050ab54a5b47df10915ceda7694369cb91a5f3128d441314dd23ec8f15f",
+      "bytes": 9961
     },
     {
       "path": "docs/install.md",
-      "sha256": "52c3d3ca74e77425ca88da3f8a19101d5efb502085e97d23be72d097918e1c40",
+      "sha256": "4e66af44872e2dfa892f61ff64e2e0d178443a3f6b7a5fc6542d8e43801eae2d",
       "bytes": 13024
     },
     {
@@ -533,13 +533,18 @@
       "bytes": 1044
     },
     {
+      "path": "docs/releases/0.11.5.md",
+      "sha256": "c8c098aba09fe4dac8f43a9a17c923229ad0b7a5007e116f4c9021c677446ca6",
+      "bytes": 734
+    },
+    {
       "path": "docs/source-distribution.md",
       "sha256": "0f6d8704b8d3880f6fec258c7a228cc1d4d455a16e066dc8b4acc4d8b6060555",
       "bytes": 4657
     },
     {
       "path": "docs/windows.md",
-      "sha256": "27b95569a77548c3fe2274ac9557e1c737c9f4b50f2e5972c650873dad4c9fa9",
+      "sha256": "81e8fd807a7af8682e7dbf3b4ba6773dc0e03630992aadb9611f5a82abf233d4",
       "bytes": 14939
     },
     {
@@ -669,7 +674,7 @@
     },
     {
       "path": "lib/am/native_contract.lua",
-      "sha256": "8f766f29ee853fe0bdaf802e1847bcce2886272f43535b77eb7bfbb273a952c9",
+      "sha256": "f4757d7f892c7e745cf48a81d1d62dc29f74f31ebff99dfa84c1def543d5198a",
       "bytes": 9099
     },
     {
@@ -759,13 +764,13 @@
     },
     {
       "path": "native/contract.h",
-      "sha256": "275df9101bbe54179acdebd1e0b3f56cff33cc8121be13893c9ac4f270937c16",
+      "sha256": "2e90baba09ea933a5c47096994f873e75b99b8f351fe4969f8a2625c8537b2fa",
       "bytes": 10396
     },
     {
       "path": "native/cursor.cpp",
-      "sha256": "f49bad891af51b25057a6f6d58876dc3c0e15f9aeaa33953b1b783993db92999",
-      "bytes": 24961
+      "sha256": "2e8b95113381397fe65d517a6ebbc3aae7380fce711fbc704dac9bf89f794fc1",
+      "bytes": 26007
     },
     {
       "path": "native/drop.mm",
@@ -854,8 +859,8 @@
     },
     {
       "path": "native/test_cursor.cpp",
-      "sha256": "5d9476f62342a60fc1b02394b0dee0a98bc1dab8d270a7665a03a2deac8c8cf4",
-      "bytes": 16472
+      "sha256": "c275325c05e22be76cdfbf1fedf99999d0b0f03283f784251a29fc36705703f0",
+      "bytes": 20044
     },
     {
       "path": "native/test_preview.cpp",
@@ -999,18 +1004,18 @@
     },
     {
       "path": "prebuilt/manifest.json",
-      "sha256": "25c2573a409060947f65a38467f27834294ace47c86c08898df44379074495c1",
+      "sha256": "44be9d0f332f95cb89ffabd91078382d683251dd7032e6f7f847c1fe7b3e6f2f",
       "bytes": 489
     },
     {
       "path": "prebuilt/reaper_audition_macro.dll",
-      "sha256": "86cb7f70c38fa94aa321b064eb829c5b1216a9439144d71d4c8287ede47f195c",
-      "bytes": 781312
+      "sha256": "d3776b21ac01802af7987c8790be5a2448c1abb3f98cd28d9c475e313ca9c380",
+      "bytes": 781824
     },
     {
       "path": "prebuilt/reaper_audition_macro.dylib",
-      "sha256": "5bd6571a832392683c6d3a493802eb4d643530f5c3ae84871e6366c88c262c0b",
-      "bytes": 1031328
+      "sha256": "f0fa673a0df62f14acf28201319618924eaf794e9d71b93e5d9166b2106f88b2",
+      "bytes": 1047712
     },
     {
       "path": "resources/audition_macro_channels_v1.jsfx",
@@ -1044,13 +1049,13 @@
     },
     {
       "path": "resources/native-contract.json",
-      "sha256": "d524991c30ddf743476dc3274ec40264f99a5c59187b96394f5bffc71d8e4a31",
+      "sha256": "a20d61241b757afca65e0a29f911566fb9a5d06dbd0c8a73b4b92ec110613af1",
       "bytes": 15204
     },
     {
       "path": "resources/public-source-files.json",
-      "sha256": "c7d1fa8ea4f271344701b2c009aa507bc82f3bf33e4f0b37777464f883a2abce",
-      "bytes": 10728
+      "sha256": "9d034979c7f8f6ddd20ea07b7593d0d83ede85080d7901e42d968d68aaa7c238",
+      "bytes": 10759
     },
     {
       "path": "resources/public-workflows/release.yml",

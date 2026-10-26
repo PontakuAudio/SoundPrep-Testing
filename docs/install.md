@@ -1,6 +1,6 @@
 # SoundPrepの導入
 
-以下は**SoundPrep v0.11.4**の導入手順です。
+以下は**SoundPrep v0.11.5**の導入手順です。
 
 配布先は[SoundPrep Releases](https://github.com/PontakuAudio/SoundPrep-Testing/releases)です。掲載されたReaPack indexとOS別ZIPを利用してください。
 
@@ -35,7 +35,7 @@ Main／Media ExplorerのActionsはReaPackが登録します。Media ExplorerのA
 
 ## ZIPから導入
 
-[Releaseページ](https://github.com/PontakuAudio/SoundPrep-Testing/releases)から、`soundprep-0.11.4-macos-universal.zip` または `soundprep-0.11.4-windows-x64.zip` を選びます。ZIP内の `SoundPrep` フォルダーを、書き込み可能な固定の場所へ展開します。Windowsの例は `Documents/SoundPrep` です。
+[Releaseページ](https://github.com/PontakuAudio/SoundPrep-Testing/releases)から、`soundprep-0.11.5-macos-universal.zip` または `soundprep-0.11.5-windows-x64.zip` を選びます。ZIP内の `SoundPrep` フォルダーを、書き込み可能な固定の場所へ展開します。Windowsの例は `Documents/SoundPrep` です。
 
 フォルダー内の配置を維持してください。主な内容は次のとおりです。
 
@@ -109,7 +109,7 @@ Windows PowerShell:
 
 Resource PathはREAPERの `Options → Show REAPER resource path in explorer/finder` で確認できます。更新ツールは起動中のREAPERがあると置換を拒否し、既存helperのバックアップを残します。REAPERを起動し直した後、Action Installerを再実行すると追加Actionsを登録できます。
 
-v0.11.4にはNative helper 0.11.4を同梱します。**v0.11.0以前からの更新ではLuaパッケージとNative helperをともに更新し、REAPERを再起動してください。** bar revision 9・waveform revision 5のhelperが必要です。互換性は機能revisionと必要APIで判定し、不足するhelperでは更新を案内します。旧FFmpeg解析キャッシュは新しい解析結果として再利用しません。
+v0.11.5にはNative helper 0.11.5を同梱します。**v0.11.0以前からの更新ではLuaパッケージとNative helperをともに更新し、REAPERを再起動してください。** bar revision 9・waveform revision 6のhelperが必要です。互換性は機能revisionと必要APIで判定し、不足するhelperでは更新を案内します。旧FFmpeg解析キャッシュは新しい解析結果として再利用しません。
 
 ## 旧Audition Macroからの切替
 

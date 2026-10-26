@@ -1,5 +1,5 @@
 -- @description SoundPrep - Media Explorer companion
--- @version 0.11.4
+-- @version 0.11.5
 -- @author Pontaku Audio
 local script=debug.getinfo(1,'S').source:sub(2)
 local root=script:match('^(.*)[/\\]')

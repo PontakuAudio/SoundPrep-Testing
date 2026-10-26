@@ -82,7 +82,10 @@ void (*destroy_font)(void*),(*delete_gdi)(void*),(*set_font)(void*,void*,int);
 unsigned int (*font_color)(void*,unsigned int),(*font_background)(void*,unsigned int);
 int (*draw_text)(void*,void*,const char*,int,int,int,int,int);
 void *label_font=nullptr,*label_gdi=nullptr;
-int label_scale=0,peak_scale=0;
+int label_dpi=0,label_font_height=0,peak_label_dpi=0,peak_scale=0;
+#ifdef _WIN32
+unsigned int (*window_dpi)(void*)=+[](void* window){return GetDpiForWindow(static_cast<HWND>(window));};
+#endif
 void* peak_bitmap=nullptr;
 std::vector<std::string> peak_names;
 std::string peak_names_json;
@@ -135,6 +138,21 @@ bool paint_peaks(const char* path,int width,int height,double start,double span,
 #else
   const int scale_factor=AMWavePixelScale(wave);
 #endif
+  // Bitmap pixels and UI font sizing are independent on Windows: the client
+  // is already in device pixels, but readable text must follow its monitor DPI.
+#ifdef _WIN32
+  const unsigned int reported_dpi=window_dpi(wave);
+  const int text_dpi=static_cast<int>(reported_dpi?reported_dpi:96);
+#else
+  const int text_dpi=96*scale_factor;
+#endif
+  auto text_px=[text_dpi](int value){return static_cast<int>(std::lround(value*text_dpi/96.0));};
+#ifdef _WIN32
+  // Negative GDI height sizes the glyphs themselves, excluding internal leading.
+  const int font_height=-text_px(13),label_height=text_px(22),minimum_lane=text_px(26),text_top=text_px(2);
+#else
+  const int font_height=text_px(11),label_height=text_px(14),minimum_lane=text_px(24),text_top=text_px(3);
+#endif
   width*=scale_factor;
   const int h=client_height*scale_factor,channels=peak_source->GetNumChannels();
   if(cursor>=0 && cursor<client_width)cursor*=scale_factor;else cursor=-999999;
@@ -142,7 +160,7 @@ bool paint_peaks(const char* path,int width,int height,double start,double span,
     peak_source->PeaksBuild_Finish();peak_building=false;peak_dirty=true;
   }
   const bool reload=peak_dirty || scale_factor!=peak_scale || width!=peak_width || start!=peak_start || span!=peak_span;
-  const bool repaint=reload || labels_dirty || !(style==peak_style) || h!=peak_height || a!=peak_a || b!=peak_b || cursor!=peak_cursor || !peak_linked;
+  const bool repaint=reload || labels_dirty || text_dpi!=peak_label_dpi || !(style==peak_style) || h!=peak_height || a!=peak_a || b!=peak_b || cursor!=peak_cursor || !peak_linked;
   if(!repaint)return true;
   if(width!=peak_width || h!=peak_height) {
     hide_peaks();if(peak_bitmap)destroy_bitmap(peak_bitmap);
@@ -170,7 +188,7 @@ bool paint_peaks(const char* path,int width,int height,double start,double span,
       const int y2=static_cast<int>(std::lround(mid-std::clamp(lo,-1.0,1.0)*scale));
       if(bottom>top)fill_rect(peak_bitmap,x,std::clamp(std::min(y1,y2),top,bottom-1),1,std::min(bottom-top,std::abs(y2-y1)+1),color,1,"COPY");
     }
-    if(bottom-top<24*scale_factor)continue;
+    if(bottom-top<minimum_lane)continue;
     const std::string role=lanes==1?"Mono":lanes>2?"Input":lane?"R":"L";
     const std::string number="ch "+std::to_string(channel+1);
     std::string label=role+" "+number;
@@ -179,7 +197,7 @@ bool paint_peaks(const char* path,int width,int height,double start,double span,
 #ifndef _WIN32
     if(AMDrawWaveLabel(peak_bitmap,label.c_str(),8*scale_factor,top+2*scale_factor,width-16*scale_factor,14*scale_factor,style.text,style.background,scale_factor,font_lookup))continue;
 #endif
-    if(label_font && label_scale!=scale_factor) {
+    if(label_font && label_dpi!=text_dpi) {
       destroy_font(label_font);delete_gdi(label_gdi);label_font=label_gdi=nullptr;
     }
     if(!label_font && create_font && gdi_font && set_font && destroy_font && delete_gdi && draw_text && font_color && font_background) {
@@ -188,7 +206,7 @@ bool paint_peaks(const char* path,int width,int height,double start,double span,
 #else
       const char* face="Hiragino Sans";
 #endif
-      label_font=create_font();label_gdi=gdi_font(11*scale_factor,400,0,false,false,false,face);label_scale=scale_factor;
+      label_font=create_font();label_gdi=gdi_font(font_height,400,0,false,false,false,face);label_dpi=text_dpi;label_font_height=font_height;
       // The JS wrapper forces PRECALCALL (ASCII-only). The public REAPER
       // setter keeps the live HFONT and permits Unicode glyph caching.
       if(label_font && label_gdi)set_font(label_font,label_gdi,0);
@@ -196,9 +214,9 @@ bool paint_peaks(const char* path,int width,int height,double start,double span,
     }
     if(label_font) {
       int units=0;for(unsigned char c:label)if(c<128)++units;else if((c&0xc0)!=0x80)units+=2;
-      fill_rect(peak_bitmap,4*scale_factor,top+2*scale_factor,std::max(0,std::min(width-8*scale_factor,(units*8+12)*scale_factor)),14*scale_factor,style.background,1,"COPY");
+      fill_rect(peak_bitmap,text_px(4),top+text_px(2),std::max(0,std::min(width-text_px(8),text_px(units*8+12))),label_height,style.background,1,"COPY");
       font_color(label_font,style.text);font_background(label_font,style.background);
-      draw_text(peak_bitmap,label_font,label.c_str(),static_cast<int>(label.size()),8*scale_factor,top+3*scale_factor,std::max(8*scale_factor,width-8*scale_factor),top+16*scale_factor);
+      draw_text(peak_bitmap,label_font,label.c_str(),static_cast<int>(label.size()),text_px(8),top+text_top,std::max(text_px(8),width-text_px(8)),top+text_px(2)+label_height);
     } else {
       const auto fallback=role+" "+number;
       fill_rect(peak_bitmap,4,top+3,std::min(width-4,static_cast<int>(fallback.size())*8+8),12,style.background,1,"COPY");
@@ -216,7 +234,7 @@ bool paint_peaks(const char* path,int width,int height,double start,double span,
   if(cursor>=0 && cursor<width)fill_rect(peak_bitmap,cursor,0,2*scale_factor,h,style.cursor,1,"COPY");
   peak_linked=composite(wave,0,0,client_width,client_height,peak_bitmap,0,0,width,h,false)>0;
   if(peak_linked)invalidate(wave,0,0,client_width,height,true);
-  peak_width=width;peak_height=h;peak_scale=scale_factor;peak_start=start;peak_span=span;peak_a=a;peak_b=b;peak_cursor=cursor;peak_style=style;peak_dirty=false;labels_dirty=false;
+  peak_width=width;peak_height=h;peak_scale=scale_factor;peak_label_dpi=text_dpi;peak_start=start;peak_span=span;peak_a=a;peak_b=b;peak_cursor=cursor;peak_style=style;peak_dirty=false;labels_dirty=false;
   return peak_linked;
 }
 
@@ -439,5 +457,5 @@ extern "C" const char* AMCursorState() {
   static std::string json;
   auto value=nlohmann::json::parse(result);value["selected_names"]=nlohmann::json::array();
   for(int channel:peak_channels)value["selected_names"].push_back(channel<=static_cast<int>(peak_names.size())?peak_names[channel-1]:"");
-  value["name_font"]=label_font!=nullptr;json=value.dump();return json.c_str();
+  value["name_font"]=label_font!=nullptr;value["name_font_pixels"]=std::abs(label_font_height);value["name_dpi"]=peak_label_dpi;json=value.dump();return json.c_str();
 }

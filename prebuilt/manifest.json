@@ -1,19 +1,19 @@
 {
   "files": [
     {
-      "bytes": 1031328,
+      "bytes": 1047712,
       "path": "prebuilt/reaper_audition_macro.dylib",
       "platform": "macos",
-      "sha256": "5bd6571a832392683c6d3a493802eb4d643530f5c3ae84871e6366c88c262c0b"
+      "sha256": "f0fa673a0df62f14acf28201319618924eaf794e9d71b93e5d9166b2106f88b2"
     },
     {
-      "bytes": 781312,
+      "bytes": 781824,
       "path": "prebuilt/reaper_audition_macro.dll",
       "platform": "windows",
-      "sha256": "86cb7f70c38fa94aa321b064eb829c5b1216a9439144d71d4c8287ede47f195c"
+      "sha256": "d3776b21ac01802af7987c8790be5a2448c1abb3f98cd28d9c475e313ca9c380"
     }
   ],
-  "helper_version": "0.11.4",
+  "helper_version": "0.11.5",
   "schema": 1,
-  "version": "0.11.4"
+  "version": "0.11.5"
 }
