@@ -1,0 +1,51 @@
+# The filename is retained for workflow callers. These checks intentionally do
+# not compile a native helper: the new analysis engine source is not published.
+name: SoundPrep public distribution checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  distribution:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check generated native contract
+        run: python tools/generate_native_contract.py --check
+      - name: Verify reviewed prebuilt helper versions and hashes
+        run: python tools/prebuilt_helpers.py
+      - name: Run public packaging and contract regressions
+        run: |
+          python -m unittest discover -s tests -p 'test_package_release.py' -v
+          python -m unittest discover -s tests -p 'test_package_windows.py' -v
+          python -m unittest discover -s tests -p 'test_public_source.py' -v
+          python -m unittest discover -s tests -p 'test_prebuilt_helpers.py' -v
+          python -m unittest discover -s tests -p 'test_native_contract.py' -v
+          python -m unittest discover -s tests -p 'test_distribution_policy.py' -v
+      - name: Run shared Lua regressions with pinned Lua 5.4.8
+        run: |
+          mkdir -p build
+          curl -fsSL https://www.lua.org/ftp/lua-5.4.8.tar.gz -o build/lua-5.4.8.tar.gz
+          echo '4f18ddae154e793e46eeab727c59ef1c0c0c2b744e7b94219710d76f530629ae  build/lua-5.4.8.tar.gz' | sha256sum --check
+          tar -xzf build/lua-5.4.8.tar.gz -C build
+          make -C build/lua-5.4.8 linux
+          build/lua-5.4.8/src/lua tests/run.lua
+      - name: Smoke-test both runtime packages and ReaPack index
+        env:
+          DOWNLOAD_REPOSITORY: ${{ github.repository }}
+        run: |
+          python tools/package_release.py \
+            --output build/package-smoke \
+            --repository "$DOWNLOAD_REPOSITORY" \
+            --macos-helper prebuilt/reaper_audition_macro.dylib \
+            --windows-helper prebuilt/reaper_audition_macro.dll
+          cd build/package-smoke
+          sha256sum --check SHA256SUMS

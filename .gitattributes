@@ -1,0 +1,6 @@
+# Preserve upstream bytes for the SHA-256 provenance checks on every platform.
+native/vendor/json.hpp -text
+native/vendor/json.LICENSE.MIT -text
+native/vendor/ebur128.LICENSE.MIT -text
+native/vendor/mosqito.LICENSE.md -text
+native/vendor/abseil.LICENSE -text

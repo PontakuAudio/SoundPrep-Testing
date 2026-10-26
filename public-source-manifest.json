@@ -1,0 +1,1686 @@
+{
+  "schema": 1,
+  "version": "0.11.3",
+  "git_history_included": false,
+  "runtime_files": [
+    "Audition Macro - Diagnostics.lua",
+    "Audition Macro - Install actions.lua",
+    "Audition Macro - Offline inactive source FX.lua",
+    "Audition Macro - Render selected drops.lua",
+    "Audition Macro - Restore native preview.lua",
+    "Audition Macro - Restore selected source FX.lua",
+    "Audition Macro.lua",
+    "LICENSE",
+    "README.md",
+    "SoundPrep - Diagnostics.lua",
+    "SoundPrep - Install actions.lua",
+    "SoundPrep - Offline inactive source FX.lua",
+    "SoundPrep - Render selected drops.lua",
+    "SoundPrep - Restore native preview.lua",
+    "SoundPrep - Restore selected source FX.lua",
+    "SoundPrep.lua",
+    "THIRD_PARTY_NOTICES.md",
+    "actions/Audition Macro - AB.lua",
+    "actions/Audition Macro - Analyse.lua",
+    "actions/Audition Macro - Edit.lua",
+    "actions/Audition Macro - Export.lua",
+    "actions/Audition Macro - Play Stop.lua",
+    "actions/Audition Macro - Quit.lua",
+    "actions/Audition Macro - Replay.lua",
+    "actions/Audition Macro - Reverse.lua",
+    "actions/Audition Macro - Slot 0.lua",
+    "actions/Audition Macro - Slot 1.lua",
+    "actions/Audition Macro - Slot 2.lua",
+    "actions/Audition Macro - Slot 3.lua",
+    "actions/Audition Macro - Slot 4.lua",
+    "actions/Audition Macro - Slot 5.lua",
+    "actions/Audition Macro - Slot 6.lua",
+    "actions/Audition Macro - Slot 7.lua",
+    "actions/Audition Macro - Slot 8.lua",
+    "actions/Audition Macro - Slot 9.lua",
+    "actions/Audition Macro - Stop.lua",
+    "actions/SoundPrep - AB.lua",
+    "actions/SoundPrep - Analyse.lua",
+    "actions/SoundPrep - Edit.lua",
+    "actions/SoundPrep - Export.lua",
+    "actions/SoundPrep - Play Stop.lua",
+    "actions/SoundPrep - Quit.lua",
+    "actions/SoundPrep - Replay.lua",
+    "actions/SoundPrep - Reverse.lua",
+    "actions/SoundPrep - Slot 0.lua",
+    "actions/SoundPrep - Slot 1.lua",
+    "actions/SoundPrep - Slot 2.lua",
+    "actions/SoundPrep - Slot 3.lua",
+    "actions/SoundPrep - Slot 4.lua",
+    "actions/SoundPrep - Slot 5.lua",
+    "actions/SoundPrep - Slot 6.lua",
+    "actions/SoundPrep - Slot 7.lua",
+    "actions/SoundPrep - Slot 8.lua",
+    "actions/SoundPrep - Slot 9.lua",
+    "actions/SoundPrep - Stop.lua",
+    "docs/channel-selection.md",
+    "docs/install.md",
+    "docs/license-audit-2026-10-22.md",
+    "docs/loudness-defaults-2026-10-22.json",
+    "docs/loudness-defaults.md",
+    "docs/media-explorer-workflow.md",
+    "docs/releases/0.11.1.md",
+    "docs/source-distribution.md",
+    "docs/windows.md",
+    "internal/Process waveform drop.lua",
+    "lib/am/action.lua",
+    "lib/am/analysis_policy.lua",
+    "lib/am/app.lua",
+    "lib/am/bank.lua",
+    "lib/am/bar.lua",
+    "lib/am/channel_mix.lua",
+    "lib/am/channel_names.lua",
+    "lib/am/channel_panel.lua",
+    "lib/am/channel_selection.lua",
+    "lib/am/chunk.lua",
+    "lib/am/drop.lua",
+    "lib/am/drop_analysis.lua",
+    "lib/am/drop_pending.lua",
+    "lib/am/drop_range.lua",
+    "lib/am/drop_render.lua",
+    "lib/am/drop_transaction.lua",
+    "lib/am/editor_panel.lua",
+    "lib/am/export.lua",
+    "lib/am/insert.lua",
+    "lib/am/json.lua",
+    "lib/am/loudness.lua",
+    "lib/am/media_explorer.lua",
+    "lib/am/model.lua",
+    "lib/am/native.lua",
+    "lib/am/native_contract.lua",
+    "lib/am/peaks.lua",
+    "lib/am/platform.lua",
+    "lib/am/preview.lua",
+    "lib/am/recovery.lua",
+    "lib/am/render_channels.lua",
+    "lib/am/render_item.lua",
+    "lib/am/settings_panel.lua",
+    "lib/am/take_fx.lua",
+    "lib/am/timeline.lua",
+    "lib/am/util.lua",
+    "lib/am/wave_channels.lua",
+    "native/vendor/abseil.LICENSE",
+    "native/vendor/ebur128.LICENSE.MIT",
+    "native/vendor/json.LICENSE.MIT",
+    "native/vendor/json.THIRD_PARTY_NOTICES.md",
+    "native/vendor/mosqito.LICENSE.md",
+    "resources/audition_macro_channels_v1.jsfx",
+    "resources/audition_macro_channels_v2.jsfx",
+    "resources/audition_macro_channels_v3.jsfx",
+    "resources/chains/dark.RfxChain",
+    "resources/chains/heavy.RfxChain",
+    "resources/chains/reverse.RfxChain",
+    "resources/native-contract.json",
+    "resources/third-party-provenance.json",
+    "tools/install_native.ps1",
+    "tools/install_native.sh"
+  ],
+  "substitutions": [
+    {
+      "path": ".github/workflows/release.yml",
+      "source": "resources/public-workflows/release.yml"
+    },
+    {
+      "path": ".github/workflows/windows.yml",
+      "source": "resources/public-workflows/windows.yml"
+    },
+    {
+      "path": "README.md",
+      "source": "docs/release-readme.md"
+    }
+  ],
+  "prebuilt_helpers_included": true,
+  "excluded_categories": [
+    "Git history",
+    "user data",
+    "build outputs",
+    "media",
+    "raw validation reports",
+    "private native analysis implementations",
+    "unreviewed source files"
+  ],
+  "privacy": {
+    "status": "pass",
+    "scanned_files": 302,
+    "findings": [],
+    "synthetic_fixture_exceptions": [
+      {
+        "path": "tests/platform.lua",
+        "line": 17,
+        "rule": "home-directory-literal"
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "43c29e4a53f0306ddd75ac8bb5d1087cc4ca0612c4f249c7b29c151c79d08570",
+      "bytes": 259
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "sha256": "0503ca30965d8090fa7bf84a7af41a4a11515a81989ca76b8f8d9ad0cc33b993",
+      "bytes": 5926
+    },
+    {
+      "path": ".github/workflows/windows.yml",
+      "sha256": "04cc1a0e67230bfe6d6a085a1739f21d48b4ce159cc07fdb1b00c0ab91aa3779",
+      "bytes": 2237
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "89ca0005264d47683131d1be9a895ad1504722f6106fa7b991a2b125086cf683",
+      "bytes": 59
+    },
+    {
+      "path": "Audition Macro - Diagnostics.lua",
+      "sha256": "b901dfc6d988cec7cf537878ae085ec17a9b82659c4dbbb11a224ca058254a03",
+      "bytes": 337
+    },
+    {
+      "path": "Audition Macro - Install actions.lua",
+      "sha256": "dfb1b908b1a05a87c6877aa552d8fa18cd7804289cb16e2740d6c208898faf29",
+      "bytes": 336
+    },
+    {
+      "path": "Audition Macro - Offline inactive source FX.lua",
+      "sha256": "41b4caf3be8127fbd22e1e9cb0d1a929a62c4f61d2ae27a7609d68c7d3e52a38",
+      "bytes": 349
+    },
+    {
+      "path": "Audition Macro - Render selected drops.lua",
+      "sha256": "7a375f32fc5e0607f6a17bbc4365aa5136b05013ac3cd661baf063f3a30c014c",
+      "bytes": 327
+    },
+    {
+      "path": "Audition Macro - Restore native preview.lua",
+      "sha256": "0af03e013e34266c498b0430f1e81e2f4b3b692c1eb325365204000c31a8ae36",
+      "bytes": 345
+    },
+    {
+      "path": "Audition Macro - Restore selected source FX.lua",
+      "sha256": "9f09a64a863045bf2a2853c0e8ce0d4daaa723870f43e0c8e448bff5dbadf90d",
+      "bytes": 363
+    },
+    {
+      "path": "Audition Macro.lua",
+      "sha256": "7ad2f5329c89ac017cbb8736b356c2679388c56b94feac365159e6768d79a6fd",
+      "bytes": 338
+    },
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "d6ebc9c6a8d8ef59bcff55dfde58e1c880665458dda59a3890870833f8cacc73",
+      "bytes": 4950
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "f03c77aedd112565f9fec7955aa1a627e4490b139a5439d1652c00f9873f5e7e",
+      "bytes": 1070
+    },
+    {
+      "path": "README.md",
+      "sha256": "bb3a3208e0c0b1f041863a77290b5e21f0800cd427a95b514faa64ca8bb41174",
+      "bytes": 1050
+    },
+    {
+      "path": "SoundPrep - Diagnostics.lua",
+      "sha256": "162c0da8436b6395720d6304f0b2ecdb30fc79422d675d038d42207fb346c122",
+      "bytes": 4224
+    },
+    {
+      "path": "SoundPrep - Install actions.lua",
+      "sha256": "94c77afb489d7e4fb7a5e2580d349e44bdc3ea7f7dfb7e4fa040ce5185f4cf1e",
+      "bytes": 2300
+    },
+    {
+      "path": "SoundPrep - Offline inactive source FX.lua",
+      "sha256": "23791f8a8f0fa967d9bddd1f1279fb6d84cbb196062698721f3664a8dc50e675",
+      "bytes": 536
+    },
+    {
+      "path": "SoundPrep - Render selected drops.lua",
+      "sha256": "149ae47bce0d37144be3112fa973cbfbc072e7bb7475a690db1f8a8f4f3dbb7c",
+      "bytes": 354
+    },
+    {
+      "path": "SoundPrep - Restore native preview.lua",
+      "sha256": "480cc2c840e22cedf36e09332f02c98488fb10c3873ff626e06a54aa90ba4c7f",
+      "bytes": 641
+    },
+    {
+      "path": "SoundPrep - Restore selected source FX.lua",
+      "sha256": "9a3e5e7b6134d87432956bfca67ad8a25237e00e2c852dafd34ef97cc1b53d56",
+      "bytes": 389
+    },
+    {
+      "path": "SoundPrep.lua",
+      "sha256": "7bba5be530c5e8a87b9e6527464d156d64414226f23cd95803d387b2bc4a62bc",
+      "bytes": 1468
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "8ffbcff1ce50084e5575ad0d3e9312a4acf59ba72a28fb305987824ca13b4db5",
+      "bytes": 7895
+    },
+    {
+      "path": "actions/Audition Macro - AB.lua",
+      "sha256": "0c376014246a2ce3ba9a21c158667ee11391b83e690f8ac191d6d6c129d84e8c",
+      "bytes": 277
+    },
+    {
+      "path": "actions/Audition Macro - Analyse.lua",
+      "sha256": "65978afa2f82934bc62762ec38ffc8a4dba71b49e3c64547f2cd95afb9e16dc3",
+      "bytes": 287
+    },
+    {
+      "path": "actions/Audition Macro - Edit.lua",
+      "sha256": "bd3382ab34c737db33ee9120b12c464c935234b7c61fb065acac38a82ff7e047",
+      "bytes": 288
+    },
+    {
+      "path": "actions/Audition Macro - Export.lua",
+      "sha256": "addf5f504424047f117c0746877e9bdd7344b635d3756073cb4b567a880d6f83",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Play Stop.lua",
+      "sha256": "1b1bf29fe3159054681cf2a847cfe7ee9ee182c372710bbcde85a68e8eb4eaad",
+      "bytes": 291
+    },
+    {
+      "path": "actions/Audition Macro - Quit.lua",
+      "sha256": "d4a0b59989906a11b15ae2278ac4e7943e3802aeaab6ce10226a809def103d13",
+      "bytes": 281
+    },
+    {
+      "path": "actions/Audition Macro - Replay.lua",
+      "sha256": "3bffe2d2282e6f1d7d587b11456818b47bf31fe6157988ef1bca326f8d542a7a",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Reverse.lua",
+      "sha256": "05803c546cba92282746b17f028f56bc4a06cb9ec476965fc3cbfde854eb4e2a",
+      "bytes": 287
+    },
+    {
+      "path": "actions/Audition Macro - Slot 0.lua",
+      "sha256": "276154596a6f9c7d9ba87b939ca21650feb03da9ecc6ff6cad52ea371bbd2912",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Slot 1.lua",
+      "sha256": "9c70abf1aa1128c10a17012f65f3d201e2153582107819e9e33c0292c2464548",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Slot 2.lua",
+      "sha256": "61ad27a8ee04df805cb5c70db3b089d6eea5ea452f613d05602e0989ec8543ef",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Slot 3.lua",
+      "sha256": "8c90f903a7203916743dc49b839b86eabe7a7fc60ef86fe8890e18e132bbdb50",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Slot 4.lua",
+      "sha256": "3a8b47cb373e97a7cd3348ab88d1c4d6ea10acdee13c664b30538994a93d111d",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Slot 5.lua",
+      "sha256": "3f5683263fb4a0aa318bd128a86e8147c8670cf49cd20309cef6847338c7ccb8",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Slot 6.lua",
+      "sha256": "9953965b3320a636d48d2a294331e384525a0e604df9fd2ece239b41569e0c95",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Slot 7.lua",
+      "sha256": "c4db631bf12ecf5fb6995819d6aa687e8a4b526d355df7f7f549ec16b36612ba",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Slot 8.lua",
+      "sha256": "77f9696ebeb4c645ba54644719d62ae3f6ef88f52d72cd7f778916d68e67f857",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Slot 9.lua",
+      "sha256": "dd51dab82341ed6b9a5c1d1807b1fc182f97babe57a81b8d673e5363c15141b5",
+      "bytes": 285
+    },
+    {
+      "path": "actions/Audition Macro - Stop.lua",
+      "sha256": "ddfba5f8cc79bc87085531be5dad2209ccc2b006e503d553641bc243a955ddd0",
+      "bytes": 281
+    },
+    {
+      "path": "actions/SoundPrep - AB.lua",
+      "sha256": "d4bf2456b8a2822a184b35226af6e0ff5da10717d1ed15ab00babdbccafcc0d0",
+      "bytes": 195
+    },
+    {
+      "path": "actions/SoundPrep - Analyse.lua",
+      "sha256": "2ba2c58a2db1daabc64bfae3802d5a0ac301e9df0dbcba00850c84e32046ae14",
+      "bytes": 205
+    },
+    {
+      "path": "actions/SoundPrep - Edit.lua",
+      "sha256": "aede3122096ae239d41c6a07f9298328da1e2a0042f0febe130999c88e69edb6",
+      "bytes": 206
+    },
+    {
+      "path": "actions/SoundPrep - Export.lua",
+      "sha256": "decda70a4d96afae2771b9ebce7a079f074ce194903ef0cb8ed3b13ce7298d83",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Play Stop.lua",
+      "sha256": "706b912bab48229d38d0fc7210b6e0e53d5a3460f9f7cfcb7656a25004486b77",
+      "bytes": 204
+    },
+    {
+      "path": "actions/SoundPrep - Quit.lua",
+      "sha256": "c1515481eb83a99842fb5cad53dbff19408308e41b6fb5917e50bff14e6c6cc3",
+      "bytes": 199
+    },
+    {
+      "path": "actions/SoundPrep - Replay.lua",
+      "sha256": "df0b22fd9533f43d8787e8f87ac4b762b4c3f86a51d8b78450ab586f9c3c57b9",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Reverse.lua",
+      "sha256": "a8daec79a293f0d1596c378cd59c8cedbb39d11fe013002058155b56044ffe1f",
+      "bytes": 205
+    },
+    {
+      "path": "actions/SoundPrep - Slot 0.lua",
+      "sha256": "17566bd1a8001c474891d2a76d95329322ee99c1bd31e038df8dfda778406d74",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Slot 1.lua",
+      "sha256": "f7e83694f5511c5bd489a40f8b2e832ac238ba8b9f080f6fdfcd8ff704bb3549",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Slot 2.lua",
+      "sha256": "080285f657fe5443dc85e19496444adc9a74f2974df2a8266bf23a5959f1cb42",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Slot 3.lua",
+      "sha256": "7e4ed2d224378509ee5f735665d0d6f033143ab64f9880f7f824410bcc9aa0f0",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Slot 4.lua",
+      "sha256": "2437b5d09027f4377ee8c56d5ac836d0d9edcf88aacbac0aca0f968695f43f15",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Slot 5.lua",
+      "sha256": "0ce0aa432d193d17a1b95b561e6f6b476dc9bccff26c13915d770ab0da017abb",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Slot 6.lua",
+      "sha256": "a786f9934bb204a881ba3fd65799353b223cdfd86e0a5bb46d726a92e6795fc2",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Slot 7.lua",
+      "sha256": "50ae6117506c3ca8620b55242e61ba114b7c198a57b8c761dd0138076421761f",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Slot 8.lua",
+      "sha256": "4dcb24499b99e8b654a7a30ef935f6c639dcb0ca767d96ad745439c9a578c5ba",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Slot 9.lua",
+      "sha256": "8581bf4956d79272f010efcfabfc3058a523b6da3f5514f0027b6e0dec175d6a",
+      "bytes": 203
+    },
+    {
+      "path": "actions/SoundPrep - Stop.lua",
+      "sha256": "c71024b7d785d0280ee64afc9e313d0cd0edfce33db473e343870da4b0d68aa6",
+      "bytes": 199
+    },
+    {
+      "path": "docs/app-settings.md",
+      "sha256": "c8d67ee144435aa1f26ea0f5c89cd25c9d6724d739fbea1a76c3ec944f7cbedf",
+      "bytes": 3030
+    },
+    {
+      "path": "docs/channel-selection.md",
+      "sha256": "f8f7580d4ab83d30941c917e4e1cce84047fee3834f867c4c8d155099eabe247",
+      "bytes": 9716
+    },
+    {
+      "path": "docs/install.md",
+      "sha256": "e5602ae27820bb922ec9beba2dbcb6b04ec9f76b6ec3b023c60efdab59aa3893",
+      "bytes": 13028
+    },
+    {
+      "path": "docs/license-audit-2026-10-22.md",
+      "sha256": "266d384659474b105656a49765dffc81a4e2f3e6c6b4bd4367970066096f73bb",
+      "bytes": 6245
+    },
+    {
+      "path": "docs/loudness-defaults-2026-10-22.json",
+      "sha256": "79a8d1ae786d86afa7a904aeeebb135e3144226a86eeafff8ffe10593c882d66",
+      "bytes": 141458
+    },
+    {
+      "path": "docs/loudness-defaults.md",
+      "sha256": "06d8a8621f03a358cfcea64bfcad26aee7d5561b51f39d551c7149a8b5b24c7f",
+      "bytes": 5382
+    },
+    {
+      "path": "docs/media-explorer-workflow.md",
+      "sha256": "b9a7848ef54a0eaf8cf704905107d2a2a56245cc82850039d829e677f77a5cc5",
+      "bytes": 20614
+    },
+    {
+      "path": "docs/preset-tools.md",
+      "sha256": "0c6f3710ae306c10f3009691508ca8ce094db558fe27ca01668ad2c30ef97710",
+      "bytes": 3491
+    },
+    {
+      "path": "docs/release-readme.md",
+      "sha256": "bb3a3208e0c0b1f041863a77290b5e21f0800cd427a95b514faa64ca8bb41174",
+      "bytes": 1050
+    },
+    {
+      "path": "docs/releases/0.10.25.md",
+      "sha256": "d80ddf3c3350df0fb9392385f683488a06d9b528b011db322b541df115eab06e",
+      "bytes": 1879
+    },
+    {
+      "path": "docs/releases/0.11.0.md",
+      "sha256": "e03131e5009d66e3321e4457dd1a4a666540111ab57cb5b09dc66c904fa2413b",
+      "bytes": 5008
+    },
+    {
+      "path": "docs/releases/0.11.1.md",
+      "sha256": "b7f3ab9f60883aad0dcdf79c030e54c0dfede7b672eddbbdd51f0e0dd8aa4a0c",
+      "bytes": 2279
+    },
+    {
+      "path": "docs/releases/0.11.2.md",
+      "sha256": "51f40c8bff0e2e0cbfa7f0463ccb62e320038fe1ca0a6a2f0b7390adf3332203",
+      "bytes": 1027
+    },
+    {
+      "path": "docs/releases/0.11.3.md",
+      "sha256": "4683c96a504a8ed4a2bc9d23089cb5ceebb0bf2eda11b100d55126392e04be3b",
+      "bytes": 578
+    },
+    {
+      "path": "docs/source-distribution.md",
+      "sha256": "0f6d8704b8d3880f6fec258c7a228cc1d4d455a16e066dc8b4acc4d8b6060555",
+      "bytes": 4657
+    },
+    {
+      "path": "docs/windows.md",
+      "sha256": "6445b7f2c872c8c8a844790db7f4e3b3f9dc04b1f8b9665d17d449778648c773",
+      "bytes": 14956
+    },
+    {
+      "path": "internal/Process waveform drop.lua",
+      "sha256": "4cd102051c745604be54541826a14a3e48058250a94468c195388318ff7bc704",
+      "bytes": 11102
+    },
+    {
+      "path": "lib/am/action.lua",
+      "sha256": "765de18f955f9fe8fb06aa2394f7b16c2e49525a522bdc6c3b0ebf4ee106593a",
+      "bytes": 422
+    },
+    {
+      "path": "lib/am/analysis_policy.lua",
+      "sha256": "a5f30b9356bfbe079a8fa515256423026dbdce36328f7f9ff9f52ea5841605ec",
+      "bytes": 5387
+    },
+    {
+      "path": "lib/am/app.lua",
+      "sha256": "5ce7b0c8567771bdf799937aa11fcc119e31b53bc58614ac3a598d62a1ffbe61",
+      "bytes": 41011
+    },
+    {
+      "path": "lib/am/bank.lua",
+      "sha256": "a6e12869ecc55dc66c9ddb9a15fb88386e67bbbe0b96d1587166b3d1020ebc63",
+      "bytes": 14700
+    },
+    {
+      "path": "lib/am/bar.lua",
+      "sha256": "b8fc6044efbed32ca7be60b29024ee2e462f0e73e970b067ee180c54e548ab6b",
+      "bytes": 8153
+    },
+    {
+      "path": "lib/am/channel_mix.lua",
+      "sha256": "efb43f96d2321bf67be2df7165a6b561015db42995ee640b4bad468572eea67f",
+      "bytes": 1278
+    },
+    {
+      "path": "lib/am/channel_names.lua",
+      "sha256": "fe404ae64ddaf8ed02c03474019285a12ab452bb8bd972e1cbc3f51ee05e3b6e",
+      "bytes": 6929
+    },
+    {
+      "path": "lib/am/channel_panel.lua",
+      "sha256": "3aa338f0846bb0a995c4151140df1a3e5496d431a83554f45bd6be3eb626e66a",
+      "bytes": 4399
+    },
+    {
+      "path": "lib/am/channel_selection.lua",
+      "sha256": "a08466280c11465a79304a54ac8fdddf2b4494378a3296fa31045735adb57c1d",
+      "bytes": 2497
+    },
+    {
+      "path": "lib/am/chunk.lua",
+      "sha256": "7b9d07084bf0bb4ca6aec8969c16d781fcd73a53123307784f429175b1f7241d",
+      "bytes": 4672
+    },
+    {
+      "path": "lib/am/drop.lua",
+      "sha256": "355a5a1d7b50bfa79088ae999e9d23e5b3dd6d6a0fb9e8d4a0d926abf76188b9",
+      "bytes": 4653
+    },
+    {
+      "path": "lib/am/drop_analysis.lua",
+      "sha256": "a3c52cc1525c4af4da948ba0a92546b3e33c7986dfc5fe7575c7b5ef92993119",
+      "bytes": 8173
+    },
+    {
+      "path": "lib/am/drop_pending.lua",
+      "sha256": "9e53b1a5737334a03cb4e2ca1ca16cb01ea8370e24b827cd7c8846534c18ef3d",
+      "bytes": 2815
+    },
+    {
+      "path": "lib/am/drop_range.lua",
+      "sha256": "b8c543fdcba411daf5f1b5b66cbb7d6d46510aff4191b942f3ce0f145bfb010f",
+      "bytes": 620
+    },
+    {
+      "path": "lib/am/drop_render.lua",
+      "sha256": "bbbe1c4eda4304bbbe8a6ff1504f9e18a4352d8e5547087c10a315a5a4ae9a35",
+      "bytes": 5290
+    },
+    {
+      "path": "lib/am/drop_transaction.lua",
+      "sha256": "90c1621cd42bc6993f37c8322de195ba061cf52afafccc683f545eea8fe5d014",
+      "bytes": 7029
+    },
+    {
+      "path": "lib/am/editor_panel.lua",
+      "sha256": "cec3217dd3afb5b9acffd01d273b952a59868309f1582f38b771da319208c44c",
+      "bytes": 8102
+    },
+    {
+      "path": "lib/am/export.lua",
+      "sha256": "8b94c220d9d9c622b8a018d1f1336de0529d337e3674e745b89d9a69f10a989f",
+      "bytes": 6629
+    },
+    {
+      "path": "lib/am/insert.lua",
+      "sha256": "bc3344aeb8b8881b343f35327db56594de2615376e711567d2012913c31fd034",
+      "bytes": 15429
+    },
+    {
+      "path": "lib/am/json.lua",
+      "sha256": "53326558b8e16f11c9044ebe9c5c5e0e2679894da2a397ed2cd7bcf588b80aa4",
+      "bytes": 4819
+    },
+    {
+      "path": "lib/am/loudness.lua",
+      "sha256": "30231c996e2681ae4643fbd07de8aabc71121c7ef52ce36e2de1eaf8d7821ff6",
+      "bytes": 14116
+    },
+    {
+      "path": "lib/am/media_explorer.lua",
+      "sha256": "a347e2d8ec4749e2fbba7d4f542e7fa736a17ec8623194b04625a18471e9bd60",
+      "bytes": 14049
+    },
+    {
+      "path": "lib/am/model.lua",
+      "sha256": "c3d2cd6ff04525b4fa2e2bfe3a00475c2baa1ae8c2f0b9526d8a8fe988239b3b",
+      "bytes": 6940
+    },
+    {
+      "path": "lib/am/native.lua",
+      "sha256": "aab0691abc65b02b83dfe47a995ae755757a5aa52c98c0b149495627be637c24",
+      "bytes": 2309
+    },
+    {
+      "path": "lib/am/native_contract.lua",
+      "sha256": "4a68867cea90fa0307be498d51a72757344525c5568ba84048b7fa1258c12ca0",
+      "bytes": 9099
+    },
+    {
+      "path": "lib/am/peaks.lua",
+      "sha256": "c5a44dacf5f9b6e048a2a7d00ec37f4b5e9b8a0662f5a3f4518748ed3d429adc",
+      "bytes": 2204
+    },
+    {
+      "path": "lib/am/platform.lua",
+      "sha256": "12d8b8f430dd6a74477b0b1ab3aaee7c2f00492505b13c086e0ad09e985d79ad",
+      "bytes": 1636
+    },
+    {
+      "path": "lib/am/preview.lua",
+      "sha256": "fc456c633fc0129d23213ca1e1c33d16682260c9590823cd9cf17e40a2753f8f",
+      "bytes": 11184
+    },
+    {
+      "path": "lib/am/recovery.lua",
+      "sha256": "6a5577a8b6ccffac679ddb0c1125775fe96997f13a26e3386557226ed43f217a",
+      "bytes": 1735
+    },
+    {
+      "path": "lib/am/render_channels.lua",
+      "sha256": "4a5dfc2f24b8add6a5b231b3c5f89373fa3969fe488d56f662d68029c245745d",
+      "bytes": 4799
+    },
+    {
+      "path": "lib/am/render_item.lua",
+      "sha256": "20bfa2c515cc3faf5f8eb3b597c525e45879cdf049d8ce64588278e360b8364d",
+      "bytes": 7355
+    },
+    {
+      "path": "lib/am/settings_panel.lua",
+      "sha256": "d4e03a60a33b7f5abfd655f56b829a6f02dbc2ca0f85e5a04c75fb507deab13f",
+      "bytes": 3807
+    },
+    {
+      "path": "lib/am/take_fx.lua",
+      "sha256": "42cb34b6f803acf6af0632676d5f455c576aa2911c1493dd5607b7942840ddad",
+      "bytes": 9522
+    },
+    {
+      "path": "lib/am/timeline.lua",
+      "sha256": "456589c5f5c6b56ecc13f9b5c62ee7cfcac503aa602627acb4cba39c36cc7dd0",
+      "bytes": 1079
+    },
+    {
+      "path": "lib/am/util.lua",
+      "sha256": "3b896c2ead26a1c2d700c8531cf14571ad012618027c196f96cdc8f89e333fff",
+      "bytes": 3436
+    },
+    {
+      "path": "lib/am/wave_channels.lua",
+      "sha256": "31b5d893e7ed4057293fa3f9e87f00bc1177495583dad7f5e78d33579a80532b",
+      "bytes": 7795
+    },
+    {
+      "path": "native/bar.mm",
+      "sha256": "4b2437ba85ed96651ba9c87c6c73aa37c49eca1289e731c9d5be926a959e6835",
+      "bytes": 22473
+    },
+    {
+      "path": "native/build-windows.ps1",
+      "sha256": "7d006d8a7344f55c351699639ac576f75e2b985ce6b017a3f88b92104d96661c",
+      "bytes": 1032
+    },
+    {
+      "path": "native/build.sh",
+      "sha256": "ef7971ab2f637b0a3c25baf1c4efbd641ea7ba6713aad8ba71581267e8b3df33",
+      "bytes": 2574
+    },
+    {
+      "path": "native/channel_panel.h",
+      "sha256": "5e12103357b240fe2eafb857cca7cbe7a10b3e168658590df4c0d0cc3498976f",
+      "bytes": 6640
+    },
+    {
+      "path": "native/channel_subset.h",
+      "sha256": "9e0e1d2bee79e146489c32dbf6c9fbcfa9682e4b9bd7f385d87477dffcc46031",
+      "bytes": 719
+    },
+    {
+      "path": "native/check_sanitizers.sh",
+      "sha256": "9a0af923477551438b3719f8f0a553374d5327e7e2b4d68d96263c83c6e9f99f",
+      "bytes": 1788
+    },
+    {
+      "path": "native/contract.h",
+      "sha256": "14ad30ce6750eb3b4ca05e9bac96f24956d61ac82f1fd6089e7df539993982ca",
+      "bytes": 10396
+    },
+    {
+      "path": "native/cursor.cpp",
+      "sha256": "11b4c56852d7a94fb26c30a27bf6844f3297fe73ae9543af029958296e5d8e5f",
+      "bytes": 24681
+    },
+    {
+      "path": "native/drop.mm",
+      "sha256": "e6e5d5b2fdf6e8afc231a7d48d8ebd22934138f25769a56ceeaa3d66d02f77a4",
+      "bytes": 9044
+    },
+    {
+      "path": "native/editor_layout.h",
+      "sha256": "c27fe685556b490bf98a814127a75d9b34ebc5bfdf995a8372f09f1d68a8f9a4",
+      "bytes": 4171
+    },
+    {
+      "path": "native/editor_panel.h",
+      "sha256": "154e8c9ccd4637b31f599b6253d2239a394f49bae589bff0025870ca04dbeee4",
+      "bytes": 13551
+    },
+    {
+      "path": "native/json_write.h",
+      "sha256": "8b0b0f09f289ce2105a33215f8800a3cd0a08e38e8f91d74537044bc0f58aeef",
+      "bytes": 419
+    },
+    {
+      "path": "native/path_equal.h",
+      "sha256": "1e407185d4f77f1028ee63c788497219b5046061e0ab6204db8acc438da90806",
+      "bytes": 740
+    },
+    {
+      "path": "native/platform.h",
+      "sha256": "5b3855bbaedd388207575f205085ad3ed6889c9394d8b0ffdf0b0121ae7b3148",
+      "bytes": 596
+    },
+    {
+      "path": "native/prepare.mm",
+      "sha256": "49605d931a7016a97fb9d80a9f51ae1c2aadb4f922579f23c9747dda288dc1fc",
+      "bytes": 650
+    },
+    {
+      "path": "native/preview.cpp",
+      "sha256": "95e591f29a0e5b66f9e555ab58d5bb86a2e6eb707b52071be989f014892c29a7",
+      "bytes": 35303
+    },
+    {
+      "path": "native/preview_clock.h",
+      "sha256": "bc3b102b4a6c990fe60613ae5c308560943fa45994a9b5c06ca85cc4ad8715b3",
+      "bytes": 1314
+    },
+    {
+      "path": "native/preview_lock.h",
+      "sha256": "74a084836d17bad9b8b697b3925e6a23c81537f65a4eca26b1ce922efef0d6d2",
+      "bytes": 1032
+    },
+    {
+      "path": "native/probe_preview.cpp",
+      "sha256": "2d7f7d5359a9c7c65f765d09fe2234a1247161357aa35593d8b7c1b345f32545",
+      "bytes": 4923
+    },
+    {
+      "path": "native/reaper_audio_abi.h",
+      "sha256": "e22d94560d0e9d9f06e7056d07a2097a2c0c1caf78d788e40f0759509db73ab7",
+      "bytes": 5792
+    },
+    {
+      "path": "native/search.mm",
+      "sha256": "e477d67a8be8dc484f453cbbe337bdee020b1fe69ee545d4b94b3341332d75e6",
+      "bytes": 2812
+    },
+    {
+      "path": "native/settings_layout.h",
+      "sha256": "15985230266d951831791a54c74eef1e52d507f9348d5ec5238331fec664a669",
+      "bytes": 1381
+    },
+    {
+      "path": "native/settings_panel.h",
+      "sha256": "e4781d5dc693843d85914b3ce107d7c88589748dd75d8ae9ef608e1a721c399c",
+      "bytes": 12055
+    },
+    {
+      "path": "native/test_bar.mm",
+      "sha256": "abd59b4170c88246be335672509dad3bb06f832abd7cba83d32d904018531355",
+      "bytes": 21884
+    },
+    {
+      "path": "native/test_bar_contract.h",
+      "sha256": "22db93d197a4ca1ef2953ecce941b1512df031db877e328a34db47827b69d2e4",
+      "bytes": 862
+    },
+    {
+      "path": "native/test_cursor.cpp",
+      "sha256": "65508ef0142ee93d919e404b694da5d9b60d62c53c06b9517cf8e5918cad69ab",
+      "bytes": 14905
+    },
+    {
+      "path": "native/test_preview.cpp",
+      "sha256": "682f1cf522df63ea8f799ed1148f9d3a24fe53aceaf3461b4ffce76c59b43207",
+      "bytes": 36866
+    },
+    {
+      "path": "native/test_search.mm",
+      "sha256": "85f9a083f27519f0c09bc3fdb6570b96d1c8d7bde8acbf43d8c0f0f278842064",
+      "bytes": 2124
+    },
+    {
+      "path": "native/test_transport.cpp",
+      "sha256": "271a9d2d95d010f58ea472d7f9556f4e7605d0fd3feb66ff03af4d2e5389f29f",
+      "bytes": 3317
+    },
+    {
+      "path": "native/test_wave.cpp",
+      "sha256": "fe9ab5c85155bc4d6fb6645852db720c01d350e264c8199183c19968183733f3",
+      "bytes": 10571
+    },
+    {
+      "path": "native/transport.cpp",
+      "sha256": "0d8f3525ad055c317212f6deec19af80b948ce9ba148e7dc0dc49762170268ad",
+      "bytes": 19147
+    },
+    {
+      "path": "native/vendor/README.md",
+      "sha256": "74649897d07628deae1a64c9acefa818f06977237bc05738dfd5ddc52fb8e4aa",
+      "bytes": 1833
+    },
+    {
+      "path": "native/vendor/abseil.LICENSE",
+      "sha256": "c79a7fea0e3cac04cd43f20e7b648e5a0ff8fa5344e644b0ee09ca1162b62747",
+      "bytes": 11361
+    },
+    {
+      "path": "native/vendor/ebur128.LICENSE.MIT",
+      "sha256": "d6b4754bb67bdd08b97d5d11b2d7434997a371585a78fe77007149df3af8d09c",
+      "bytes": 1059
+    },
+    {
+      "path": "native/vendor/json.LICENSE.MIT",
+      "sha256": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603",
+      "bytes": 1076
+    },
+    {
+      "path": "native/vendor/json.THIRD_PARTY_NOTICES.md",
+      "sha256": "62fd1cad6ad929b8fd834e5a611e389fbfd2681de3b979f0b9da6ca444fac164",
+      "bytes": 3494
+    },
+    {
+      "path": "native/vendor/json.hpp",
+      "sha256": "aaf127c04cb31c406e5b04a63f1ae89369fccde6d8fa7cdda1ed4f32dfc5de63",
+      "bytes": 953436
+    },
+    {
+      "path": "native/vendor/mosqito.LICENSE.md",
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+      "bytes": 11558
+    },
+    {
+      "path": "native/wave.cpp",
+      "sha256": "f7ec40974120cfbf3dd59c12fbbe3d94cb85a135430a4aa4415737975d14f0b1",
+      "bytes": 9914
+    },
+    {
+      "path": "native/windows/bar.cpp",
+      "sha256": "335c527bafd423552f80c04711be9fb575571250ed5cc4354c869058d1010a0f",
+      "bytes": 18936
+    },
+    {
+      "path": "native/windows/channel_panel.h",
+      "sha256": "2151150f002ac8cb288281f7ee0ec86e2aca3ed26c4368e90953154db3823eca",
+      "bytes": 8153
+    },
+    {
+      "path": "native/windows/common.h",
+      "sha256": "3365f979ba972e97f7af11c3003cc29ab97db1bba1efef683c6a4bd9c2d19459",
+      "bytes": 2648
+    },
+    {
+      "path": "native/windows/drop.cpp",
+      "sha256": "3ccd3da38f03c0f964108f624148f1d9ae870e635f529b9025e231498aa4782f",
+      "bytes": 17769
+    },
+    {
+      "path": "native/windows/editor_panel.h",
+      "sha256": "4dd2ec415b13250448fecb1e27f4bf9467ceafa9717b76f6e15132e52310261b",
+      "bytes": 17279
+    },
+    {
+      "path": "native/windows/quiet_render.h",
+      "sha256": "159a8216b14b5aecc8da3cc3504941881ba812ca9937f978cf78fc728ac04f00",
+      "bytes": 4818
+    },
+    {
+      "path": "native/windows/search.cpp",
+      "sha256": "67725329b0212663c58acfeac2f848944e17df16242821df65ac1ec60c8e487d",
+      "bytes": 2644
+    },
+    {
+      "path": "native/windows/settings_panel.h",
+      "sha256": "8bb4041c297343f17abc6b2cdc816b836608a5ad283f536a731c3bb524c43777",
+      "bytes": 10784
+    },
+    {
+      "path": "native/windows/system.cpp",
+      "sha256": "40acffc952310514ca3cd71922f47a5fed680e38af712e22b0a393afdefa1124",
+      "bytes": 2921
+    },
+    {
+      "path": "native/windows/test_lua.cpp",
+      "sha256": "f6f434fb15efb3a78281ef1f7cdebeff41f3fc535c5a35110a0ec6c394f8ed41",
+      "bytes": 1724
+    },
+    {
+      "path": "native/windows/test_quiet_render.cpp",
+      "sha256": "66fd3872da9326bb45ff504dde622d83a78d9bbead47c923f4d121feec413207",
+      "bytes": 2763
+    },
+    {
+      "path": "native/windows/test_runtime.cpp",
+      "sha256": "6501da00a9a5792fb06d7b89ff22d558dac2e3cf7a03e1f74be25063778926f9",
+      "bytes": 408
+    },
+    {
+      "path": "native/windows/test_windows.cpp",
+      "sha256": "7df00e0e84e866108f9dcc0ea7fbabecfb13d5d8bdae0333b3759dad99035d40",
+      "bytes": 31945
+    },
+    {
+      "path": "native/windows/worker.cpp",
+      "sha256": "94cc9c2ca805fa27c33f570aa0b1e210e81750f86f0ebc7c8e39678ce3a65d28",
+      "bytes": 2714
+    },
+    {
+      "path": "native/worker.mm",
+      "sha256": "3a573a673a406cc4d06a7cef922782ba541c664932368ff5c3d07b9f3bc2ad78",
+      "bytes": 3647
+    },
+    {
+      "path": "prebuilt/manifest.json",
+      "sha256": "2061cffaadce33e04c5a17a127b0bdc5a14a133ffb328a02a06f3c20f66e0c3b",
+      "bytes": 489
+    },
+    {
+      "path": "prebuilt/reaper_audition_macro.dll",
+      "sha256": "09b5755eb0039bb279882d2f303c73f91ff4499f675d2aa5c6a3d6a969a7c1e6",
+      "bytes": 780800
+    },
+    {
+      "path": "prebuilt/reaper_audition_macro.dylib",
+      "sha256": "b7b6dd36a424fe06a7df71bbe632a2ff97b79bf3ab78e9e42a5720bf01312f42",
+      "bytes": 1031328
+    },
+    {
+      "path": "resources/audition_macro_channels_v1.jsfx",
+      "sha256": "4b29ffa0d394a5de84071582537a7a24e906d3a720bdcb4cfc6a65b54da8edbe",
+      "bytes": 5674
+    },
+    {
+      "path": "resources/audition_macro_channels_v2.jsfx",
+      "sha256": "a1cbe76ca4cb2d4a46e9d7124a95d5e35a08383594928e63be71a8617b15545a",
+      "bytes": 5921
+    },
+    {
+      "path": "resources/audition_macro_channels_v3.jsfx",
+      "sha256": "bf86e5d71dc7b582dafe64ced868e1c0ac0dd459c2daa780f2794f781566d9bb",
+      "bytes": 5445
+    },
+    {
+      "path": "resources/chains/dark.RfxChain",
+      "sha256": "25ccc5276383ab86ce7423a53d3712e44c9fced56fc441c83fc67dcaafa18a55",
+      "bytes": 104
+    },
+    {
+      "path": "resources/chains/heavy.RfxChain",
+      "sha256": "2576d3d9ed902f04249351893a3b8d28165ebb77ba09091e00ad0371a52d0806",
+      "bytes": 155
+    },
+    {
+      "path": "resources/chains/reverse.RfxChain",
+      "sha256": "457cd04ce616a82472a8974f66766158f0b344bb00734151b5e320d08d2fa9b6",
+      "bytes": 27
+    },
+    {
+      "path": "resources/native-contract.json",
+      "sha256": "edd99735da17cc4f0cec561b87adc309489d98d0b340eba9149f2bfa251ddecc",
+      "bytes": 15204
+    },
+    {
+      "path": "resources/public-source-files.json",
+      "sha256": "13a8d7b3650c1bcba6e6bbd25ddd8b01247c047588e49764d34eb465d526e07a",
+      "bytes": 10697
+    },
+    {
+      "path": "resources/public-workflows/release.yml",
+      "sha256": "0503ca30965d8090fa7bf84a7af41a4a11515a81989ca76b8f8d9ad0cc33b993",
+      "bytes": 5926
+    },
+    {
+      "path": "resources/public-workflows/windows.yml",
+      "sha256": "04cc1a0e67230bfe6d6a085a1739f21d48b4ce159cc07fdb1b00c0ab91aa3779",
+      "bytes": 2237
+    },
+    {
+      "path": "resources/release-manifest.json",
+      "sha256": "7a22a24b9492816b2e6af81900d647c2e81b10a301567c05bb227f2e48b2c166",
+      "bytes": 4443
+    },
+    {
+      "path": "resources/third-party-provenance.json",
+      "sha256": "5076af1f0ba248fb6a8174c789d839397c05775542aa585a74eea385026c82f7",
+      "bytes": 1401
+    },
+    {
+      "path": "tests/ambix.lua",
+      "sha256": "864ab7fcac378d7f3426a47cd4319ea909c72ff4dfbe7b1a2f28d660f74b376d",
+      "bytes": 10170
+    },
+    {
+      "path": "tests/analysis_dependencies.lua",
+      "sha256": "3501eab0b9d28f9d621151b6578f6cac6b208cf85768410d5d47d09463e4867a",
+      "bytes": 7122
+    },
+    {
+      "path": "tests/analysis_policy.lua",
+      "sha256": "662ce879d67888dcd75354ac2a6111a1544fe64b4a899e44976817230ae4a605",
+      "bytes": 5267
+    },
+    {
+      "path": "tests/analysis_status.lua",
+      "sha256": "ac9ea9f44e6ef10847845f03ce8dddca26934d85b1ea79d46970e3ead7f05466",
+      "bytes": 5034
+    },
+    {
+      "path": "tests/audition_gestures.lua",
+      "sha256": "fdf88652c0ae9ff37c22ca00aa29875fd64390a3243228ca50f3fa5dd4cef326",
+      "bytes": 3283
+    },
+    {
+      "path": "tests/bank_channels.lua",
+      "sha256": "c62d930dc562b0772dba4ef9aa5d66f19a41c97bcdb209f4ac9ac39c0d5b6e00",
+      "bytes": 8999
+    },
+    {
+      "path": "tests/bank_lifecycle.lua",
+      "sha256": "1029587eef137a81d0c7444a08c1039c644e9b10a9209da5713874c42aee36bc",
+      "bytes": 2806
+    },
+    {
+      "path": "tests/benchmark_bank_lifecycle.lua",
+      "sha256": "9ff61f86766ee612de5b9aa14eb23ea936a928e82e8f49db3f2fc7db554998d4",
+      "bytes": 2009
+    },
+    {
+      "path": "tests/benchmark_bar_state.lua",
+      "sha256": "7755175725c46af60ff1be0087d23ea177fd0c6769a08695bb87b2e29041281e",
+      "bytes": 1568
+    },
+    {
+      "path": "tests/cache_directory.lua",
+      "sha256": "aa958f64dc485e60681975f0d895f546cdc6b9ff2402a3807509048a4e621463",
+      "bytes": 5433
+    },
+    {
+      "path": "tests/channel_names.lua",
+      "sha256": "2adba394143a5a16416e9595bc2d88012203bd93bab6deb077f244d85de0a2cb",
+      "bytes": 3955
+    },
+    {
+      "path": "tests/channel_panel.lua",
+      "sha256": "878c02d54520c270e6c86060cd5f5629747acdec1b73b624e4946ad0c2998061",
+      "bytes": 4241
+    },
+    {
+      "path": "tests/channel_selection.lua",
+      "sha256": "0360121388718a54a9fc7c5882befcfd608e9c13d12dc01817568bde4ef81a43",
+      "bytes": 9760
+    },
+    {
+      "path": "tests/downmix.lua",
+      "sha256": "4a81afa223d1a2f63a79bf11c6d34a16064b83776c410b27b366d34e0cf2d969",
+      "bytes": 10310
+    },
+    {
+      "path": "tests/drop_analysis.lua",
+      "sha256": "e57b9e82146d9f5c97eb4a26f9a698d0bcb581d61e9c24a894a2aeeeda64ceff",
+      "bytes": 7458
+    },
+    {
+      "path": "tests/drop_pending.lua",
+      "sha256": "493fc639e25673618eb1f2bb4e9ef967f6c685797c7b00b34afddfcfd2fcbd61",
+      "bytes": 2420
+    },
+    {
+      "path": "tests/drop_playback.lua",
+      "sha256": "f410df59ec90bb6fbcab2dbc1e43e3b1624693871bf1a7e3f3976e12dfcf553a",
+      "bytes": 14459
+    },
+    {
+      "path": "tests/editor_panel.lua",
+      "sha256": "8e99c51f08fb70574f28ce25a36883a1d7a0ed49cff04c10a78e66b0d5cd8d78",
+      "bytes": 5823
+    },
+    {
+      "path": "tests/entrypoint_compatibility.lua",
+      "sha256": "486554e16a1f14ad6cff7382ede3af6dee9e53e863ff9e3e13b431a3b72ba65b",
+      "bytes": 4468
+    },
+    {
+      "path": "tests/launcher_lifecycle.lua",
+      "sha256": "c927182fa3514b38ada762c8401f980e9491a98c8bb31d336bd19f94971a7e8d",
+      "bytes": 3174
+    },
+    {
+      "path": "tests/live_normalization.lua",
+      "sha256": "c25969f17cacaebb0ed317fcf591e63965fd519d4fbcbd5f603512d1fb264320",
+      "bytes": 12537
+    },
+    {
+      "path": "tests/loudness.lua",
+      "sha256": "0edfdc9b56bf4f30fa7536dd026d7721e9d5d01e597f2100bd91948c618fd687",
+      "bytes": 7509
+    },
+    {
+      "path": "tests/media_explorer.lua",
+      "sha256": "1277cbbb8d1e2d5e62be16799110e188c23d53392754b2d6638aa7e0b809b907",
+      "bytes": 3383
+    },
+    {
+      "path": "tests/multichannel_drop.lua",
+      "sha256": "8c37a2c15db20f163d35fe21c44ae5a74305c344231fd4b5733838045f1c557e",
+      "bytes": 13289
+    },
+    {
+      "path": "tests/multichannel_insert.lua",
+      "sha256": "e7dafc44cfbfc21cbbc0c534d3f63baa71f1da45ee704434fa85775fc5d6c819",
+      "bytes": 9478
+    },
+    {
+      "path": "tests/multichannel_preview.lua",
+      "sha256": "6cd967a010a700c1a8b5cc8908529457aed03265c1fa293a9c9250e3eafba46d",
+      "bytes": 1623
+    },
+    {
+      "path": "tests/native-bar-cases.json",
+      "sha256": "3276192fdfb3278e6b8ff6bfaa04376b912e274db369f03da7025567b25afc76",
+      "bytes": 29971
+    },
+    {
+      "path": "tests/native-editor-state.json",
+      "sha256": "6b279bf070851eb34b42216d3806fa39b9447234502c88133b52df98f2dff1c8",
+      "bytes": 944
+    },
+    {
+      "path": "tests/native-settings-state.json",
+      "sha256": "94ba332420dfb8e063aca3284edc9b9e94106e7ef82a70644c6cee04dfe3784d",
+      "bytes": 500
+    },
+    {
+      "path": "tests/native.lua",
+      "sha256": "b55bf90472325e10d9405a833d0b8e87929d0b21601dd689e63ea3952254c605",
+      "bytes": 3677
+    },
+    {
+      "path": "tests/native_drop_host.mm",
+      "sha256": "d8739a0dc2281a67ef6fb344f11470bc65634dc5aded1bce83d89e5a87a17a86",
+      "bytes": 2804
+    },
+    {
+      "path": "tests/normalized_drop.lua",
+      "sha256": "6fc240d128bbbed6c9c0d7828d5c40cde1c03ba7f228259403591625e593f0fe",
+      "bytes": 16286
+    },
+    {
+      "path": "tests/peaks.lua",
+      "sha256": "c426f421280899c01a4389958d28e2f35ad3343fd25d8fc0c602789f8cd226b2",
+      "bytes": 1852
+    },
+    {
+      "path": "tests/platform.lua",
+      "sha256": "1ec16df99ef49b12042784d4da58f93b881b980acb1740d50843e37cd7d67134",
+      "bytes": 1723
+    },
+    {
+      "path": "tests/preview_channels.lua",
+      "sha256": "4015bc8d51db3e0395b1a424b388339abac045bb13190de794d31f353533e301",
+      "bytes": 14259
+    },
+    {
+      "path": "tests/preview_eof.lua",
+      "sha256": "541bedb4cdb2d0970ede84970958634d1db401df28ac7a05a98be04713544d4a",
+      "bytes": 2778
+    },
+    {
+      "path": "tests/preview_gain.lua",
+      "sha256": "67c15a5ebf263485e681921c9f196bd859055ac64fd2de7cb618c26ed403c848",
+      "bytes": 4642
+    },
+    {
+      "path": "tests/preview_regression.cpp",
+      "sha256": "8743d22742bc44969c8c22958b51516513b76de16f620e319ee506400a5ab4f1",
+      "bytes": 4547
+    },
+    {
+      "path": "tests/project_lifecycle.lua",
+      "sha256": "e7e15d520ddaed2700262be6bfad0eec22b004a813137fac33894651c7fe5d97",
+      "bytes": 6451
+    },
+    {
+      "path": "tests/reaper_audio.lua",
+      "sha256": "7215b8254b90bb6b7efe7585f0d5da188e1adea072a18abb54c5fea203cd8614",
+      "bytes": 3025
+    },
+    {
+      "path": "tests/reaper_bar.lua",
+      "sha256": "ec2c0c25a12ff74b5987bb2fccaf93db797aa849bfb4fa7eb34bcd66e95cf863",
+      "bytes": 6455
+    },
+    {
+      "path": "tests/reaper_controls.lua",
+      "sha256": "b82e34f0aac3c2b488efea87c53470720ec47b81ed3304d4552a36c95ea32daf",
+      "bytes": 7172
+    },
+    {
+      "path": "tests/reaper_cursor.lua",
+      "sha256": "3f630b15aef26c4382273f14d99764fa78dbb518270584c31c7f4143398a8247",
+      "bytes": 6579
+    },
+    {
+      "path": "tests/reaper_direct.lua",
+      "sha256": "da5f3c98958d5c4ad1536bab547722c7a4d2bd96e170c040362b0aaa3d791a34",
+      "bytes": 268
+    },
+    {
+      "path": "tests/reaper_direct_suite.lua",
+      "sha256": "061db1f898680006511288901abcaf0c977fad3b840bf38e3e8cd6b2bd938bba",
+      "bytes": 16203
+    },
+    {
+      "path": "tests/reaper_drop.lua",
+      "sha256": "a8e8b5f315855121fc4cbfc99bec832f2e052016cf489a62d3dbfa79a1039eef",
+      "bytes": 5733
+    },
+    {
+      "path": "tests/reaper_drop_analysis.lua",
+      "sha256": "e7163f276867ee0823599efe907a85c9a6f627a92ce363d18726c4176dd0af7f",
+      "bytes": 9682
+    },
+    {
+      "path": "tests/reaper_drop_edit.lua",
+      "sha256": "c11d821cfd4a89173bf2efadb44756bd60d4c567a0cfeca3d66729a8b3c7ff3a",
+      "bytes": 6382
+    },
+    {
+      "path": "tests/reaper_drop_peaks.lua",
+      "sha256": "05907e693c1ee367f1ac4d57c31c21848837b4e6376a13c373fae81c053ca4b5",
+      "bytes": 4510
+    },
+    {
+      "path": "tests/reaper_drop_snapshot.lua",
+      "sha256": "be6df55ff2854a0f9de30112b5df0813856545eee672178cae5fab98f6cfc517",
+      "bytes": 3699
+    },
+    {
+      "path": "tests/reaper_drop_worker.lua",
+      "sha256": "bcab50d0d537377c2461c6b9c8eb3b463dcd541f04e38203c609d0a47ac526fe",
+      "bytes": 2547
+    },
+    {
+      "path": "tests/reaper_editor_lifecycle.lua",
+      "sha256": "36c41dcb9edaf16fdbd7d7a83415218fed1106ecc2f82e8264d2d8ca9f33c258",
+      "bytes": 5669
+    },
+    {
+      "path": "tests/reaper_fx_timing.lua",
+      "sha256": "6839d8772e9c34cce93978a482e0bd6ebae3ef766db49fe47bf75ca971dff0f2",
+      "bytes": 4776
+    },
+    {
+      "path": "tests/reaper_insert.lua",
+      "sha256": "8471574e5e34c793d16dc4752ff0e8461d72dd4ffc8b384f76c020612e5bf3f0",
+      "bytes": 6676
+    },
+    {
+      "path": "tests/reaper_insert_peaks.lua",
+      "sha256": "22a9c63ce5fa3b7f773a5c87a4531689f8ae7a451688be9767f86c1747d11f36",
+      "bytes": 5215
+    },
+    {
+      "path": "tests/reaper_item_volume.lua",
+      "sha256": "a4e04e52ff8047288434509985748401b0d346febf41d40e0fd28ad54944f5be",
+      "bytes": 8145
+    },
+    {
+      "path": "tests/reaper_latency.lua",
+      "sha256": "a0092e08cd5451eb36ec28ac9cb9498fabaad69e2dccaf613efb0749534b0c58",
+      "bytes": 3942
+    },
+    {
+      "path": "tests/reaper_list_drop.lua",
+      "sha256": "46739abc05984d718d31d9b02b18a8b552912773752059ac33852171cfb2645b",
+      "bytes": 6419
+    },
+    {
+      "path": "tests/reaper_live_normalization.lua",
+      "sha256": "3e7384f5ccb0a74f1921a7041052762026e79fb173f94fd69ac50e4231e46e23",
+      "bytes": 16728
+    },
+    {
+      "path": "tests/reaper_multichannel_drop.lua",
+      "sha256": "5926032a7378aaeb80d4b50fdd4a0a47a8d46fea05e740425de7fcd2d2346bf8",
+      "bytes": 23647
+    },
+    {
+      "path": "tests/reaper_multichannel_normalize.lua",
+      "sha256": "d8fdacb08720c0186a1aa60e40d9fc5c753e4ffba0c4b89c56969a61c6d6872a",
+      "bytes": 19073
+    },
+    {
+      "path": "tests/reaper_native_analysis.lua",
+      "sha256": "43563a651ac1f33e9585f056671f00df1f7462038ca8a760bee5c28045011860",
+      "bytes": 16784
+    },
+    {
+      "path": "tests/reaper_native_duration.lua",
+      "sha256": "d62e8d971c47b5a01aed57a6edae06bf0652cd3522024c3c7a598b93b0c6e132",
+      "bytes": 2334
+    },
+    {
+      "path": "tests/reaper_native_options.lua",
+      "sha256": "b1fdb816bd8b52edbac319a74b1362a980785b9be0af016818c2301b801cf49e",
+      "bytes": 5125
+    },
+    {
+      "path": "tests/reaper_performance.lua",
+      "sha256": "04436f682fd0487d0c43a1640f87133edd106d86868c81e98345d7a9ef3e30a3",
+      "bytes": 2998
+    },
+    {
+      "path": "tests/reaper_playback.lua",
+      "sha256": "a67bb9408c4abcd76916e4166cf3083130b7f4329b8ad281e951cfb151f1cdc8",
+      "bytes": 6198
+    },
+    {
+      "path": "tests/reaper_presets.lua",
+      "sha256": "e31154cbff8deb0a0ac0f3a4cc1d4b8c09fec1c9ee945814c9aff1801c01adb7",
+      "bytes": 7281
+    },
+    {
+      "path": "tests/reaper_preview_channels.lua",
+      "sha256": "d0abeeab751d14c398140679049cd188e634af4d62dd3206f55ee332eff0f786",
+      "bytes": 24498
+    },
+    {
+      "path": "tests/reaper_preview_lifecycle.lua",
+      "sha256": "9a0b57af11bafa8a212228a611b5298d5c18235bf050d675fcffa14eb1378e57",
+      "bytes": 2395
+    },
+    {
+      "path": "tests/reaper_project_lifecycle.lua",
+      "sha256": "b5f2a875ab0d4670d8a5644c3e03f9270ed8d39d1ced18cfa12071c82faa0fd4",
+      "bytes": 4832
+    },
+    {
+      "path": "tests/reaper_render_benchmark.lua",
+      "sha256": "b977b3ae234817cfda14508b79568874fb445ac625170ff3d8af8bda6b90c622",
+      "bytes": 2132
+    },
+    {
+      "path": "tests/reaper_selected_channels.lua",
+      "sha256": "223e6724e9fadd8614088bec19d073a5d589a1c862cd018021b5af6bc9cf2cd0",
+      "bytes": 7717
+    },
+    {
+      "path": "tests/reaper_smoke.lua",
+      "sha256": "8bf562833d52a159f658bbcbdc32fef0609e8cea3bcec31c3f15e3d29118a159",
+      "bytes": 4442
+    },
+    {
+      "path": "tests/reaper_source_buffers.lua",
+      "sha256": "a113476f1d6bde489f4ab9cea7c20504e31959570009a90a39b52b080e35dc2f",
+      "bytes": 6469
+    },
+    {
+      "path": "tests/reaper_startup.lua",
+      "sha256": "ba84c37798ed0e0eeaa4e553c9259dbbcacc4ef8d473871800087c525ef78449",
+      "bytes": 7225
+    },
+    {
+      "path": "tests/reaper_switching.lua",
+      "sha256": "1fb62e8ac0034f7ca0da60b9ef5ee4c829fe4af232c10cf7d75f73e14a3a8ba8",
+      "bytes": 3193
+    },
+    {
+      "path": "tests/reaper_take_fx.lua",
+      "sha256": "28de37e141d643af9d3f600e8563b23de069ff101956510a4bc3c20d0ea6be94",
+      "bytes": 7297
+    },
+    {
+      "path": "tests/reaper_tcp_drop.lua",
+      "sha256": "c259420c2824935059a130a8ee8e63410264853f59f80e471133b9ea473e7236",
+      "bytes": 6750
+    },
+    {
+      "path": "tests/reaper_wave.lua",
+      "sha256": "bcc879b742156a9b91ccc79ae86021b6ca5c86dca609e9386017511cf24d9266",
+      "bytes": 8031
+    },
+    {
+      "path": "tests/reaper_windows_direct.lua",
+      "sha256": "f4577e812a86ac56e2361c5f8282e7c097789c9629c87a0ebc4f583f88412ffc",
+      "bytes": 312
+    },
+    {
+      "path": "tests/reaper_windows_drag.lua",
+      "sha256": "f2c69eae82570c1d5b78fb834639a77249a034fe469364247a5ae81a92ce234b",
+      "bytes": 3054
+    },
+    {
+      "path": "tests/reaper_windows_review.lua",
+      "sha256": "c5a570c4df328f7ccc6c8e40f35510bfa71f7ab07489816f5410f0d923f658f6",
+      "bytes": 14627
+    },
+    {
+      "path": "tests/reaper_windows_seek.lua",
+      "sha256": "bd883c544f95dc1a4ef8ba825c1487a9be89c5cf46e757637ade4b55925f4d51",
+      "bytes": 7712
+    },
+    {
+      "path": "tests/reaper_workflow.lua",
+      "sha256": "48c998b969354dfe7199fff518c0d1abb8be5417e23b517772f817ac9534f2bd",
+      "bytes": 5567
+    },
+    {
+      "path": "tests/render_channels.lua",
+      "sha256": "924be30b5ff708d3177b42f6f439ff4d330f419bd5c281850de7c2bf13356a86",
+      "bytes": 3566
+    },
+    {
+      "path": "tests/run.lua",
+      "sha256": "943e985117d2e320699d8259d115969e59bf58c2ac461264f5274371f55706d3",
+      "bytes": 25517
+    },
+    {
+      "path": "tests/search_omission.lua",
+      "sha256": "8216ad14aa4890b11495c45eff6b11abf4c34e997691952b3197088ca7c23456",
+      "bytes": 1130
+    },
+    {
+      "path": "tests/settings_panel.lua",
+      "sha256": "747ebb2cdb1f8b1a3393a8d634086087c983b09eefe2700e68fb4b7de91343be",
+      "bytes": 3458
+    },
+    {
+      "path": "tests/source_buffers.lua",
+      "sha256": "259f7042204e59f0aa9e7dcc6d4b291871d918a9951e72cf3c0e91d59550c5b2",
+      "bytes": 5452
+    },
+    {
+      "path": "tests/source_ownership.lua",
+      "sha256": "7556f58aea1bee34d2165f432e8d913fc6e056036b2ed0afc4514aee12de8a04",
+      "bytes": 4074
+    },
+    {
+      "path": "tests/take_fx.lua",
+      "sha256": "61b00063520c0f0075f8094511d64ba57e6055f206bc78208ace538a8b241db6",
+      "bytes": 7949
+    },
+    {
+      "path": "tests/test_distribution_policy.py",
+      "sha256": "239263a590e36ad036d8827b2b50d0b8ec00b1105d611259b8c1dd2ef80ed2de",
+      "bytes": 4736
+    },
+    {
+      "path": "tests/test_multichannel_worker.py",
+      "sha256": "627ded162dae82956ddf2097868cb26afcbc6af28dc834b1a47750f980151be9",
+      "bytes": 17320
+    },
+    {
+      "path": "tests/test_native_contract.py",
+      "sha256": "43dca824363a7f0b86088f004ff9725a2a2d6eea27b9c1a694e1dd12e5d82a0c",
+      "bytes": 3791
+    },
+    {
+      "path": "tests/test_package_release.py",
+      "sha256": "43875186379173523bb18dcd50f7eae8a8481e5b687f77c3d68429c53eca8355",
+      "bytes": 18114
+    },
+    {
+      "path": "tests/test_package_windows.py",
+      "sha256": "5626e6971e08a3347a4130eeba9b0d2b3f48166ccd54429ec1eb342dd65559bc",
+      "bytes": 7765
+    },
+    {
+      "path": "tests/test_prebuilt_helpers.py",
+      "sha256": "717af40b32f201cb9cfc963af2de86d91d8ea2768e9903042a09846a9c641da7",
+      "bytes": 10046
+    },
+    {
+      "path": "tests/test_prepare_test_host.py",
+      "sha256": "7b3ef96b374cf09ba516ba1a9df561c0936d826f8fda389115a29901657ea024",
+      "bytes": 3387
+    },
+    {
+      "path": "tests/test_prepare_worker.py",
+      "sha256": "a8194ca5d04c36a8ce3abb7593687914e8fb5b83ab97e1ac99716c5e217f00a6",
+      "bytes": 4738
+    },
+    {
+      "path": "tests/test_public_source.py",
+      "sha256": "3709c14ea2ce396b67067e209d14cb100052420361b97bd6f5f8f47354408d11",
+      "bytes": 21767
+    },
+    {
+      "path": "tests/test_worker.py",
+      "sha256": "954d6fd3c6224b1597480cf1fb1b59fd245ad3f01f3ceaf98fce3d63c14e1967",
+      "bytes": 5977
+    },
+    {
+      "path": "tests/wave_channels.lua",
+      "sha256": "7909b28f727cbe446b1e559df39527b08a381e856e7f13b0a25daa27fd20bd32",
+      "bytes": 7637
+    },
+    {
+      "path": "tests/windows_test_host.cpp",
+      "sha256": "fb7c25175593eb7eda20b25adfb85a313b58b94c319a6f50fcd13e1227b52277",
+      "bytes": 2897
+    },
+    {
+      "path": "tests/zwicker.lua",
+      "sha256": "82a3656c5f9ee1d47dad5ee1e8299d85cf45f9dcb88c7ca7fa2fe5b2ba6b2eaf",
+      "bytes": 7766
+    },
+    {
+      "path": "tools/analyze_latency.py",
+      "sha256": "4ef844a524e82c5de033ca75eb566e9307493313fc1022a0989fa7c42c061b9e",
+      "bytes": 1361
+    },
+    {
+      "path": "tools/calibrate_loudness_defaults.cpp",
+      "sha256": "5274881653e00fa239a81811ae4f0c99f1328d82b3a51afd0718056e68083edc",
+      "bytes": 4353
+    },
+    {
+      "path": "tools/calibrate_loudness_defaults.py",
+      "sha256": "6917ba046d2c73684f6f33a91ce6a30737a972a2c5c49ea8977efc95eed4f350",
+      "bytes": 5445
+    },
+    {
+      "path": "tools/compare_quality.py",
+      "sha256": "94f50a14fde7eb3f8dda68efbb1c3578249ac4fb30d8b4f40a995fb631bb6eb7",
+      "bytes": 3787
+    },
+    {
+      "path": "tools/compare_rendered_audio.py",
+      "sha256": "dc7186a0dead4f6fea16a482ec82774981fcd21b7e9744b3dd145d998dae2eb8",
+      "bytes": 2400
+    },
+    {
+      "path": "tools/generate_native_contract.py",
+      "sha256": "ec6d27af76116579dab92881e03a756174dfdd3bda39ef33fa7b54ff8f3574f0",
+      "bytes": 9835
+    },
+    {
+      "path": "tools/install_native.ps1",
+      "sha256": "b58683141b1f50eae3ccfd05a694099a62e2a4e8caaf715713a58fe65a01bc76",
+      "bytes": 1801
+    },
+    {
+      "path": "tools/install_native.sh",
+      "sha256": "915cc64e2c9e5909b0223f59a92949a09d20add47fbbf0f180f01a5c8201d11a",
+      "bytes": 1381
+    },
+    {
+      "path": "tools/package_release.py",
+      "sha256": "94264aee1cb19b7e4d49a7900e0f8b160f41ffd9983984e031537a8aa725a5f5",
+      "bytes": 20284
+    },
+    {
+      "path": "tools/package_windows.py",
+      "sha256": "869ecaffd1c5386448f26caf52b44bfa1855f1fdfaa303d71ca724268361f860",
+      "bytes": 3423
+    },
+    {
+      "path": "tools/prebuilt_helpers.py",
+      "sha256": "4c9eaf4c85378ae3e24416f266c88d555988d53d2ba594d774bf4e91a4044fcc",
+      "bytes": 6620
+    },
+    {
+      "path": "tools/prepare_public_source.py",
+      "sha256": "d891f768ff0bdf662e8963a4997fa6955e4987c970da689bec0f4459193eece5",
+      "bytes": 14591
+    },
+    {
+      "path": "tools/prepare_test_host.py",
+      "sha256": "28328c7bd1aeab1c7de4ad1d48071c0b1fd90aa335207b4d966f045111ed137e",
+      "bytes": 5595
+    },
+    {
+      "path": "tools/run_macos_quality.py",
+      "sha256": "7205182c0d70406e87fac0e4da2d7483ddf39d000e4aee896c5af7f1dca8e650",
+      "bytes": 6384
+    },
+    {
+      "path": "tools/run_reapack_smoke.py",
+      "sha256": "7a8ede7b6c31884897a6eda391ea43d28cd070bce3512b79009d3c7d71a5d31e",
+      "bytes": 10711
+    },
+    {
+      "path": "tools/run_windows_integration.py",
+      "sha256": "f3a88a56f5255385d2a46b969e29e52425ae06ecfd6ab9cfbb34ebdfe3e7bff5",
+      "bytes": 6857
+    },
+    {
+      "path": "worker/analyze.py",
+      "sha256": "a53454b65191be4237757c9b4d43f718e363fcb2c6bae6f274fd461b3114ff26",
+      "bytes": 19302
+    },
+    {
+      "path": "worker/prepare.lua",
+      "sha256": "97f899bbd56ed7d4bb7b48ae52c6daa6c5fec1bf77b74ebdac1a3b10aad588d8",
+      "bytes": 1882
+    },
+    {
+      "path": "worker/prepare.py",
+      "sha256": "65779ba7ba94cbe02d10486238739f0b76a822b79ff8a061860ab7489be24d10",
+      "bytes": 7631
+    }
+  ]
+}

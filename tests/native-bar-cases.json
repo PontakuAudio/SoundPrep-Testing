@@ -1,0 +1,1336 @@
+{
+  "base": {
+    "active": "raw",
+    "macros": [
+      {
+        "id": "heavy",
+        "label": "1 Heavy 日本語"
+      }
+    ],
+    "status": "Ready",
+    "reverse": false,
+    "normalize": false,
+    "target": -16,
+    "monitor": -6,
+    "paused": false,
+    "preserve_pitch": false,
+    "search": {
+      "open": false
+    },
+    "downmix": false,
+    "multichannel": false
+  },
+  "cases": [
+    {
+      "name": "valid current state",
+      "accept": true
+    },
+    {
+      "name": "optional Preserve Pitch omitted",
+      "remove": [
+        "preserve_pitch"
+      ],
+      "accept": true
+    },
+    {
+      "name": "optional Downmix fields omitted",
+      "remove": [
+        "downmix",
+        "multichannel"
+      ],
+      "accept": true
+    },
+    {
+      "name": "multichannel Downmix active",
+      "set": {
+        "downmix": true,
+        "multichannel": true
+      },
+      "accept": true
+    },
+    {
+      "name": "downmix rejects numeric boolean",
+      "set": {
+        "downmix": 1
+      },
+      "accept": false
+    },
+    {
+      "name": "downmix rejects null",
+      "set": {
+        "downmix": null
+      },
+      "accept": false
+    },
+    {
+      "name": "multichannel rejects numeric boolean",
+      "set": {
+        "multichannel": 1
+      },
+      "accept": false
+    },
+    {
+      "name": "multichannel rejects null",
+      "set": {
+        "multichannel": null
+      },
+      "accept": false
+    },
+    {
+      "name": "reverse rejects numeric boolean",
+      "set": {
+        "reverse": 1
+      },
+      "accept": false
+    },
+    {
+      "name": "normalize rejects numeric boolean",
+      "set": {
+        "normalize": 1
+      },
+      "accept": false
+    },
+    {
+      "name": "paused rejects numeric boolean",
+      "set": {
+        "paused": 1
+      },
+      "accept": false
+    },
+    {
+      "name": "preserve_pitch rejects numeric boolean",
+      "set": {
+        "preserve_pitch": 1
+      },
+      "accept": false
+    },
+    {
+      "name": "target rejects boolean number",
+      "set": {
+        "target": true
+      },
+      "accept": false
+    },
+    {
+      "name": "monitor rejects boolean number",
+      "set": {
+        "monitor": true
+      },
+      "accept": false
+    },
+    {
+      "name": "required normalize missing",
+      "remove": [
+        "normalize"
+      ],
+      "accept": false
+    },
+    {
+      "name": "null Preserve Pitch",
+      "set": {
+        "preserve_pitch": null
+      },
+      "accept": false
+    },
+    {
+      "name": "invalid macro ID type",
+      "set": {
+        "macros": [
+          {
+            "id": 42,
+            "label": "name"
+          }
+        ]
+      },
+      "accept": false
+    },
+    {
+      "name": "too many macros",
+      "set": {
+        "macros": [
+          {
+            "id": "m0",
+            "label": "macro"
+          },
+          {
+            "id": "m1",
+            "label": "macro"
+          },
+          {
+            "id": "m2",
+            "label": "macro"
+          },
+          {
+            "id": "m3",
+            "label": "macro"
+          },
+          {
+            "id": "m4",
+            "label": "macro"
+          },
+          {
+            "id": "m5",
+            "label": "macro"
+          },
+          {
+            "id": "m6",
+            "label": "macro"
+          },
+          {
+            "id": "m7",
+            "label": "macro"
+          },
+          {
+            "id": "m8",
+            "label": "macro"
+          },
+          {
+            "id": "m9",
+            "label": "macro"
+          }
+        ]
+      },
+      "accept": false
+    },
+    {
+      "name": "search must be an object",
+      "set": {
+        "search": 1
+      },
+      "accept": false
+    },
+    {
+      "name": "optional search omitted",
+      "remove": [
+        "search"
+      ],
+      "accept": true
+    },
+    {
+      "name": "empty optional search state",
+      "set": {
+        "search": {}
+      },
+      "accept": true
+    },
+    {
+      "name": "complete closed search state",
+      "set": {
+        "search": {
+          "open": false,
+          "revision": 3,
+          "input": "金属",
+          "query": "( metal OR metallic )",
+          "mode": "natural",
+          "broad": true,
+          "can_restore": true,
+          "preserve_inputs": false,
+          "notice": "Review",
+          "error": "",
+          "groups": [
+            {
+              "label": "金属",
+              "query": "metal",
+              "enabled": true,
+              "original": "金属",
+              "negative": false
+            }
+          ]
+        }
+      },
+      "accept": true
+    },
+    {
+      "name": "maximum search groups",
+      "set": {
+        "search": {
+          "open": false,
+          "groups": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        }
+      },
+      "accept": true
+    },
+    {
+      "name": "too many search groups",
+      "set": {
+        "search": {
+          "open": false,
+          "groups": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search open rejects invalid type",
+      "set": {
+        "search": {
+          "open": []
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search revision rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "revision": "3"
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search input rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "input": false
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search query rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "query": null
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search mode rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "mode": 0
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search broad rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "broad": 1
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search can_restore rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "can_restore": []
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search preserve_inputs rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "preserve_inputs": 0
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search notice rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "notice": {}
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search error rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "error": []
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search groups rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "groups": {}
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search group label rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "groups": [
+            {
+              "label": 42
+            }
+          ]
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search group query rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "groups": [
+            {
+              "query": false
+            }
+          ]
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search group enabled rejects invalid type",
+      "set": {
+        "search": {
+          "open": false,
+          "groups": [
+            {
+              "enabled": 1
+            }
+          ]
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search group must be an object",
+      "set": {
+        "search": {
+          "open": false,
+          "groups": [
+            null
+          ]
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search revision rejects 1e+100",
+      "set": {
+        "search": {
+          "open": false,
+          "revision": 1e+100
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search revision rejects -1e+100",
+      "set": {
+        "search": {
+          "open": false,
+          "revision": -1e+100
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "search revision rejects 1.5",
+      "set": {
+        "search": {
+          "open": false,
+          "revision": 1.5
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "native microphone state",
+      "set": {
+        "channels": {
+          "open": false,
+          "source": "/six.wav:6",
+          "file": "six.wav",
+          "summary": "Ch 1, 3, 5",
+          "items": [
+            {
+              "channel": 1,
+              "name": "Boom & L",
+              "selected": true
+            },
+            {
+              "channel": 2,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 3,
+              "name": "風鈴 🎤",
+              "selected": true
+            }
+          ],
+          "previous": false,
+          "next": false,
+          "all": false,
+          "downmix": false,
+          "can_downmix": true,
+          "can_swap": false,
+          "enabled": true,
+          "playing": false,
+          "page": "1–6 / 6",
+          "notice": ""
+        }
+      },
+      "accept": true
+    },
+    {
+      "name": "invalid microphone number",
+      "set": {
+        "channels": {
+          "open": false,
+          "source": "/six.wav:6",
+          "file": "six.wav",
+          "summary": "Ch 1, 3, 5",
+          "items": [
+            {
+              "channel": 0,
+              "name": "Boom & L",
+              "selected": true
+            },
+            {
+              "channel": 2,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 3,
+              "name": "風鈴 🎤",
+              "selected": true
+            }
+          ],
+          "previous": false,
+          "next": false,
+          "all": false,
+          "downmix": false,
+          "can_downmix": true,
+          "can_swap": false,
+          "enabled": true,
+          "playing": false,
+          "page": "1–6 / 6",
+          "notice": ""
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "duplicate microphone",
+      "set": {
+        "channels": {
+          "open": false,
+          "source": "/six.wav:6",
+          "file": "six.wav",
+          "summary": "Ch 1, 3, 5",
+          "items": [
+            {
+              "channel": 1,
+              "name": "Boom & L",
+              "selected": true
+            },
+            {
+              "channel": 1,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 3,
+              "name": "風鈴 🎤",
+              "selected": true
+            }
+          ],
+          "previous": false,
+          "next": false,
+          "all": false,
+          "downmix": false,
+          "can_downmix": true,
+          "can_swap": false,
+          "enabled": true,
+          "playing": false,
+          "page": "1–6 / 6",
+          "notice": ""
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "fractional microphone",
+      "set": {
+        "channels": {
+          "open": false,
+          "source": "/six.wav:6",
+          "file": "six.wav",
+          "summary": "Ch 1, 3, 5",
+          "items": [
+            {
+              "channel": 1.5,
+              "name": "Boom & L",
+              "selected": true
+            },
+            {
+              "channel": 2,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 3,
+              "name": "風鈴 🎤",
+              "selected": true
+            }
+          ],
+          "previous": false,
+          "next": false,
+          "all": false,
+          "downmix": false,
+          "can_downmix": true,
+          "can_swap": false,
+          "enabled": true,
+          "playing": false,
+          "page": "1–6 / 6",
+          "notice": ""
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "numeric microphone name",
+      "set": {
+        "channels": {
+          "open": false,
+          "source": "/six.wav:6",
+          "file": "six.wav",
+          "summary": "Ch 1, 3, 5",
+          "items": [
+            {
+              "channel": 1,
+              "name": 123,
+              "selected": true
+            },
+            {
+              "channel": 2,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 3,
+              "name": "風鈴 🎤",
+              "selected": true
+            }
+          ],
+          "previous": false,
+          "next": false,
+          "all": false,
+          "downmix": false,
+          "can_downmix": true,
+          "can_swap": false,
+          "enabled": true,
+          "playing": false,
+          "page": "1–6 / 6",
+          "notice": ""
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "missing microphone fields",
+      "set": {
+        "channels": {
+          "open": false,
+          "file": "six.wav",
+          "summary": "Ch 1, 3, 5",
+          "items": [
+            {
+              "channel": 1,
+              "name": "Boom & L",
+              "selected": true
+            },
+            {
+              "channel": 2,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 3,
+              "name": "風鈴 🎤",
+              "selected": true
+            }
+          ],
+          "previous": false,
+          "next": false,
+          "all": false,
+          "downmix": false,
+          "can_downmix": true,
+          "can_swap": false,
+          "enabled": true,
+          "playing": false,
+          "page": "1–6 / 6",
+          "notice": ""
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "too many microphone buttons",
+      "set": {
+        "channels": {
+          "open": false,
+          "source": "/six.wav:6",
+          "file": "six.wav",
+          "summary": "Ch 1, 3, 5",
+          "items": [
+            {
+              "channel": 1,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 2,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 3,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 4,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 5,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 6,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 7,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 8,
+              "name": "",
+              "selected": false
+            },
+            {
+              "channel": 9,
+              "name": "",
+              "selected": false
+            }
+          ],
+          "previous": false,
+          "next": false,
+          "all": false,
+          "downmix": false,
+          "can_downmix": true,
+          "can_swap": false,
+          "enabled": true,
+          "playing": false,
+          "page": "1–6 / 6",
+          "notice": ""
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "valid app settings",
+      "set": {
+        "settings": {
+          "open": true,
+          "focus": 1,
+          "values": {
+            "autoplay": true,
+            "loop": false,
+            "auto_render_drops": false,
+            "insert_handles": true,
+            "keep_fx_running": false,
+            "monitor_gain_db": -6,
+            "preview_fade_ms": 0,
+            "fade_ms": 5
+          },
+          "cache_available": true,
+          "cache_default": false,
+          "cache_path": "/fixtures/解析 🎤/cache",
+          "diagnostics": "Chain loads: 3   Switches: 7   Source starts: 2",
+          "notice": "Changes are saved automatically and shared across every preset."
+        }
+      },
+      "accept": true
+    },
+    {
+      "name": "settings missing values",
+      "set": {
+        "settings": {
+          "open": true,
+          "focus": 1,
+          "cache_available": true,
+          "cache_default": false,
+          "cache_path": "/fixtures/解析 🎤/cache",
+          "diagnostics": "Chain loads: 3   Switches: 7   Source starts: 2",
+          "notice": "Changes are saved automatically and shared across every preset."
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "settings boolean monitor",
+      "set": {
+        "settings": {
+          "open": true,
+          "focus": 1,
+          "values": {
+            "autoplay": true,
+            "loop": false,
+            "auto_render_drops": false,
+            "insert_handles": true,
+            "keep_fx_running": false,
+            "monitor_gain_db": true,
+            "preview_fade_ms": 0,
+            "fade_ms": 5
+          },
+          "cache_available": true,
+          "cache_default": false,
+          "cache_path": "/fixtures/解析 🎤/cache",
+          "diagnostics": "Chain loads: 3   Switches: 7   Source starts: 2",
+          "notice": "Changes are saved automatically and shared across every preset."
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "settings out of range",
+      "set": {
+        "settings": {
+          "open": true,
+          "focus": 1,
+          "values": {
+            "autoplay": true,
+            "loop": false,
+            "auto_render_drops": false,
+            "insert_handles": true,
+            "keep_fx_running": false,
+            "monitor_gain_db": -6,
+            "preview_fade_ms": 0,
+            "fade_ms": 51
+          },
+          "cache_available": true,
+          "cache_default": false,
+          "cache_path": "/fixtures/解析 🎤/cache",
+          "diagnostics": "Chain loads: 3   Switches: 7   Source starts: 2",
+          "notice": "Changes are saved automatically and shared across every preset."
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "settings negative focus",
+      "set": {
+        "settings": {
+          "open": true,
+          "focus": -1,
+          "values": {
+            "autoplay": true,
+            "loop": false,
+            "auto_render_drops": false,
+            "insert_handles": true,
+            "keep_fx_running": false,
+            "monitor_gain_db": -6,
+            "preview_fade_ms": 0,
+            "fade_ms": 5
+          },
+          "cache_available": true,
+          "cache_default": false,
+          "cache_path": "/fixtures/解析 🎤/cache",
+          "diagnostics": "Chain loads: 3   Switches: 7   Source starts: 2",
+          "notice": "Changes are saved automatically and shared across every preset."
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "Zwicker target label",
+      "set": {
+        "target_label": "Norm 36.00 sones"
+      },
+      "accept": true
+    },
+    {
+      "name": "target label rejects number",
+      "set": {
+        "target_label": 36
+      },
+      "accept": false
+    },
+    {
+      "name": "target label rejects null",
+      "set": {
+        "target_label": null
+      },
+      "accept": false
+    },
+    {
+      "name": "complete native editor state",
+      "set": {
+        "editor": {
+          "deleting": false,
+          "dirty": true,
+          "focus": 1,
+          "id": "heavy",
+          "measurement": "Loudness: off",
+          "notice": "",
+          "open": true,
+          "page": 0,
+          "playing": false,
+          "presets": [
+            {
+              "id": "raw",
+              "label": "Raw"
+            },
+            {
+              "id": "heavy",
+              "label": "Heavy"
+            },
+            {
+              "id": "dark",
+              "label": "Dark"
+            },
+            {
+              "id": "reverse",
+              "label": "Reverse"
+            }
+          ],
+          "source": "Select a file in Media Explorer",
+          "values": {
+            "boost": 18,
+            "ceiling": -1,
+            "directory": "/tmp/Export 素材",
+            "export_ceiling": -1,
+            "final": false,
+            "gain": 0,
+            "guard": false,
+            "limiter": false,
+            "lufs": -18,
+            "metric": "lufs_m_max",
+            "name": "Heavy",
+            "normalize": false,
+            "pitch": -4,
+            "preserve": false,
+            "rate": 0.72,
+            "reference_dbfs": -20,
+            "reference_spl": 79,
+            "reverse": false,
+            "slot": 1,
+            "sones": 36,
+            "tail": 1
+          }
+        }
+      },
+      "accept": true
+    },
+    {
+      "name": "editor rejects unknown page",
+      "set": {
+        "editor": {
+          "deleting": false,
+          "dirty": true,
+          "focus": 1,
+          "id": "heavy",
+          "measurement": "Loudness: off",
+          "notice": "",
+          "open": true,
+          "page": 5,
+          "playing": false,
+          "presets": [
+            {
+              "id": "raw",
+              "label": "Raw"
+            },
+            {
+              "id": "heavy",
+              "label": "Heavy"
+            },
+            {
+              "id": "dark",
+              "label": "Dark"
+            },
+            {
+              "id": "reverse",
+              "label": "Reverse"
+            }
+          ],
+          "source": "Select a file in Media Explorer",
+          "values": {
+            "boost": 18,
+            "ceiling": -1,
+            "directory": "/tmp/Export 素材",
+            "export_ceiling": -1,
+            "final": false,
+            "gain": 0,
+            "guard": false,
+            "limiter": false,
+            "lufs": -18,
+            "metric": "lufs_m_max",
+            "name": "Heavy",
+            "normalize": false,
+            "pitch": -4,
+            "preserve": false,
+            "rate": 0.72,
+            "reference_dbfs": -20,
+            "reference_spl": 79,
+            "reverse": false,
+            "slot": 1,
+            "sones": 36,
+            "tail": 1
+          }
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "editor rejects fractional focus",
+      "set": {
+        "editor": {
+          "deleting": false,
+          "dirty": true,
+          "focus": 0.5,
+          "id": "heavy",
+          "measurement": "Loudness: off",
+          "notice": "",
+          "open": true,
+          "page": 0,
+          "playing": false,
+          "presets": [
+            {
+              "id": "raw",
+              "label": "Raw"
+            },
+            {
+              "id": "heavy",
+              "label": "Heavy"
+            },
+            {
+              "id": "dark",
+              "label": "Dark"
+            },
+            {
+              "id": "reverse",
+              "label": "Reverse"
+            }
+          ],
+          "source": "Select a file in Media Explorer",
+          "values": {
+            "boost": 18,
+            "ceiling": -1,
+            "directory": "/tmp/Export 素材",
+            "export_ceiling": -1,
+            "final": false,
+            "gain": 0,
+            "guard": false,
+            "limiter": false,
+            "lufs": -18,
+            "metric": "lufs_m_max",
+            "name": "Heavy",
+            "normalize": false,
+            "pitch": -4,
+            "preserve": false,
+            "rate": 0.72,
+            "reference_dbfs": -20,
+            "reference_spl": 79,
+            "reverse": false,
+            "slot": 1,
+            "sones": 36,
+            "tail": 1
+          }
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "editor rejects boolean number",
+      "set": {
+        "editor": {
+          "deleting": false,
+          "dirty": true,
+          "focus": 1,
+          "id": "heavy",
+          "measurement": "Loudness: off",
+          "notice": "",
+          "open": true,
+          "page": 0,
+          "playing": false,
+          "presets": [
+            {
+              "id": "raw",
+              "label": "Raw"
+            },
+            {
+              "id": "heavy",
+              "label": "Heavy"
+            },
+            {
+              "id": "dark",
+              "label": "Dark"
+            },
+            {
+              "id": "reverse",
+              "label": "Reverse"
+            }
+          ],
+          "source": "Select a file in Media Explorer",
+          "values": {
+            "boost": 18,
+            "ceiling": -1,
+            "directory": "/tmp/Export 素材",
+            "export_ceiling": -1,
+            "final": false,
+            "gain": 0,
+            "guard": false,
+            "limiter": false,
+            "lufs": -18,
+            "metric": "lufs_m_max",
+            "name": "Heavy",
+            "normalize": false,
+            "pitch": -4,
+            "preserve": false,
+            "rate": false,
+            "reference_dbfs": -20,
+            "reference_spl": 79,
+            "reverse": false,
+            "slot": 1,
+            "sones": 36,
+            "tail": 1
+          }
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "editor rejects missing values",
+      "set": {
+        "editor": {
+          "deleting": false,
+          "dirty": true,
+          "focus": 1,
+          "id": "heavy",
+          "measurement": "Loudness: off",
+          "notice": "",
+          "open": true,
+          "page": 0,
+          "playing": false,
+          "presets": [
+            {
+              "id": "raw",
+              "label": "Raw"
+            },
+            {
+              "id": "heavy",
+              "label": "Heavy"
+            },
+            {
+              "id": "dark",
+              "label": "Dark"
+            },
+            {
+              "id": "reverse",
+              "label": "Reverse"
+            }
+          ],
+          "source": "Select a file in Media Explorer",
+          "values": {}
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "editor bounds preset count",
+      "set": {
+        "editor": {
+          "deleting": false,
+          "dirty": true,
+          "focus": 1,
+          "id": "heavy",
+          "measurement": "Loudness: off",
+          "notice": "",
+          "open": true,
+          "page": 0,
+          "playing": false,
+          "presets": [],
+          "source": "Select a file in Media Explorer",
+          "values": {
+            "boost": 18,
+            "ceiling": -1,
+            "directory": "/tmp/Export 素材",
+            "export_ceiling": -1,
+            "final": false,
+            "gain": 0,
+            "guard": false,
+            "limiter": false,
+            "lufs": -18,
+            "metric": "lufs_m_max",
+            "name": "Heavy",
+            "normalize": false,
+            "pitch": -4,
+            "preserve": false,
+            "rate": 0.72,
+            "reference_dbfs": -20,
+            "reference_spl": 79,
+            "reverse": false,
+            "slot": 1,
+            "sones": 36,
+            "tail": 1
+          }
+        }
+      },
+      "accept": false
+    },
+    {
+      "name": "editor rejects numeric checkbox",
+      "set": {
+        "editor": {
+          "deleting": false,
+          "dirty": true,
+          "focus": 1,
+          "id": "heavy",
+          "measurement": "Loudness: off",
+          "notice": "",
+          "open": true,
+          "page": 0,
+          "playing": false,
+          "presets": [
+            {
+              "id": "raw",
+              "label": "Raw"
+            },
+            {
+              "id": "heavy",
+              "label": "Heavy"
+            },
+            {
+              "id": "dark",
+              "label": "Dark"
+            },
+            {
+              "id": "reverse",
+              "label": "Reverse"
+            }
+          ],
+          "source": "Select a file in Media Explorer",
+          "values": {
+            "boost": 18,
+            "ceiling": -1,
+            "directory": "/tmp/Export 素材",
+            "export_ceiling": -1,
+            "final": false,
+            "gain": 0,
+            "guard": false,
+            "limiter": false,
+            "lufs": -18,
+            "metric": "lufs_m_max",
+            "name": "Heavy",
+            "normalize": 1,
+            "pitch": -4,
+            "preserve": false,
+            "rate": 0.72,
+            "reference_dbfs": -20,
+            "reference_spl": 79,
+            "reverse": false,
+            "slot": 1,
+            "sones": 36,
+            "tail": 1
+          }
+        }
+      },
+      "accept": false
+    }
+  ]
+}

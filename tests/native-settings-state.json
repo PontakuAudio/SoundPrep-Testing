@@ -1,0 +1,19 @@
+{
+  "open": true,
+  "focus": 1,
+  "values": {
+    "autoplay": true,
+    "loop": false,
+    "auto_render_drops": false,
+    "insert_handles": true,
+    "keep_fx_running": false,
+    "monitor_gain_db": -6,
+    "preview_fade_ms": 0,
+    "fade_ms": 5
+  },
+  "cache_available": true,
+  "cache_default": false,
+  "cache_path": "/fixtures/解析 🎤/cache",
+  "diagnostics": "Chain loads: 3   Switches: 7   Source starts: 2",
+  "notice": "Changes are saved automatically and shared across every preset."
+}

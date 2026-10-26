@@ -1,0 +1,295 @@
+desc:Audition Macro channel processing (v2)
+slider1:0<0,3,1{Pass through,Discrete,AmbiX W/Y,Select channels}>Channel mix
+slider2:2<1,128,1>Source channels
+slider3:0<-120,24,0.1>Output gain (dB)
+slider4:1<1,128,1>Left input channel
+slider5:2<1,128,1>Right input channel
+in_pin:Channel 1
+in_pin:Channel 2
+in_pin:Channel 3
+in_pin:Channel 4
+in_pin:Channel 5
+in_pin:Channel 6
+in_pin:Channel 7
+in_pin:Channel 8
+in_pin:Channel 9
+in_pin:Channel 10
+in_pin:Channel 11
+in_pin:Channel 12
+in_pin:Channel 13
+in_pin:Channel 14
+in_pin:Channel 15
+in_pin:Channel 16
+in_pin:Channel 17
+in_pin:Channel 18
+in_pin:Channel 19
+in_pin:Channel 20
+in_pin:Channel 21
+in_pin:Channel 22
+in_pin:Channel 23
+in_pin:Channel 24
+in_pin:Channel 25
+in_pin:Channel 26
+in_pin:Channel 27
+in_pin:Channel 28
+in_pin:Channel 29
+in_pin:Channel 30
+in_pin:Channel 31
+in_pin:Channel 32
+in_pin:Channel 33
+in_pin:Channel 34
+in_pin:Channel 35
+in_pin:Channel 36
+in_pin:Channel 37
+in_pin:Channel 38
+in_pin:Channel 39
+in_pin:Channel 40
+in_pin:Channel 41
+in_pin:Channel 42
+in_pin:Channel 43
+in_pin:Channel 44
+in_pin:Channel 45
+in_pin:Channel 46
+in_pin:Channel 47
+in_pin:Channel 48
+in_pin:Channel 49
+in_pin:Channel 50
+in_pin:Channel 51
+in_pin:Channel 52
+in_pin:Channel 53
+in_pin:Channel 54
+in_pin:Channel 55
+in_pin:Channel 56
+in_pin:Channel 57
+in_pin:Channel 58
+in_pin:Channel 59
+in_pin:Channel 60
+in_pin:Channel 61
+in_pin:Channel 62
+in_pin:Channel 63
+in_pin:Channel 64
+in_pin:Channel 65
+in_pin:Channel 66
+in_pin:Channel 67
+in_pin:Channel 68
+in_pin:Channel 69
+in_pin:Channel 70
+in_pin:Channel 71
+in_pin:Channel 72
+in_pin:Channel 73
+in_pin:Channel 74
+in_pin:Channel 75
+in_pin:Channel 76
+in_pin:Channel 77
+in_pin:Channel 78
+in_pin:Channel 79
+in_pin:Channel 80
+in_pin:Channel 81
+in_pin:Channel 82
+in_pin:Channel 83
+in_pin:Channel 84
+in_pin:Channel 85
+in_pin:Channel 86
+in_pin:Channel 87
+in_pin:Channel 88
+in_pin:Channel 89
+in_pin:Channel 90
+in_pin:Channel 91
+in_pin:Channel 92
+in_pin:Channel 93
+in_pin:Channel 94
+in_pin:Channel 95
+in_pin:Channel 96
+in_pin:Channel 97
+in_pin:Channel 98
+in_pin:Channel 99
+in_pin:Channel 100
+in_pin:Channel 101
+in_pin:Channel 102
+in_pin:Channel 103
+in_pin:Channel 104
+in_pin:Channel 105
+in_pin:Channel 106
+in_pin:Channel 107
+in_pin:Channel 108
+in_pin:Channel 109
+in_pin:Channel 110
+in_pin:Channel 111
+in_pin:Channel 112
+in_pin:Channel 113
+in_pin:Channel 114
+in_pin:Channel 115
+in_pin:Channel 116
+in_pin:Channel 117
+in_pin:Channel 118
+in_pin:Channel 119
+in_pin:Channel 120
+in_pin:Channel 121
+in_pin:Channel 122
+in_pin:Channel 123
+in_pin:Channel 124
+in_pin:Channel 125
+in_pin:Channel 126
+in_pin:Channel 127
+in_pin:Channel 128
+out_pin:Channel 1
+out_pin:Channel 2
+out_pin:Channel 3
+out_pin:Channel 4
+out_pin:Channel 5
+out_pin:Channel 6
+out_pin:Channel 7
+out_pin:Channel 8
+out_pin:Channel 9
+out_pin:Channel 10
+out_pin:Channel 11
+out_pin:Channel 12
+out_pin:Channel 13
+out_pin:Channel 14
+out_pin:Channel 15
+out_pin:Channel 16
+out_pin:Channel 17
+out_pin:Channel 18
+out_pin:Channel 19
+out_pin:Channel 20
+out_pin:Channel 21
+out_pin:Channel 22
+out_pin:Channel 23
+out_pin:Channel 24
+out_pin:Channel 25
+out_pin:Channel 26
+out_pin:Channel 27
+out_pin:Channel 28
+out_pin:Channel 29
+out_pin:Channel 30
+out_pin:Channel 31
+out_pin:Channel 32
+out_pin:Channel 33
+out_pin:Channel 34
+out_pin:Channel 35
+out_pin:Channel 36
+out_pin:Channel 37
+out_pin:Channel 38
+out_pin:Channel 39
+out_pin:Channel 40
+out_pin:Channel 41
+out_pin:Channel 42
+out_pin:Channel 43
+out_pin:Channel 44
+out_pin:Channel 45
+out_pin:Channel 46
+out_pin:Channel 47
+out_pin:Channel 48
+out_pin:Channel 49
+out_pin:Channel 50
+out_pin:Channel 51
+out_pin:Channel 52
+out_pin:Channel 53
+out_pin:Channel 54
+out_pin:Channel 55
+out_pin:Channel 56
+out_pin:Channel 57
+out_pin:Channel 58
+out_pin:Channel 59
+out_pin:Channel 60
+out_pin:Channel 61
+out_pin:Channel 62
+out_pin:Channel 63
+out_pin:Channel 64
+out_pin:Channel 65
+out_pin:Channel 66
+out_pin:Channel 67
+out_pin:Channel 68
+out_pin:Channel 69
+out_pin:Channel 70
+out_pin:Channel 71
+out_pin:Channel 72
+out_pin:Channel 73
+out_pin:Channel 74
+out_pin:Channel 75
+out_pin:Channel 76
+out_pin:Channel 77
+out_pin:Channel 78
+out_pin:Channel 79
+out_pin:Channel 80
+out_pin:Channel 81
+out_pin:Channel 82
+out_pin:Channel 83
+out_pin:Channel 84
+out_pin:Channel 85
+out_pin:Channel 86
+out_pin:Channel 87
+out_pin:Channel 88
+out_pin:Channel 89
+out_pin:Channel 90
+out_pin:Channel 91
+out_pin:Channel 92
+out_pin:Channel 93
+out_pin:Channel 94
+out_pin:Channel 95
+out_pin:Channel 96
+out_pin:Channel 97
+out_pin:Channel 98
+out_pin:Channel 99
+out_pin:Channel 100
+out_pin:Channel 101
+out_pin:Channel 102
+out_pin:Channel 103
+out_pin:Channel 104
+out_pin:Channel 105
+out_pin:Channel 106
+out_pin:Channel 107
+out_pin:Channel 108
+out_pin:Channel 109
+out_pin:Channel 110
+out_pin:Channel 111
+out_pin:Channel 112
+out_pin:Channel 113
+out_pin:Channel 114
+out_pin:Channel 115
+out_pin:Channel 116
+out_pin:Channel 117
+out_pin:Channel 118
+out_pin:Channel 119
+out_pin:Channel 120
+out_pin:Channel 121
+out_pin:Channel 122
+out_pin:Channel 123
+out_pin:Channel 124
+out_pin:Channel 125
+out_pin:Channel 126
+out_pin:Channel 127
+out_pin:Channel 128
+@init
+ext_nodenorm=1;
+
+@slider
+mode=floor(slider1+0.5);
+channels=max(1,min(128,floor(slider2+0.5)));
+gain=10^(slider3/20);
+
+@sample
+mode == 1 ? (
+  left=0; right=0; channel=0;
+  loop(channels,
+    channel%2 ? right+=spl(channel) : left+=spl(channel);
+    channel+=1;
+  );
+  spl0=left/ceil(channels/2);
+  spl1=right/max(1,floor(channels/2));
+);
+mode == 2 ? (
+  w=spl0; y=spl1;
+  spl0=0.5*(w+y); spl1=0.5*(w-y);
+);
+mode == 3 ? (
+  left=spl(max(0,min(channels-1,floor(slider4+0.5)-1)));
+  right=spl(max(0,min(channels-1,floor(slider5+0.5)-1)));
+  spl0=left; spl1=right;
+);
+// A final pass-through stage also limits the frozen output width, so internal
+// Macro sidechain/output pins cannot leak into the editable Source + FX take.
+channel=mode > 0 ? 2 : channels;
+loop(128-channel, spl(channel)=0; channel+=1;);
+channel=0;
+loop(min(128,num_ch), spl(channel)*=gain; channel+=1;);

@@ -1,0 +1,4246 @@
+{
+  "reference_lufs_m_max": -18,
+  "ceiling_dbtp": -1,
+  "max_boost_db": 18,
+  "reference_dbfs": -20,
+  "reference_spl_db": 79,
+  "response_tail_seconds": 0.4,
+  "targets": [
+    8.0,
+    28.0,
+    32.0,
+    36.0,
+    40.0
+  ],
+  "cases": [
+    {
+      "channels": 2,
+      "duration": 0.9333333333333333,
+      "reference_gain_db": -3.1734302740038682,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 48.217990094524765,
+      "reference_p95_sones": 39.36684751502626,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -14.826569725996132,
+      "source_true_peak_dbtp": 0.03821921610322932,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.997221569844992,
+            "capped": false,
+            "delta_reference_db": -27.779494559143714,
+            "gain_db": -30.952924833147584,
+            "lufs_m_max": -45.779494559143714,
+            "peak_dbtp": -30.914705617044355
+          },
+          "p95": {
+            "achieved_sones": 8.003775214928625,
+            "capped": false,
+            "delta_reference_db": -23.713418067506616,
+            "gain_db": -26.886848341510486,
+            "lufs_m_max": -41.713418067506616,
+            "peak_dbtp": -26.848629125407257
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.0054556137184,
+            "capped": false,
+            "delta_reference_db": -8.654413346693511,
+            "gain_db": -11.82784362069738,
+            "lufs_m_max": -26.65441334669351,
+            "peak_dbtp": -11.78962440459415
+          },
+          "p95": {
+            "achieved_sones": 28.001600527619527,
+            "capped": false,
+            "delta_reference_db": -5.357987048116295,
+            "gain_db": -8.531417322120163,
+            "lufs_m_max": -23.357987048116293,
+            "peak_dbtp": -8.493198106016933
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.01118117576785,
+            "capped": false,
+            "delta_reference_db": -6.548766592095729,
+            "gain_db": -9.722196866099598,
+            "lufs_m_max": -24.54876659209573,
+            "peak_dbtp": -9.683977649996368
+          },
+          "p95": {
+            "achieved_sones": 32.01218801001061,
+            "capped": false,
+            "delta_reference_db": -3.252340293518513,
+            "gain_db": -6.425770567522381,
+            "lufs_m_max": -21.252340293518515,
+            "peak_dbtp": -6.387551351419152
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.008757282234924,
+            "capped": false,
+            "delta_reference_db": -4.675467065591498,
+            "gain_db": -7.848897339595366,
+            "lufs_m_max": -22.675467065591498,
+            "peak_dbtp": -7.810678123492137
+          },
+          "p95": {
+            "achieved_sones": 35.99384216885176,
+            "capped": false,
+            "delta_reference_db": -1.4080841705259735,
+            "gain_db": -4.581514444529842,
+            "lufs_m_max": -19.408084170525974,
+            "peak_dbtp": -4.543295228426612
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.98967390382182,
+            "capped": false,
+            "delta_reference_db": -2.9909496619132714,
+            "gain_db": -6.16437993591714,
+            "lufs_m_max": -20.99094966191327,
+            "peak_dbtp": -6.12616071981391
+          },
+          "p95": {
+            "achieved_sones": 39.9969176381229,
+            "capped": false,
+            "delta_reference_db": 0.24738982964055856,
+            "gain_db": -2.9260404443633097,
+            "lufs_m_max": -17.752610170359443,
+            "peak_dbtp": -2.8878212282600804
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-01",
+      "family": "door",
+      "source_sha256": "b7cdb1faf3860bf7494f4208b49d954d50395cbc30dfdaffc45184ad721b9306",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 1.4333333333333333,
+      "reference_gain_db": -0.98658070765682,
+      "reference_lufs_m_max": -18.3716067057494,
+      "reference_max_sones": 35.02574490152483,
+      "reference_p95_sones": 21.756970692334434,
+      "reference_peak_capped": true,
+      "source_lufs_m_max": -17.38502599809258,
+      "source_true_peak_dbtp": -0.013419292343179996,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.003335814973909,
+            "capped": false,
+            "delta_reference_db": -21.995400001050726,
+            "gain_db": -22.981980708707546,
+            "lufs_m_max": -40.367006706800126,
+            "peak_dbtp": -22.995400001050726
+          },
+          "p95": {
+            "achieved_sones": 8.00275103748637,
+            "capped": false,
+            "delta_reference_db": -14.586117305848699,
+            "gain_db": -15.57269801350552,
+            "lufs_m_max": -32.9577240115981,
+            "peak_dbtp": -15.586117305848699
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.998400118258157,
+            "capped": false,
+            "delta_reference_db": -3.2978571996291386,
+            "gain_db": -4.284437907285959,
+            "lufs_m_max": -21.66946390537854,
+            "peak_dbtp": -4.297857199629139
+          },
+          "p95": {
+            "achieved_sones": 21.756970692334434,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.98658070765682,
+            "lufs_m_max": -18.3716067057494,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.995828421341095,
+            "capped": false,
+            "delta_reference_db": -1.3075204756238874,
+            "gain_db": -2.2941011832807074,
+            "lufs_m_max": -19.67912718137329,
+            "peak_dbtp": -2.3075204756238876
+          },
+          "p95": {
+            "achieved_sones": 21.756970692334434,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.98658070765682,
+            "lufs_m_max": -18.3716067057494,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.02574490152483,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.98658070765682,
+            "lufs_m_max": -18.3716067057494,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 21.756970692334434,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.98658070765682,
+            "lufs_m_max": -18.3716067057494,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.02574490152483,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.98658070765682,
+            "lufs_m_max": -18.3716067057494,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 21.756970692334434,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.98658070765682,
+            "lufs_m_max": -18.3716067057494,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-02",
+      "family": "keys",
+      "source_sha256": "3b64215914102cfada92f53cb889683b06be517d862dcc7c782d36ea9407310c",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 11.333333333333334,
+      "reference_gain_db": -0.009661552605900847,
+      "reference_lufs_m_max": -18.19741815837262,
+      "reference_max_sones": 44.19242783320921,
+      "reference_p95_sones": 31.810323022529687,
+      "reference_peak_capped": true,
+      "source_lufs_m_max": -18.18775660576672,
+      "source_true_peak_dbtp": -0.9903384473940992,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.001777303209835,
+            "capped": false,
+            "delta_reference_db": -25.471581855470983,
+            "gain_db": -25.481243408076885,
+            "lufs_m_max": -43.6690000138436,
+            "peak_dbtp": -26.471581855470983
+          },
+          "p95": {
+            "achieved_sones": 8.002335615699867,
+            "capped": false,
+            "delta_reference_db": -20.066743612418197,
+            "gain_db": -20.0764051650241,
+            "lufs_m_max": -38.26416177079082,
+            "peak_dbtp": -21.066743612418197
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.996250295328327,
+            "capped": false,
+            "delta_reference_db": -7.147861958292031,
+            "gain_db": -7.157523510897932,
+            "lufs_m_max": -25.34528011666465,
+            "peak_dbtp": -8.147861958292031
+          },
+          "p95": {
+            "achieved_sones": 28.001875433607584,
+            "capped": false,
+            "delta_reference_db": -1.9773798450193119,
+            "gain_db": -1.9870413976252128,
+            "lufs_m_max": -20.17479800339193,
+            "peak_dbtp": -2.977379845019312
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.012481108245986,
+            "capped": false,
+            "delta_reference_db": -5.082598564605194,
+            "gain_db": -5.092260117211095,
+            "lufs_m_max": -23.280016722977813,
+            "peak_dbtp": -6.082598564605194
+          },
+          "p95": {
+            "achieved_sones": 31.810323022529687,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.009661552605900847,
+            "lufs_m_max": -18.19741815837262,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.00736319525703,
+            "capped": false,
+            "delta_reference_db": -3.2370440425871694,
+            "gain_db": -3.2467055951930703,
+            "lufs_m_max": -21.43446220095979,
+            "peak_dbtp": -4.237044042587169
+          },
+          "p95": {
+            "achieved_sones": 31.810323022529687,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.009661552605900847,
+            "lufs_m_max": -18.19741815837262,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.01053009482567,
+            "capped": false,
+            "delta_reference_db": -1.5672566179041953,
+            "gain_db": -1.5769181705100963,
+            "lufs_m_max": -19.764674776276816,
+            "peak_dbtp": -2.5672566179041953
+          },
+          "p95": {
+            "achieved_sones": 31.810323022529687,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.009661552605900847,
+            "lufs_m_max": -18.19741815837262,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-03",
+      "family": "footsteps",
+      "source_sha256": "68438460d16f7bce82954bf6614d5a5f8401d51f06bd4b98798bea0fcb0828e8",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 2.7,
+      "reference_gain_db": 0.001240086822598574,
+      "reference_lufs_m_max": -18.58350961519293,
+      "reference_max_sones": 56.90915607408634,
+      "reference_p95_sones": 32.29521310370914,
+      "reference_peak_capped": true,
+      "source_lufs_m_max": -18.58474970201553,
+      "source_true_peak_dbtp": -1.0012400868225986,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.999758783323472,
+            "capped": false,
+            "delta_reference_db": -29.502257999860923,
+            "gain_db": -29.501017913038325,
+            "lufs_m_max": -48.085767615053854,
+            "peak_dbtp": -30.502257999860923
+          },
+          "p95": {
+            "achieved_sones": 7.998258975575554,
+            "capped": false,
+            "delta_reference_db": -20.30294418461135,
+            "gain_db": -20.30170409778875,
+            "lufs_m_max": -38.88645379980428,
+            "peak_dbtp": -21.30294418461135
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.99102940968143,
+            "capped": false,
+            "delta_reference_db": -11.250116258139618,
+            "gain_db": -11.24887617131702,
+            "lufs_m_max": -29.83362587333255,
+            "peak_dbtp": -12.250116258139618
+          },
+          "p95": {
+            "achieved_sones": 27.98906476917095,
+            "capped": false,
+            "delta_reference_db": -2.226585509423466,
+            "gain_db": -2.2253454226008675,
+            "lufs_m_max": -20.810095124616396,
+            "peak_dbtp": -3.226585509423466
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.991227068921706,
+            "capped": false,
+            "delta_reference_db": -9.170016637494012,
+            "gain_db": -9.168776550671414,
+            "lufs_m_max": -27.753526252686942,
+            "peak_dbtp": -10.170016637494012
+          },
+          "p95": {
+            "achieved_sones": 31.993631335386453,
+            "capped": false,
+            "delta_reference_db": -0.14648588877785962,
+            "gain_db": -0.14524580195526104,
+            "lufs_m_max": -18.72999550397079,
+            "peak_dbtp": -1.1464858887778595
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.004913220912975,
+            "capped": false,
+            "delta_reference_db": -7.309645850015196,
+            "gain_db": -7.308405763192597,
+            "lufs_m_max": -25.893155465208125,
+            "peak_dbtp": -8.309645850015196
+          },
+          "p95": {
+            "achieved_sones": 32.29521310370914,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": 0.001240086822598574,
+            "lufs_m_max": -18.58350961519293,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.001306144766524,
+            "capped": false,
+            "delta_reference_db": -5.639706717947595,
+            "gain_db": -5.638466631124996,
+            "lufs_m_max": -24.223216333140524,
+            "peak_dbtp": -6.639706717947595
+          },
+          "p95": {
+            "achieved_sones": 32.29521310370914,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": 0.001240086822598574,
+            "lufs_m_max": -18.58350961519293,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-04",
+      "family": "sliding_door",
+      "source_sha256": "7df0e9b12e88344723fe7225806b79602385c35fc147da61889e3c50d3c81a9d",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 2.6,
+      "reference_gain_db": -0.012178263718566451,
+      "reference_lufs_m_max": -18.128266582995646,
+      "reference_max_sones": 56.650876940486015,
+      "reference_p95_sones": 27.129228100293943,
+      "reference_peak_capped": true,
+      "source_lufs_m_max": -18.11608831927708,
+      "source_true_peak_dbtp": -0.9878217362814335,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.997533818542754,
+            "capped": false,
+            "delta_reference_db": -29.80654507242831,
+            "gain_db": -29.818723336146878,
+            "lufs_m_max": -47.93481165542396,
+            "peak_dbtp": -30.80654507242831
+          },
+          "p95": {
+            "achieved_sones": 7.999250331632086,
+            "capped": false,
+            "delta_reference_db": -17.37128376211301,
+            "gain_db": -17.383462025831577,
+            "lufs_m_max": -35.49955034510866,
+            "peak_dbtp": -18.37128376211301
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.993939141013826,
+            "capped": false,
+            "delta_reference_db": -11.175623533298674,
+            "gain_db": -11.18780179701724,
+            "lufs_m_max": -29.30389011629432,
+            "peak_dbtp": -12.175623533298674
+          },
+          "p95": {
+            "achieved_sones": 27.129228100293943,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.012178263718566451,
+            "lufs_m_max": -18.128266582995646,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.00501034464287,
+            "capped": false,
+            "delta_reference_db": -9.066462604340602,
+            "gain_db": -9.078640868059168,
+            "lufs_m_max": -27.194729187336247,
+            "peak_dbtp": -10.066462604340602
+          },
+          "p95": {
+            "achieved_sones": 27.129228100293943,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.012178263718566451,
+            "lufs_m_max": -18.128266582995646,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.983749182550966,
+            "capped": false,
+            "delta_reference_db": -7.2062998406067456,
+            "gain_db": -7.218478104325312,
+            "lufs_m_max": -25.33456642360239,
+            "peak_dbtp": -8.206299840606746
+          },
+          "p95": {
+            "achieved_sones": 27.129228100293943,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.012178263718566451,
+            "lufs_m_max": -18.128266582995646,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.99826600280889,
+            "capped": false,
+            "delta_reference_db": -5.521900487619397,
+            "gain_db": -5.5340787513379635,
+            "lufs_m_max": -23.65016707061504,
+            "peak_dbtp": -6.521900487619397
+          },
+          "p95": {
+            "achieved_sones": 27.129228100293943,
+            "capped": true,
+            "delta_reference_db": 0.0,
+            "gain_db": -0.012178263718566451,
+            "lufs_m_max": -18.128266582995646,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-05",
+      "family": "sliding_door",
+      "source_sha256": "fd641d3d32594faf5ccd068225ff63aa9b1addec06b49d6f2f817d4197a42c9a",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 22.0,
+      "reference_gain_db": -9.483603668363765,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 46.33889341914301,
+      "reference_p95_sones": 43.44386545380882,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -8.516396331636235,
+      "source_true_peak_dbtp": -0.025211441353555176,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.000811879120638,
+            "capped": false,
+            "delta_reference_db": -25.795203959256774,
+            "gain_db": -35.27880762762054,
+            "lufs_m_max": -43.795203959256774,
+            "peak_dbtp": -35.30401906897409
+          },
+          "p95": {
+            "achieved_sones": 8.00360980737031,
+            "capped": false,
+            "delta_reference_db": -24.82173116060312,
+            "gain_db": -34.305334828966885,
+            "lufs_m_max": -42.82173116060312,
+            "peak_dbtp": -34.33054627032044
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.99953899384758,
+            "capped": false,
+            "delta_reference_db": -7.865869130322411,
+            "gain_db": -17.349472798686175,
+            "lufs_m_max": -25.86586913032241,
+            "peak_dbtp": -17.37468424003973
+          },
+          "p95": {
+            "achieved_sones": 27.997731732388367,
+            "capped": false,
+            "delta_reference_db": -6.863337442156711,
+            "gain_db": -16.346941110520476,
+            "lufs_m_max": -24.863337442156713,
+            "peak_dbtp": -16.37215255187403
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.989937904306924,
+            "capped": false,
+            "delta_reference_db": -5.802687974966917,
+            "gain_db": -15.286291643330681,
+            "lufs_m_max": -23.802687974966915,
+            "peak_dbtp": -15.311503084684237
+          },
+          "p95": {
+            "achieved_sones": 32.00060077625596,
+            "capped": false,
+            "delta_reference_db": -4.785626842045195,
+            "gain_db": -14.26923051040896,
+            "lufs_m_max": -22.785626842045197,
+            "peak_dbtp": -14.294441951762515
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.983159822134674,
+            "capped": false,
+            "delta_reference_db": -3.9574484909517924,
+            "gain_db": -13.441052159315557,
+            "lufs_m_max": -21.95744849095179,
+            "peak_dbtp": -13.466263600669112
+          },
+          "p95": {
+            "achieved_sones": 36.00948665213033,
+            "capped": false,
+            "delta_reference_db": -2.940387358030071,
+            "gain_db": -12.423991026393836,
+            "lufs_m_max": -20.940387358030073,
+            "peak_dbtp": -12.44920246774739
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.00001829362658,
+            "capped": false,
+            "delta_reference_db": -2.2865623440089617,
+            "gain_db": -11.770166012372727,
+            "lufs_m_max": -20.286562344008964,
+            "peak_dbtp": -11.795377453726282
+          },
+          "p95": {
+            "achieved_sones": 39.99933719325854,
+            "capped": false,
+            "delta_reference_db": -1.2985601005992873,
+            "gain_db": -10.782163768963052,
+            "lufs_m_max": -19.29856010059929,
+            "peak_dbtp": -10.807375210316607
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-06",
+      "family": "diesel_train",
+      "source_sha256": "b843d11692ba2b3448e3a70f65b4d1a8e0d6e725e5f1fd5c34720afbdcd72955",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.26666666666666666,
+      "reference_gain_db": 17.03213488140309,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 36.41808877631291,
+      "reference_p95_sones": 21.70355621980226,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -35.03213488140309,
+      "source_true_peak_dbtp": -20.571565622846574,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.999546082611333,
+            "capped": false,
+            "delta_reference_db": -23.22256456890309,
+            "gain_db": -6.1904296875,
+            "lufs_m_max": -41.22256456890309,
+            "peak_dbtp": -26.761995310346574
+          },
+          "p95": {
+            "achieved_sones": 7.999046198511951,
+            "capped": false,
+            "delta_reference_db": -14.749175897028088,
+            "gain_db": 2.282958984375,
+            "lufs_m_max": -32.74917589702809,
+            "peak_dbtp": -18.288606638471574
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.99978494439003,
+            "capped": false,
+            "delta_reference_db": -4.102691522028088,
+            "gain_db": 12.929443359375,
+            "lufs_m_max": -22.10269152202809,
+            "peak_dbtp": -7.642122263471574
+          },
+          "p95": {
+            "achieved_sones": 23.103019819085755,
+            "capped": true,
+            "delta_reference_db": 0.9678651185969116,
+            "gain_db": 18.0,
+            "lufs_m_max": -17.03213488140309,
+            "peak_dbtp": -2.571565622846574
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.00191505786138,
+            "capped": false,
+            "delta_reference_db": -2.0306700376530884,
+            "gain_db": 15.00146484375,
+            "lufs_m_max": -20.03067003765309,
+            "peak_dbtp": -5.570100779096574
+          },
+          "p95": {
+            "achieved_sones": 23.103019819085755,
+            "capped": true,
+            "delta_reference_db": 0.9678651185969116,
+            "gain_db": 18.0,
+            "lufs_m_max": -17.03213488140309,
+            "peak_dbtp": -2.571565622846574
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.008295249993076,
+            "capped": false,
+            "delta_reference_db": -0.1776426939030884,
+            "gain_db": 16.8544921875,
+            "lufs_m_max": -18.17764269390309,
+            "peak_dbtp": -3.717073435346574
+          },
+          "p95": {
+            "achieved_sones": 23.103019819085755,
+            "capped": true,
+            "delta_reference_db": 0.9678651185969116,
+            "gain_db": 18.0,
+            "lufs_m_max": -17.03213488140309,
+            "peak_dbtp": -2.571565622846574
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 38.73514689611962,
+            "capped": true,
+            "delta_reference_db": 0.9678651185969116,
+            "gain_db": 18.0,
+            "lufs_m_max": -17.03213488140309,
+            "peak_dbtp": -2.571565622846574
+          },
+          "p95": {
+            "achieved_sones": 23.103019819085755,
+            "capped": true,
+            "delta_reference_db": 0.9678651185969116,
+            "gain_db": 18.0,
+            "lufs_m_max": -17.03213488140309,
+            "peak_dbtp": -2.571565622846574
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-07",
+      "family": "ui_click",
+      "source_sha256": "caa50815a961bf86e97f5432ca9d65b5afb452ae92a5d113dc888329b7b53069",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.3034375,
+      "reference_gain_db": 13.625339811133323,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 38.304209389646076,
+      "reference_p95_sones": 28.77767784666588,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -31.625339811133323,
+      "source_true_peak_dbtp": -19.82850343356348,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.00028919255547,
+            "capped": false,
+            "delta_reference_db": -23.252292936133323,
+            "gain_db": -9.626953125,
+            "lufs_m_max": -41.25229293613332,
+            "peak_dbtp": -29.45545655856348
+          },
+          "p95": {
+            "achieved_sones": 8.000776055493773,
+            "capped": false,
+            "delta_reference_db": -19.074558561133323,
+            "gain_db": -5.44921875,
+            "lufs_m_max": -37.07455856113332,
+            "peak_dbtp": -25.27772218356348
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.000019522994204,
+            "capped": false,
+            "delta_reference_db": -4.755710904883323,
+            "gain_db": 8.86962890625,
+            "lufs_m_max": -22.755710904883323,
+            "peak_dbtp": -10.95887452731348
+          },
+          "p95": {
+            "achieved_sones": 28.009576398818474,
+            "capped": false,
+            "delta_reference_db": -0.4095194986333226,
+            "gain_db": 13.2158203125,
+            "lufs_m_max": -18.409519498633323,
+            "peak_dbtp": -6.61268312106348
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.991547675005844,
+            "capped": false,
+            "delta_reference_db": -2.7679179361333226,
+            "gain_db": 10.857421875,
+            "lufs_m_max": -20.767917936133323,
+            "peak_dbtp": -8.97108155856348
+          },
+          "p95": {
+            "achieved_sones": 31.99532193118487,
+            "capped": false,
+            "delta_reference_db": 1.5951191732416774,
+            "gain_db": 15.220458984375,
+            "lufs_m_max": -16.404880826758323,
+            "peak_dbtp": -4.60804444918848
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.00285679297423,
+            "capped": false,
+            "delta_reference_db": -0.9485819986333226,
+            "gain_db": 12.6767578125,
+            "lufs_m_max": -18.948581998633323,
+            "peak_dbtp": -7.15174562106348
+          },
+          "p95": {
+            "achieved_sones": 36.002663645885,
+            "capped": false,
+            "delta_reference_db": 3.3976094076166774,
+            "gain_db": 17.02294921875,
+            "lufs_m_max": -14.602390592383323,
+            "peak_dbtp": -2.8055542148134798
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.999067610359205,
+            "capped": false,
+            "delta_reference_db": 0.6601826498041774,
+            "gain_db": 14.2855224609375,
+            "lufs_m_max": -17.339817350195823,
+            "peak_dbtp": -5.54298097262598
+          },
+          "p95": {
+            "achieved_sones": 38.36860897329634,
+            "capped": true,
+            "delta_reference_db": 4.374660188866677,
+            "gain_db": 18.0,
+            "lufs_m_max": -13.625339811133323,
+            "peak_dbtp": -1.8285034335634798
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-08",
+      "family": "ui_click",
+      "source_sha256": "3a226fefda4d94ead2d8e5e7ca7353a946cd52fa13e091e614f62da504946f17",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.3662708333333333,
+      "reference_gain_db": 17.41359282473045,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 41.8115529139511,
+      "reference_p95_sones": 26.643034440575757,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -35.41359282473045,
+      "source_true_peak_dbtp": -18.615044240703828,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.00362627329346,
+            "capped": false,
+            "delta_reference_db": -25.34938870733113,
+            "gain_db": -7.935795882600679,
+            "lufs_m_max": -43.34938870733113,
+            "peak_dbtp": -26.550840123304507
+          },
+          "p95": {
+            "achieved_sones": 7.999056697917794,
+            "capped": false,
+            "delta_reference_db": -18.058747935789935,
+            "gain_db": -0.6451551110594851,
+            "lufs_m_max": -36.05874793578994,
+            "peak_dbtp": -19.260199351763312
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.989803445857483,
+            "capped": false,
+            "delta_reference_db": -6.249253782809614,
+            "gain_db": 11.164339041920837,
+            "lufs_m_max": -24.249253782809614,
+            "peak_dbtp": -7.450705198782991
+          },
+          "p95": {
+            "achieved_sones": 26.98960888714445,
+            "capped": true,
+            "delta_reference_db": 0.20145141597337712,
+            "gain_db": 17.615044240703828,
+            "lufs_m_max": -17.798548584026623,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.00147360326489,
+            "capped": false,
+            "delta_reference_db": -4.166213562369272,
+            "gain_db": 13.247379262361179,
+            "lufs_m_max": -22.166213562369272,
+            "peak_dbtp": -5.367664978342649
+          },
+          "p95": {
+            "achieved_sones": 26.98960888714445,
+            "capped": true,
+            "delta_reference_db": 0.20145141597337712,
+            "gain_db": 17.615044240703828,
+            "lufs_m_max": -17.798548584026623,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.0020429783861,
+            "capped": false,
+            "delta_reference_db": -2.3519527252115573,
+            "gain_db": 15.061640099518893,
+            "lufs_m_max": -20.351952725211557,
+            "peak_dbtp": -3.5534041411849344
+          },
+          "p95": {
+            "achieved_sones": 26.98960888714445,
+            "capped": true,
+            "delta_reference_db": 0.20145141597337712,
+            "gain_db": 17.615044240703828,
+            "lufs_m_max": -17.798548584026623,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.98062900407538,
+            "capped": false,
+            "delta_reference_db": -0.705679002605482,
+            "gain_db": 16.70791382212497,
+            "lufs_m_max": -18.705679002605482,
+            "peak_dbtp": -1.9071304185788591
+          },
+          "p95": {
+            "achieved_sones": 26.98960888714445,
+            "capped": true,
+            "delta_reference_db": 0.20145141597337712,
+            "gain_db": 17.615044240703828,
+            "lufs_m_max": -17.798548584026623,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-09",
+      "family": "ui_click",
+      "source_sha256": "1e9f02012b9dff31c99188ed65b1e7c4630616857a402d3ce34e0d0dd6570b57",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.26560416666666664,
+      "reference_gain_db": 17.627251784581873,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 47.24233924890874,
+      "reference_p95_sones": 31.89533396174126,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -35.62725178458187,
+      "source_true_peak_dbtp": -20.38765485599904,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.00346380835796,
+            "capped": false,
+            "delta_reference_db": -27.456353347081873,
+            "gain_db": -9.8291015625,
+            "lufs_m_max": -45.45635334708187,
+            "peak_dbtp": -30.21675641849904
+          },
+          "p95": {
+            "achieved_sones": 7.999470195842542,
+            "capped": false,
+            "delta_reference_db": -21.172906081456873,
+            "gain_db": -3.545654296875,
+            "lufs_m_max": -39.17290608145687,
+            "peak_dbtp": -23.93330915287404
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.995519515139748,
+            "capped": false,
+            "delta_reference_db": -8.269097487706873,
+            "gain_db": 9.358154296875,
+            "lufs_m_max": -26.269097487706873,
+            "peak_dbtp": -11.029500559124038
+          },
+          "p95": {
+            "achieved_sones": 28.00120508629638,
+            "capped": false,
+            "delta_reference_db": -2.0530330345818726,
+            "gain_db": 15.57421875,
+            "lufs_m_max": -20.053033034581873,
+            "peak_dbtp": -4.813436105999038
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.98841572001892,
+            "capped": false,
+            "delta_reference_db": -6.163384597081873,
+            "gain_db": 11.4638671875,
+            "lufs_m_max": -24.163384597081873,
+            "peak_dbtp": -8.923787668499038
+          },
+          "p95": {
+            "achieved_sones": 32.00154746758602,
+            "capped": false,
+            "delta_reference_db": 0.052679856043127415,
+            "gain_db": 17.679931640625,
+            "lufs_m_max": -17.947320143956873,
+            "peak_dbtp": -2.7077232153740383
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.000250286347665,
+            "capped": false,
+            "delta_reference_db": -4.301934401769373,
+            "gain_db": 13.3253173828125,
+            "lufs_m_max": -22.301934401769373,
+            "peak_dbtp": -7.062337473186538
+          },
+          "p95": {
+            "achieved_sones": 32.656367391770935,
+            "capped": true,
+            "delta_reference_db": 0.3727482154181274,
+            "gain_db": 18.0,
+            "lufs_m_max": -17.627251784581873,
+            "peak_dbtp": -2.3876548559990383
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.014707276032965,
+            "capped": false,
+            "delta_reference_db": -2.6426326439568726,
+            "gain_db": 14.984619140625,
+            "lufs_m_max": -20.642632643956873,
+            "peak_dbtp": -5.403035715374038
+          },
+          "p95": {
+            "achieved_sones": 32.656367391770935,
+            "capped": true,
+            "delta_reference_db": 0.3727482154181274,
+            "gain_db": 18.0,
+            "lufs_m_max": -17.627251784581873,
+            "peak_dbtp": -2.3876548559990383
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-10",
+      "family": "ui_click",
+      "source_sha256": "bdb8621b10272944620aa6627c5c2e14945ab84be11499a5d55698e7a3f41f05",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.4272916666666667,
+      "reference_gain_db": 1.408086838239342e-07,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 36.55178203590208,
+      "reference_p95_sones": 30.762543782649445,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -18.000000140808684,
+      "source_true_peak_dbtp": -9.115276781913414,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.998517188289432,
+            "capped": false,
+            "delta_reference_db": -22.552943301440703,
+            "gain_db": -22.55294316063202,
+            "lufs_m_max": -40.552943301440706,
+            "peak_dbtp": -31.668219942545434
+          },
+          "p95": {
+            "achieved_sones": 7.999773308550286,
+            "capped": false,
+            "delta_reference_db": -20.035052729921166,
+            "gain_db": -20.03505258911248,
+            "lufs_m_max": -38.03505272992116,
+            "peak_dbtp": -29.150329371025897
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.998874411693585,
+            "capped": false,
+            "delta_reference_db": -4.098838491545951,
+            "gain_db": -4.098838350737267,
+            "lufs_m_max": -22.09883849154595,
+            "peak_dbtp": -13.214115132650681
+          },
+          "p95": {
+            "achieved_sones": 28.011967441347835,
+            "capped": false,
+            "delta_reference_db": -1.440196273171283,
+            "gain_db": -1.4401961323625991,
+            "lufs_m_max": -19.44019627317128,
+            "peak_dbtp": -10.555472914276013
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.00062920440217,
+            "capped": false,
+            "delta_reference_db": -2.050120076210177,
+            "gain_db": -2.050119935401493,
+            "lufs_m_max": -20.050120076210177,
+            "peak_dbtp": -11.165396717314907
+          },
+          "p95": {
+            "achieved_sones": 32.00542231436778,
+            "capped": false,
+            "delta_reference_db": 0.6085221421644907,
+            "gain_db": 0.6085222829731746,
+            "lufs_m_max": -17.391477857835508,
+            "peak_dbtp": -8.50675449894024
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.99624011291774,
+            "capped": false,
+            "delta_reference_db": -0.2359877389662862,
+            "gain_db": -0.23598759815760237,
+            "lufs_m_max": -18.235987738966287,
+            "peak_dbtp": -9.351264380071017
+          },
+          "p95": {
+            "achieved_sones": 36.01225147409006,
+            "capped": false,
+            "delta_reference_db": 2.4382935512811743,
+            "gain_db": 2.438293692089858,
+            "lufs_m_max": -15.561706448718827,
+            "peak_dbtp": -6.676983089823556
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.011371754839914,
+            "capped": false,
+            "delta_reference_db": 1.390475735804099,
+            "gain_db": 1.3904758766127827,
+            "lufs_m_max": -16.6095242641959,
+            "peak_dbtp": -7.724800905300631
+          },
+          "p95": {
+            "achieved_sones": 39.98491638138095,
+            "capped": false,
+            "delta_reference_db": 4.064757026051559,
+            "gain_db": 4.064757166860243,
+            "lufs_m_max": -13.93524297394844,
+            "peak_dbtp": -5.050519615053171
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-11",
+      "family": "ui_comical",
+      "source_sha256": "999e6945e3dab25be5dd391806e80b4a98f1fb8bb03fb46ff7f51912ba046aaa",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.260875,
+      "reference_gain_db": -5.117024457490515e-07,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 39.3236904475792,
+      "reference_p95_sones": 32.64319907180691,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -17.999999488297554,
+      "source_true_peak_dbtp": -4.968251700897559,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.001000567084434,
+            "capped": false,
+            "delta_reference_db": -23.57352245727714,
+            "gain_db": -23.573522968979585,
+            "lufs_m_max": -41.573522457277136,
+            "peak_dbtp": -28.541774669877142
+          },
+          "p95": {
+            "achieved_sones": 7.9965768496639775,
+            "capped": false,
+            "delta_reference_db": -21.137134698018777,
+            "gain_db": -21.137135209721222,
+            "lufs_m_max": -39.13713469801878,
+            "peak_dbtp": -26.105386910618783
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.989819146953167,
+            "capped": false,
+            "delta_reference_db": -5.187117938650366,
+            "gain_db": -5.187118450352812,
+            "lufs_m_max": -23.187117938650367,
+            "peak_dbtp": -10.15537015125037
+          },
+          "p95": {
+            "achieved_sones": 28.007394085173804,
+            "capped": false,
+            "delta_reference_db": -2.3572762555366147,
+            "gain_db": -2.3572767672390604,
+            "lufs_m_max": -20.357276255536615,
+            "peak_dbtp": -7.3255284681366195
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.99507265670466,
+            "capped": false,
+            "delta_reference_db": -3.1593169464725968,
+            "gain_db": -3.1593174581750425,
+            "lufs_m_max": -21.159316946472597,
+            "peak_dbtp": -8.127569159072602
+          },
+          "p95": {
+            "achieved_sones": 32.01338713199371,
+            "capped": false,
+            "delta_reference_db": -0.299209576908432,
+            "gain_db": -0.2992100886108777,
+            "lufs_m_max": -18.29920957690843,
+            "peak_dbtp": -5.267461789508436
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.00556040693907,
+            "capped": false,
+            "delta_reference_db": -1.3433757594477305,
+            "gain_db": -1.3433762711501762,
+            "lufs_m_max": -19.34337575944773,
+            "peak_dbtp": -6.311627972047735
+          },
+          "p95": {
+            "achieved_sones": 35.99558437518232,
+            "capped": false,
+            "delta_reference_db": 1.5015987668912278,
+            "gain_db": 1.501598255188782,
+            "lufs_m_max": -16.498401233108773,
+            "peak_dbtp": -3.466653445708777
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.006732302375426,
+            "capped": false,
+            "delta_reference_db": 0.26070562242423534,
+            "gain_db": 0.2607051107217896,
+            "lufs_m_max": -17.739294377575764,
+            "peak_dbtp": -4.707546590175769
+          },
+          "p95": {
+            "achieved_sones": 39.99163398632655,
+            "capped": false,
+            "delta_reference_db": 3.135945835213608,
+            "gain_db": 3.1359453235111623,
+            "lufs_m_max": -14.864054164786392,
+            "peak_dbtp": -1.8323063773863968
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-12",
+      "family": "ui_confirm",
+      "source_sha256": "a321b4bba950f1a172e53257c78bdde0176e49e50e25758b6d260f804f28072a",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 1.4640208333333333,
+      "reference_gain_db": 5.227192900747468e-09,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 29.835398866606234,
+      "reference_p95_sones": 24.692045474573366,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -18.000000005227193,
+      "source_true_peak_dbtp": -12.630132083867158,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.997505555953012,
+            "capped": false,
+            "delta_reference_db": -18.80290871321116,
+            "gain_db": -18.802908707983967,
+            "lufs_m_max": -36.80290871321116,
+            "peak_dbtp": -31.433040791851127
+          },
+          "p95": {
+            "achieved_sones": 7.998715239270941,
+            "capped": false,
+            "delta_reference_db": -16.344484615453386,
+            "gain_db": -16.344484610226193,
+            "lufs_m_max": -34.34448461545338,
+            "peak_dbtp": -28.97461669409335
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.010547163299062,
+            "capped": false,
+            "delta_reference_db": -0.9030103805173082,
+            "gain_db": -0.9030103752901153,
+            "lufs_m_max": -18.90301038051731,
+            "peak_dbtp": -13.533142459157274
+          },
+          "p95": {
+            "achieved_sones": 27.986862660586013,
+            "capped": false,
+            "delta_reference_db": 1.8125038189667677,
+            "gain_db": 1.8125038241939606,
+            "lufs_m_max": -16.187496181033232,
+            "peak_dbtp": -10.817628259673198
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.00081279334767,
+            "capped": false,
+            "delta_reference_db": 1.0090972510720708,
+            "gain_db": 1.0090972562992637,
+            "lufs_m_max": -16.99090274892793,
+            "peak_dbtp": -11.621034827567895
+          },
+          "p95": {
+            "achieved_sones": 31.998478716720875,
+            "capped": false,
+            "delta_reference_db": 3.7728158446298288,
+            "gain_db": 3.7728158498570217,
+            "lufs_m_max": -14.227184155370171,
+            "peak_dbtp": -8.857316234010137
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.999970101097304,
+            "capped": false,
+            "delta_reference_db": 2.7283873063667223,
+            "gain_db": 2.7283873115939152,
+            "lufs_m_max": -15.271612693633278,
+            "peak_dbtp": -9.901744772273243
+          },
+          "p95": {
+            "achieved_sones": 36.01000405088767,
+            "capped": false,
+            "delta_reference_db": 5.5403102939981625,
+            "gain_db": 5.5403102992253555,
+            "lufs_m_max": -12.459689706001837,
+            "peak_dbtp": -7.089821784641803
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.00646818261612,
+            "capped": false,
+            "delta_reference_db": 4.3191323107982225,
+            "gain_db": 4.319132316025415,
+            "lufs_m_max": -13.680867689201778,
+            "peak_dbtp": -8.310999767841743
+          },
+          "p95": {
+            "achieved_sones": 39.98109039561849,
+            "capped": false,
+            "delta_reference_db": 7.114987167071769,
+            "gain_db": 7.114987172298962,
+            "lufs_m_max": -10.885012832928231,
+            "peak_dbtp": -5.515144911568196
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-13",
+      "family": "ui_comical",
+      "source_sha256": "4dc4670d4c08afb8caee3fb4a0700ad262d6bf7b82f3508b9b876eddce5b1521",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.24464583333333334,
+      "reference_gain_db": 7.493690149877477,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 32.26068722312913,
+      "reference_p95_sones": 29.582969058318213,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -25.493690149877477,
+      "source_true_peak_dbtp": -18.17036466704487,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.999716497532236,
+            "capped": false,
+            "delta_reference_db": -21.88657467684867,
+            "gain_db": -14.392884526971194,
+            "lufs_m_max": -39.88657467684867,
+            "peak_dbtp": -32.563249194016066
+          },
+          "p95": {
+            "achieved_sones": 7.996730073509381,
+            "capped": false,
+            "delta_reference_db": -20.145154031661576,
+            "gain_db": -12.6514638817841,
+            "lufs_m_max": -38.145154031661576,
+            "peak_dbtp": -30.821828548828968
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.00491104526274,
+            "capped": false,
+            "delta_reference_db": -2.245359130651936,
+            "gain_db": 5.248331019225541,
+            "lufs_m_max": -20.245359130651934,
+            "peak_dbtp": -12.922033647819328
+          },
+          "p95": {
+            "achieved_sones": 27.990615418248282,
+            "capped": false,
+            "delta_reference_db": -0.8555715003583906,
+            "gain_db": 6.638118649519086,
+            "lufs_m_max": -18.85557150035839,
+            "peak_dbtp": -11.532246017525782
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.984223955377928,
+            "capped": false,
+            "delta_reference_db": -0.13556104129065005,
+            "gain_db": 7.358129108586827,
+            "lufs_m_max": -18.13556104129065,
+            "peak_dbtp": -10.812235558458042
+          },
+          "p95": {
+            "achieved_sones": 32.013303082601624,
+            "capped": false,
+            "delta_reference_db": 1.2207377304416056,
+            "gain_db": 8.714427880319082,
+            "lufs_m_max": -16.779262269558394,
+            "peak_dbtp": -9.455936786725786
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.01732147136577,
+            "capped": false,
+            "delta_reference_db": 1.7733038967028936,
+            "gain_db": 9.26699404658037,
+            "lufs_m_max": -16.226696103297108,
+            "peak_dbtp": -8.903370620464498
+          },
+          "p95": {
+            "achieved_sones": 36.00466293514031,
+            "capped": false,
+            "delta_reference_db": 3.0793693805932136,
+            "gain_db": 10.57305953047069,
+            "lufs_m_max": -14.920630619406786,
+            "peak_dbtp": -7.597305136574178
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.981241183003206,
+            "capped": false,
+            "delta_reference_db": 3.447746824767407,
+            "gain_db": 10.941436974644883,
+            "lufs_m_max": -14.552253175232593,
+            "peak_dbtp": -7.228927692399985
+          },
+          "p95": {
+            "achieved_sones": 40.002444189813716,
+            "capped": false,
+            "delta_reference_db": 4.737067879377079,
+            "gain_db": 12.230758029254556,
+            "lufs_m_max": -13.26293212062292,
+            "peak_dbtp": -5.9396066377903125
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-14",
+      "family": "ui_lockon",
+      "source_sha256": "433a4723c1a0d78e77c612a01cfcc20861414362aa89396c7b84ad020d165fc0",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.33739583333333334,
+      "reference_gain_db": 12.571457293786917,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 37.57189388004153,
+      "reference_p95_sones": 30.91318286420266,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -30.571457293786917,
+      "source_true_peak_dbtp": -19.202050436702724,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.998024515884225,
+            "capped": false,
+            "delta_reference_db": -23.562912371911917,
+            "gain_db": -10.991455078125,
+            "lufs_m_max": -41.56291237191192,
+            "peak_dbtp": -30.193505514827724
+          },
+          "p95": {
+            "achieved_sones": 7.998897288230841,
+            "capped": false,
+            "delta_reference_db": -20.429611590661917,
+            "gain_db": -7.858154296875,
+            "lufs_m_max": -38.42961159066192,
+            "peak_dbtp": -27.060204733577724
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.98995327831584,
+            "capped": false,
+            "delta_reference_db": -4.577804950036917,
+            "gain_db": 7.99365234375,
+            "lufs_m_max": -22.577804950036917,
+            "peak_dbtp": -11.208398092952724
+          },
+          "p95": {
+            "achieved_sones": 28.00524428969829,
+            "capped": false,
+            "delta_reference_db": -1.5118869812869171,
+            "gain_db": 11.0595703125,
+            "lufs_m_max": -19.511886981286917,
+            "peak_dbtp": -8.142480124202724
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.014193607946716,
+            "capped": false,
+            "delta_reference_db": -2.488937762536917,
+            "gain_db": 10.08251953125,
+            "lufs_m_max": -20.488937762536917,
+            "peak_dbtp": -9.119530905452724
+          },
+          "p95": {
+            "achieved_sones": 32.00008336867063,
+            "capped": false,
+            "delta_reference_db": 0.5348659484005829,
+            "gain_db": 13.1063232421875,
+            "lufs_m_max": -17.465134051599417,
+            "peak_dbtp": -6.095727194515224
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.986007823096706,
+            "capped": false,
+            "delta_reference_db": -0.6696018250369171,
+            "gain_db": 11.90185546875,
+            "lufs_m_max": -18.669601825036917,
+            "peak_dbtp": -7.300194967952724
+          },
+          "p95": {
+            "achieved_sones": 36.01394705546595,
+            "capped": false,
+            "delta_reference_db": 2.362624737463083,
+            "gain_db": 14.93408203125,
+            "lufs_m_max": -15.637375262536917,
+            "peak_dbtp": -4.267968405452724
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.99823896712859,
+            "capped": false,
+            "delta_reference_db": 0.9728542296505829,
+            "gain_db": 13.5443115234375,
+            "lufs_m_max": -17.027145770349417,
+            "peak_dbtp": -5.657738913265224
+          },
+          "p95": {
+            "achieved_sones": 39.980787032394375,
+            "capped": false,
+            "delta_reference_db": 4.013503643713083,
+            "gain_db": 16.5849609375,
+            "lufs_m_max": -13.986496356286917,
+            "peak_dbtp": -2.6170894992027236
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-15",
+      "family": "ui_lockon",
+      "source_sha256": "d335c1351bc5b6aec80790a85521ac28801026eaaae0433841e6247a0149edd0",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.3333333333333333,
+      "reference_gain_db": 12.810629665171525,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 30.80327568310653,
+      "reference_p95_sones": 18.896700450303246,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -30.810629665171525,
+      "source_true_peak_dbtp": -17.510388453097608,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.99949811520508,
+            "capped": false,
+            "delta_reference_db": -20.21288860345515,
+            "gain_db": -7.402258938283625,
+            "lufs_m_max": -38.21288860345515,
+            "peak_dbtp": -24.912647391381235
+          },
+          "p95": {
+            "achieved_sones": 7.996611025274798,
+            "capped": false,
+            "delta_reference_db": -12.964106990039934,
+            "gain_db": -0.153477324868408,
+            "lufs_m_max": -30.964106990039934,
+            "peak_dbtp": -17.663865777966016
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.009300172210484,
+            "capped": false,
+            "delta_reference_db": -1.5160312005772791,
+            "gain_db": 11.294598464594246,
+            "lufs_m_max": -19.51603120057728,
+            "peak_dbtp": -6.215789988503362
+          },
+          "p95": {
+            "achieved_sones": 24.096906677842522,
+            "capped": true,
+            "delta_reference_db": 3.6997587879260827,
+            "gain_db": 16.510388453097608,
+            "lufs_m_max": -14.300241212073917,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.99255966647559,
+            "capped": false,
+            "delta_reference_db": 0.6002797532244024,
+            "gain_db": 13.410909418395928,
+            "lufs_m_max": -17.399720246775598,
+            "peak_dbtp": -4.09947903470168
+          },
+          "p95": {
+            "achieved_sones": 24.096906677842522,
+            "capped": true,
+            "delta_reference_db": 3.6997587879260827,
+            "gain_db": 16.510388453097608,
+            "lufs_m_max": -14.300241212073917,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.995822552278455,
+            "capped": false,
+            "delta_reference_db": 2.433304988800664,
+            "gain_db": 15.24393465397219,
+            "lufs_m_max": -15.566695011199336,
+            "peak_dbtp": -2.2664537991254186
+          },
+          "p95": {
+            "achieved_sones": 24.096906677842522,
+            "capped": true,
+            "delta_reference_db": 3.6997587879260827,
+            "gain_db": 16.510388453097608,
+            "lufs_m_max": -14.300241212073917,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.127885948500605,
+            "capped": true,
+            "delta_reference_db": 3.6997587879260827,
+            "gain_db": 16.510388453097608,
+            "lufs_m_max": -14.300241212073917,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 24.096906677842522,
+            "capped": true,
+            "delta_reference_db": 3.6997587879260827,
+            "gain_db": 16.510388453097608,
+            "lufs_m_max": -14.300241212073917,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-16",
+      "family": "ui_lockon",
+      "source_sha256": "78d2271f5eed1e2c7884f04ecba9f749426377fbde387d1846690a8302a9d4f7",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.28458333333333335,
+      "reference_gain_db": -1.580445250226603e-07,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 38.58309649480845,
+      "reference_p95_sones": 35.54184782384946,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -17.999999841955475,
+      "source_true_peak_dbtp": -6.637846027547906,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.996607176825832,
+            "capped": false,
+            "delta_reference_db": -23.379097745574636,
+            "gain_db": -23.37909790361916,
+            "lufs_m_max": -41.37909774557464,
+            "peak_dbtp": -30.016943931167066
+          },
+          "p95": {
+            "achieved_sones": 8.00011593845844,
+            "capped": false,
+            "delta_reference_db": -22.22884891109391,
+            "gain_db": -22.228849069138434,
+            "lufs_m_max": -40.228848911093905,
+            "peak_dbtp": -28.86669509668634
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.997382712634256,
+            "capped": false,
+            "delta_reference_db": -4.821749882618955,
+            "gain_db": -4.82175004066348,
+            "lufs_m_max": -22.821749882618956,
+            "peak_dbtp": -11.459596068211386
+          },
+          "p95": {
+            "achieved_sones": 27.996517821758864,
+            "capped": false,
+            "delta_reference_db": -3.5948177925061824,
+            "gain_db": -3.5948179505507074,
+            "lufs_m_max": -21.594817792506184,
+            "peak_dbtp": -10.232663978098614
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.985387186468476,
+            "capped": false,
+            "delta_reference_db": -2.8739951895649285,
+            "gain_db": -2.8739953476094535,
+            "lufs_m_max": -20.87399518956493,
+            "peak_dbtp": -9.51184137515736
+          },
+          "p95": {
+            "achieved_sones": 31.99546653559515,
+            "capped": false,
+            "delta_reference_db": -1.6163897971993362,
+            "gain_db": -1.6163899552438612,
+            "lufs_m_max": -19.616389797199336,
+            "peak_dbtp": -8.254235982791768
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.997978317846076,
+            "capped": false,
+            "delta_reference_db": -1.0642703566485885,
+            "gain_db": -1.0642705146931135,
+            "lufs_m_max": -19.06427035664859,
+            "peak_dbtp": -7.702116542241019
+          },
+          "p95": {
+            "achieved_sones": 35.984574828817,
+            "capped": false,
+            "delta_reference_db": 0.193335035717003,
+            "gain_db": 0.19333487767247798,
+            "lufs_m_max": -17.806664964282998,
+            "peak_dbtp": -6.444511149875428
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.9967579929571,
+            "capped": false,
+            "delta_reference_db": 0.546078011624425,
+            "gain_db": 0.5460778535799,
+            "lufs_m_max": -17.453921988375576,
+            "peak_dbtp": -6.091768173968006
+          },
+          "p95": {
+            "achieved_sones": 40.01319510226873,
+            "capped": false,
+            "delta_reference_db": 1.8343567062428363,
+            "gain_db": 1.8343565481983113,
+            "lufs_m_max": -16.165643293757164,
+            "peak_dbtp": -4.803489479349595
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-17",
+      "family": "ui_confirm",
+      "source_sha256": "50a3517a9bfba5bb5077e9cd7bfda22800bd10c79d9f146a6a72569a5371aba9",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.24620833333333333,
+      "reference_gain_db": -1.3220946826209e-07,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 44.20365523300551,
+      "reference_p95_sones": 42.56940308549336,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -17.99999986779053,
+      "source_true_peak_dbtp": -5.797329566153685,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.001630008155574,
+            "capped": false,
+            "delta_reference_db": -26.005917418673317,
+            "gain_db": -26.005917550882785,
+            "lufs_m_max": -44.00591741867332,
+            "peak_dbtp": -31.80324711703647
+          },
+          "p95": {
+            "achieved_sones": 8.001289409377307,
+            "capped": false,
+            "delta_reference_db": -25.046172330457043,
+            "gain_db": -25.04617246266651,
+            "lufs_m_max": -43.04617233045704,
+            "peak_dbtp": -30.843502028820197
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.001296351060514,
+            "capped": false,
+            "delta_reference_db": -7.108079610224385,
+            "gain_db": -7.108079742433853,
+            "lufs_m_max": -25.108079610224387,
+            "peak_dbtp": -12.905409308587538
+          },
+          "p95": {
+            "achieved_sones": 28.00453619167837,
+            "capped": false,
+            "delta_reference_db": -6.414930379845968,
+            "gain_db": -6.414930512055436,
+            "lufs_m_max": -24.41493037984597,
+            "peak_dbtp": -12.212260078209122
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.00015661285604,
+            "capped": false,
+            "delta_reference_db": -5.074334066147051,
+            "gain_db": -5.074334198356519,
+            "lufs_m_max": -23.074334066147053,
+            "peak_dbtp": -10.871663764510204
+          },
+          "p95": {
+            "achieved_sones": 32.00616337526319,
+            "capped": false,
+            "delta_reference_db": -4.419269958316898,
+            "gain_db": -4.419270090526366,
+            "lufs_m_max": -22.419269958316896,
+            "peak_dbtp": -10.216599656680051
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.01695984978365,
+            "capped": false,
+            "delta_reference_db": -3.2157800857917342,
+            "gain_db": -3.2157802180012025,
+            "lufs_m_max": -21.215780085791735,
+            "peak_dbtp": -9.013109784154889
+          },
+          "p95": {
+            "achieved_sones": 36.004318851221896,
+            "capped": false,
+            "delta_reference_db": -2.5759500269808884,
+            "gain_db": -2.5759501591903566,
+            "lufs_m_max": -20.575950026980887,
+            "peak_dbtp": -8.373279725344041
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.01426958392751,
+            "capped": false,
+            "delta_reference_db": -1.5552687426873946,
+            "gain_db": -1.5552688748968628,
+            "lufs_m_max": -19.555268742687396,
+            "peak_dbtp": -7.352598441050548
+          },
+          "p95": {
+            "achieved_sones": 40.006782686650325,
+            "capped": false,
+            "delta_reference_db": -0.9459067819151599,
+            "gain_db": -0.9459069141246281,
+            "lufs_m_max": -18.94590678191516,
+            "peak_dbtp": -6.743236480278314
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-18",
+      "family": "ui_confirm",
+      "source_sha256": "86848a22cc4496474a2608e39d98cf2fdb4dbceb66523d5c41dc36e48604ee40",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.2108125,
+      "reference_gain_db": -1.726135430146769e-07,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 50.53189572194629,
+      "reference_p95_sones": 40.72675766060201,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -17.999999827386457,
+      "source_true_peak_dbtp": -3.7693308043900258,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.000586658663627,
+            "capped": false,
+            "delta_reference_db": -27.488393497369415,
+            "gain_db": -27.48839366998296,
+            "lufs_m_max": -45.488393497369415,
+            "peak_dbtp": -31.257724474372985
+          },
+          "p95": {
+            "achieved_sones": 7.998870650057674,
+            "capped": false,
+            "delta_reference_db": -24.521068363181275,
+            "gain_db": -24.521068535794818,
+            "lufs_m_max": -42.52106836318127,
+            "peak_dbtp": -28.290399340184845
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.01005485981491,
+            "capped": false,
+            "delta_reference_db": -9.025037106865446,
+            "gain_db": -9.025037279478989,
+            "lufs_m_max": -27.025037106865447,
+            "peak_dbtp": -12.794368083869013
+          },
+          "p95": {
+            "achieved_sones": 27.9895174884724,
+            "capped": false,
+            "delta_reference_db": -5.892860576333522,
+            "gain_db": -5.892860748947065,
+            "lufs_m_max": -23.892860576333522,
+            "peak_dbtp": -9.662191553337092
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.00840684594523,
+            "capped": false,
+            "delta_reference_db": -7.016847369586604,
+            "gain_db": -7.016847542200147,
+            "lufs_m_max": -25.016847369586603,
+            "peak_dbtp": -10.786178346590173
+          },
+          "p95": {
+            "achieved_sones": 31.99605172019171,
+            "capped": false,
+            "delta_reference_db": -3.7797654050177263,
+            "gain_db": -3.7797655776312693,
+            "lufs_m_max": -21.779765405017727,
+            "peak_dbtp": -7.549096382021295
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.99282912642086,
+            "capped": false,
+            "delta_reference_db": -5.263427972111795,
+            "gain_db": -5.263428144725338,
+            "lufs_m_max": -23.263427972111796,
+            "peak_dbtp": -9.032758949115363
+          },
+          "p95": {
+            "achieved_sones": 36.01508552301013,
+            "capped": false,
+            "delta_reference_db": -1.9364270640826702,
+            "gain_db": -1.9364272366962132,
+            "lufs_m_max": -19.93642706408267,
+            "peak_dbtp": -5.705758041086239
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.00111134090672,
+            "capped": false,
+            "delta_reference_db": -3.629900499250648,
+            "gain_db": -3.629900671864191,
+            "lufs_m_max": -21.62990049925065,
+            "peak_dbtp": -7.399231476254217
+          },
+          "p95": {
+            "achieved_sones": 39.98781340987108,
+            "capped": false,
+            "delta_reference_db": -0.2879131006448159,
+            "gain_db": -0.2879132732583589,
+            "lufs_m_max": -18.287913100644815,
+            "peak_dbtp": -4.0572440776483845
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-19",
+      "family": "ui_confirm",
+      "source_sha256": "80cb4eced702bcd3c7b5ba9639aac3b056476f899b1d606b9a84339e9e152ca2",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.4023333333333333,
+      "reference_gain_db": -1.0977676367929234e-07,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 39.919848102110954,
+      "reference_p95_sones": 35.416980660462414,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -17.999999890223236,
+      "source_true_peak_dbtp": -8.680958046958095,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.00271745698856,
+            "capped": false,
+            "delta_reference_db": -24.363969790597395,
+            "gain_db": -24.36396990037416,
+            "lufs_m_max": -42.363969790597395,
+            "peak_dbtp": -33.044927947332255
+          },
+          "p95": {
+            "achieved_sones": 8.000894795007612,
+            "capped": false,
+            "delta_reference_db": -22.08840584103003,
+            "gain_db": -22.088405950806795,
+            "lufs_m_max": -40.08840584103003,
+            "peak_dbtp": -30.76936399776489
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.99276112260545,
+            "capped": false,
+            "delta_reference_db": -5.426913634951145,
+            "gain_db": -5.4269137447279086,
+            "lufs_m_max": -23.426913634951145,
+            "peak_dbtp": -14.107871791686003
+          },
+          "p95": {
+            "achieved_sones": 28.013714827347957,
+            "capped": false,
+            "delta_reference_db": -3.5410010466110666,
+            "gain_db": -3.5410011563878303,
+            "lufs_m_max": -21.541001046611065,
+            "peak_dbtp": -12.221959203345925
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.989645131760234,
+            "capped": false,
+            "delta_reference_db": -3.400726556569243,
+            "gain_db": -3.4007266663460065,
+            "lufs_m_max": -21.400726556569243,
+            "peak_dbtp": -12.081684713304101
+          },
+          "p95": {
+            "achieved_sones": 32.014802461384065,
+            "capped": false,
+            "delta_reference_db": -1.5148139682291637,
+            "gain_db": -1.5148140780059274,
+            "lufs_m_max": -19.514813968229163,
+            "peak_dbtp": -10.195772124964023
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.014441798614754,
+            "capped": false,
+            "delta_reference_db": -1.57715818602553,
+            "gain_db": -1.5771582958022936,
+            "lufs_m_max": -19.577158186025528,
+            "peak_dbtp": -10.258116342760388
+          },
+          "p95": {
+            "achieved_sones": 36.008151283673385,
+            "capped": false,
+            "delta_reference_db": 0.24641018451818297,
+            "gain_db": 0.2464100747414193,
+            "lufs_m_max": -17.753589815481817,
+            "peak_dbtp": -8.434547972216675
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.993327804342506,
+            "capped": false,
+            "delta_reference_db": 0.028205422230901053,
+            "gain_db": 0.028205312454137373,
+            "lufs_m_max": -17.9717945777691,
+            "peak_dbtp": -8.652752734503958
+          },
+          "p95": {
+            "achieved_sones": 39.98771681143303,
+            "capped": false,
+            "delta_reference_db": 1.7894295749782478,
+            "gain_db": 1.7894294652014842,
+            "lufs_m_max": -16.210570425021753,
+            "peak_dbtp": -6.89152858175661
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-20",
+      "family": "ui_confirm",
+      "source_sha256": "cf4e864d1661ac5a5c6fea31bd919c41ac5f546f6bf27ac2cf6ebc294521fc18",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.40527083333333336,
+      "reference_gain_db": -6.12351485074214e-08,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 38.649616127592395,
+      "reference_p95_sones": 37.33757409913912,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -17.99999993876485,
+      "source_true_peak_dbtp": -9.733566631840722,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.9999735642064564,
+            "capped": false,
+            "delta_reference_db": -23.182677670848506,
+            "gain_db": -23.182677732083654,
+            "lufs_m_max": -41.182677670848506,
+            "peak_dbtp": -32.91624436392438
+          },
+          "p95": {
+            "achieved_sones": 7.999202376911325,
+            "capped": false,
+            "delta_reference_db": -22.522666709112997,
+            "gain_db": -22.522666770348145,
+            "lufs_m_max": -40.522666709113,
+            "peak_dbtp": -32.25623340218887
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.010074184004836,
+            "capped": false,
+            "delta_reference_db": -4.76522892908614,
+            "gain_db": -4.7652289903212885,
+            "lufs_m_max": -22.765228929086142,
+            "peak_dbtp": -14.49879562216201
+          },
+          "p95": {
+            "achieved_sones": 27.998340695646185,
+            "capped": false,
+            "delta_reference_db": -4.3173643479084705,
+            "gain_db": -4.317364409143619,
+            "lufs_m_max": -22.31736434790847,
+            "peak_dbtp": -14.050931040984342
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.005258955567946,
+            "capped": false,
+            "delta_reference_db": -2.7694814971716166,
+            "gain_db": -2.769481558406765,
+            "lufs_m_max": -20.76948149717162,
+            "peak_dbtp": -12.503048190247487
+          },
+          "p95": {
+            "achieved_sones": 31.986711387342975,
+            "capped": false,
+            "delta_reference_db": -2.313759642639954,
+            "gain_db": -2.3137597038751023,
+            "lufs_m_max": -20.313759642639955,
+            "peak_dbtp": -12.047326335715823
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.986954349524666,
+            "capped": false,
+            "delta_reference_db": -1.0723104527088725,
+            "gain_db": -1.072310513944021,
+            "lufs_m_max": -19.072310452708873,
+            "peak_dbtp": -10.805877145784743
+          },
+          "p95": {
+            "achieved_sones": 36.01319981362326,
+            "capped": false,
+            "delta_reference_db": -0.5380158646372679,
+            "gain_db": -0.5380159258724164,
+            "lufs_m_max": -18.538015864637266,
+            "peak_dbtp": -10.271582557713138
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.00201413448634,
+            "capped": false,
+            "delta_reference_db": 0.4991442180899645,
+            "gain_db": 0.499144156854816,
+            "lufs_m_max": -17.500855781910037,
+            "peak_dbtp": -9.234422474985905
+          },
+          "p95": {
+            "achieved_sones": 40.01687349228845,
+            "capped": false,
+            "delta_reference_db": 1.0177242594535807,
+            "gain_db": 1.0177241982184322,
+            "lufs_m_max": -16.98227574054642,
+            "peak_dbtp": -8.715842433622289
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-21",
+      "family": "ui_confirm",
+      "source_sha256": "a5f5883abea8544ee46a728b5d72d03a8319700b283e3cea021ba6b2b6ab6c13",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 0.30341666666666667,
+      "reference_gain_db": -4.1731894384611223e-08,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 35.967488049339984,
+      "reference_p95_sones": 34.81739307163349,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -17.999999958268106,
+      "source_true_peak_dbtp": -8.348116954012001,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.00201671621234,
+            "capped": false,
+            "delta_reference_db": -22.15709857782969,
+            "gain_db": -22.157098619561584,
+            "lufs_m_max": -40.157098577829686,
+            "peak_dbtp": -30.505215573573587
+          },
+          "p95": {
+            "achieved_sones": 8.003446185034402,
+            "capped": false,
+            "delta_reference_db": -21.830644664739573,
+            "gain_db": -21.830644706471467,
+            "lufs_m_max": -39.83064466473957,
+            "peak_dbtp": -30.178761660483467
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.009715035331865,
+            "capped": false,
+            "delta_reference_db": -3.720225200454414,
+            "gain_db": -3.7202252421863085,
+            "lufs_m_max": -21.720225200454415,
+            "peak_dbtp": -12.068342196198309
+          },
+          "p95": {
+            "achieved_sones": 27.995249795866872,
+            "capped": false,
+            "delta_reference_db": -3.269407891901393,
+            "gain_db": -3.2694079336332873,
+            "lufs_m_max": -21.269407891901395,
+            "peak_dbtp": -11.617524887645288
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.999066408874047,
+            "capped": false,
+            "delta_reference_db": -1.7459562974808394,
+            "gain_db": -1.7459563392127337,
+            "lufs_m_max": -19.745956297480838,
+            "peak_dbtp": -10.094073293224735
+          },
+          "p95": {
+            "achieved_sones": 31.991283646032965,
+            "capped": false,
+            "delta_reference_db": -1.2795935644949556,
+            "gain_db": -1.27959360622685,
+            "lufs_m_max": -19.279593564494956,
+            "peak_dbtp": -9.627710560238851
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.99277761783805,
+            "capped": false,
+            "delta_reference_db": 0.010676663432656372,
+            "gain_db": 0.010676621700761987,
+            "lufs_m_max": -17.989323336567345,
+            "peak_dbtp": -8.337440332311239
+          },
+          "p95": {
+            "achieved_sones": 35.994796017425465,
+            "capped": false,
+            "delta_reference_db": 0.5081302452842658,
+            "gain_db": 0.5081302035523714,
+            "lufs_m_max": -17.491869754715733,
+            "peak_dbtp": -7.83998675045963
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.01345848529514,
+            "capped": false,
+            "delta_reference_db": 1.6429462288832497,
+            "gain_db": 1.6429461871513553,
+            "lufs_m_max": -16.35705377111675,
+            "peak_dbtp": -6.705170766860646
+          },
+          "p95": {
+            "achieved_sones": 40.00376247550121,
+            "capped": false,
+            "delta_reference_db": 2.1248543863019966,
+            "gain_db": 2.1248543445701022,
+            "lufs_m_max": -15.875145613698002,
+            "peak_dbtp": -6.223262609441899
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-22",
+      "family": "ui_question",
+      "source_sha256": "43332aef2394d4b253d1860706216c442e329da6b974462cc45a2fa48cedf00d",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 1.1062083333333332,
+      "reference_gain_db": 0.07118368056068292,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 25.549299956148975,
+      "reference_p95_sones": 24.746212003555076,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -18.071183680560683,
+      "source_true_peak_dbtp": -17.12157179286268,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.997078853082987,
+            "capped": false,
+            "delta_reference_db": -16.833473042248205,
+            "gain_db": -16.76228936168752,
+            "lufs_m_max": -34.8334730422482,
+            "peak_dbtp": -33.8838611545502
+          },
+          "p95": {
+            "achieved_sones": 7.998084132888519,
+            "capped": false,
+            "delta_reference_db": -16.40144656927281,
+            "gain_db": -16.330262888712127,
+            "lufs_m_max": -34.40144656927281,
+            "peak_dbtp": -33.45183468157481
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.997930147000655,
+            "capped": false,
+            "delta_reference_db": 1.3365634269284752,
+            "gain_db": 1.407747107489158,
+            "lufs_m_max": -16.663436573071525,
+            "peak_dbtp": -15.713824685373524
+          },
+          "p95": {
+            "achieved_sones": 28.009769529659426,
+            "capped": false,
+            "delta_reference_db": 1.7935145041139884,
+            "gain_db": 1.8646981846746713,
+            "lufs_m_max": -16.20648549588601,
+            "peak_dbtp": -15.25687360818801
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.987552937932595,
+            "capped": false,
+            "delta_reference_db": 3.272374353914376,
+            "gain_db": 3.343558034475059,
+            "lufs_m_max": -14.727625646085624,
+            "peak_dbtp": -13.778013758387623
+          },
+          "p95": {
+            "achieved_sones": 31.996654334041466,
+            "capped": false,
+            "delta_reference_db": 3.7210172296965163,
+            "gain_db": 3.792200910257199,
+            "lufs_m_max": -14.278982770303484,
+            "peak_dbtp": -13.329370882605483
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.98511620427688,
+            "capped": false,
+            "delta_reference_db": 5.066945857042937,
+            "gain_db": 5.13812953760362,
+            "lufs_m_max": -12.933054142957063,
+            "peak_dbtp": -11.983442255259062
+          },
+          "p95": {
+            "achieved_sones": 36.0171937190625,
+            "capped": false,
+            "delta_reference_db": 5.515588732825076,
+            "gain_db": 5.586772413385759,
+            "lufs_m_max": -12.484411267174924,
+            "peak_dbtp": -11.534799379476922
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.001204283700424,
+            "capped": false,
+            "delta_reference_db": 6.6704287278939205,
+            "gain_db": 6.741612408454603,
+            "lufs_m_max": -11.32957127210608,
+            "peak_dbtp": -10.379959384408078
+          },
+          "p95": {
+            "achieved_sones": 39.99840293643109,
+            "capped": false,
+            "delta_reference_db": 7.102455200869314,
+            "gain_db": 7.173638881429997,
+            "lufs_m_max": -10.897544799130685,
+            "peak_dbtp": -9.947932911432684
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-23",
+      "family": "ui_question",
+      "source_sha256": "2e5618adf87818fa17e7181b6d05ccbf25f3b09a30742be6559ffb163d4f3e88",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 4.5675625,
+      "reference_gain_db": 3.9725377721520125,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 38.91997839439482,
+      "reference_p95_sones": 35.25867891553501,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -21.972537772152013,
+      "source_true_peak_dbtp": -13.319375225579126,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.999141433033202,
+            "capped": false,
+            "delta_reference_db": -23.5700430941491,
+            "gain_db": -19.597505321997087,
+            "lufs_m_max": -41.5700430941491,
+            "peak_dbtp": -32.91688054757621
+          },
+          "p95": {
+            "achieved_sones": 7.999807821860046,
+            "capped": false,
+            "delta_reference_db": -22.01942541572435,
+            "gain_db": -18.046887643572337,
+            "lufs_m_max": -40.01942541572435,
+            "peak_dbtp": -31.366262869151463
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.012255803144164,
+            "capped": false,
+            "delta_reference_db": -5.027240022986401,
+            "gain_db": -1.0547022508343888,
+            "lufs_m_max": -23.0272400229864,
+            "peak_dbtp": -14.374077476413515
+          },
+          "p95": {
+            "achieved_sones": 28.001400419957854,
+            "capped": false,
+            "delta_reference_db": -3.52507914701242,
+            "gain_db": 0.4474586251395929,
+            "lufs_m_max": -21.52507914701242,
+            "peak_dbtp": -12.871916600439533
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.998041230369825,
+            "capped": false,
+            "delta_reference_db": -2.99205432005391,
+            "gain_db": 0.9804834520981025,
+            "lufs_m_max": -20.99205432005391,
+            "peak_dbtp": -12.338891773481024
+          },
+          "p95": {
+            "achieved_sones": 31.986077156993993,
+            "capped": false,
+            "delta_reference_db": -1.4898934440799283,
+            "gain_db": 2.4826443280720842,
+            "lufs_m_max": -19.48989344407993,
+            "peak_dbtp": -10.836730897507042
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.98402871524896,
+            "capped": false,
+            "delta_reference_db": -1.1991526293752863,
+            "gain_db": 2.773385142776726,
+            "lufs_m_max": -19.199152629375288,
+            "peak_dbtp": -10.5459900828024
+          },
+          "p95": {
+            "achieved_sones": 36.00263852925008,
+            "capped": false,
+            "delta_reference_db": 0.3191605140822862,
+            "gain_db": 4.291698286234299,
+            "lufs_m_max": -17.680839485917716,
+            "peak_dbtp": -9.027676939344827
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.989440249168034,
+            "capped": false,
+            "delta_reference_db": 0.4160741189838326,
+            "gain_db": 4.388611891135845,
+            "lufs_m_max": -17.583925881016167,
+            "peak_dbtp": -8.93076333444328
+          },
+          "p95": {
+            "achieved_sones": 39.9945281806394,
+            "capped": false,
+            "delta_reference_db": 1.9343872624414065,
+            "gain_db": 5.906925034593419,
+            "lufs_m_max": -16.065612737558595,
+            "peak_dbtp": -7.412450190985707
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-24",
+      "family": "scifi_activate",
+      "source_sha256": "19c54ad18d7556a78abf8e007a469951214e843d7c850ddaad3f6a20d60ef452",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 5.2,
+      "reference_gain_db": 4.229889229415434,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 22.122317691423575,
+      "reference_p95_sones": 19.99855625143307,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -22.229889229415434,
+      "source_true_peak_dbtp": -15.773798133265245,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.997855179703596,
+            "capped": false,
+            "delta_reference_db": -15.20328275613067,
+            "gain_db": -10.973393526715236,
+            "lufs_m_max": -33.20328275613067,
+            "peak_dbtp": -26.74719165998048
+          },
+          "p95": {
+            "achieved_sones": 7.998302441481786,
+            "capped": false,
+            "delta_reference_db": -13.755517346495985,
+            "gain_db": -9.52562811708055,
+            "lufs_m_max": -31.755517346495985,
+            "peak_dbtp": -25.299426250345796
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.98816158973934,
+            "capped": false,
+            "delta_reference_db": 3.55186005050048,
+            "gain_db": 7.781749279915914,
+            "lufs_m_max": -14.44813994949952,
+            "peak_dbtp": -7.992048853349331
+          },
+          "p95": {
+            "achieved_sones": 28.003058321611356,
+            "capped": false,
+            "delta_reference_db": 5.114788617719743,
+            "gain_db": 9.344677847135177,
+            "lufs_m_max": -12.885211382280257,
+            "peak_dbtp": -6.429120286130068
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.9934390234687,
+            "capped": false,
+            "delta_reference_db": 5.591893127712989,
+            "gain_db": 9.821782357128424,
+            "lufs_m_max": -12.40810687228701,
+            "peak_dbtp": -5.952015776136822
+          },
+          "p95": {
+            "achieved_sones": 32.00153816051779,
+            "capped": false,
+            "delta_reference_db": 7.154821694932252,
+            "gain_db": 11.384710924347687,
+            "lufs_m_max": -10.845178305067748,
+            "peak_dbtp": -4.389087208917559
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.9827971416422,
+            "capped": false,
+            "delta_reference_db": 7.401599889756346,
+            "gain_db": 11.63148911917178,
+            "lufs_m_max": -10.598400110243654,
+            "peak_dbtp": -4.142309014093465
+          },
+          "p95": {
+            "achieved_sones": 35.989831700240096,
+            "capped": false,
+            "delta_reference_db": 8.980980336630548,
+            "gain_db": 13.210869566045982,
+            "lufs_m_max": -9.019019663369452,
+            "peak_dbtp": -2.562928567219263
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.017780668503555,
+            "capped": false,
+            "delta_reference_db": 9.046787855250308,
+            "gain_db": 13.276677084665742,
+            "lufs_m_max": -8.953212144749692,
+            "peak_dbtp": -2.497121048599503
+          },
+          "p95": {
+            "achieved_sones": 39.74751317623679,
+            "capped": true,
+            "delta_reference_db": 10.543908903849811,
+            "gain_db": 14.773798133265245,
+            "lufs_m_max": -7.456091096150189,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-25",
+      "family": "scifi_activate",
+      "source_sha256": "13862b9d8b5a6d6bde808aff90c2c20cf8fd7618f81165d4644518bf60bb762d",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 3.6675625,
+      "reference_gain_db": 2.135497113037111,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 30.81941090528499,
+      "reference_p95_sones": 27.724678361427827,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -20.13549711303711,
+      "source_true_peak_dbtp": -14.181016029554417,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.996776627056747,
+            "capped": false,
+            "delta_reference_db": -19.74608806101883,
+            "gain_db": -17.61059094798172,
+            "lufs_m_max": -37.74608806101883,
+            "peak_dbtp": -31.791606977536137
+          },
+          "p95": {
+            "achieved_sones": 8.000371705245072,
+            "capped": false,
+            "delta_reference_db": -18.08782833994772,
+            "gain_db": -15.95233122691061,
+            "lufs_m_max": -36.08782833994772,
+            "peak_dbtp": -30.13334725646503
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 28.011452785969684,
+            "capped": false,
+            "delta_reference_db": -1.488973680990806,
+            "gain_db": 0.6465234320463052,
+            "lufs_m_max": -19.488973680990807,
+            "peak_dbtp": -13.534492597508113
+          },
+          "p95": {
+            "achieved_sones": 27.999800773263093,
+            "capped": false,
+            "delta_reference_db": 0.15302859183451112,
+            "gain_db": 2.2885257048716223,
+            "lufs_m_max": -17.846971408165487,
+            "peak_dbtp": -11.892490324682795
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.009076831551326,
+            "capped": false,
+            "delta_reference_db": 0.5919796944709814,
+            "gain_db": 2.7274768075080926,
+            "lufs_m_max": -17.408020305529018,
+            "peak_dbtp": -11.453539222046324
+          },
+          "p95": {
+            "achieved_sones": 32.00265605804835,
+            "capped": false,
+            "delta_reference_db": 2.233981967296298,
+            "gain_db": 4.369479080333409,
+            "lufs_m_max": -15.766018032703702,
+            "peak_dbtp": -9.811536949221008
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.01269646678685,
+            "capped": false,
+            "delta_reference_db": 2.445328794491637,
+            "gain_db": 4.580825907528748,
+            "lufs_m_max": -15.554671205508363,
+            "peak_dbtp": -9.60019012202567
+          },
+          "p95": {
+            "achieved_sones": 36.00180057680086,
+            "capped": false,
+            "delta_reference_db": 4.087331067316953,
+            "gain_db": 6.222828180354064,
+            "lufs_m_max": -13.912668932683047,
+            "peak_dbtp": -7.958187849200353
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.007782254958805,
+            "capped": false,
+            "delta_reference_db": 4.103588515562748,
+            "gain_db": 6.2390856285998595,
+            "lufs_m_max": -13.896411484437252,
+            "peak_dbtp": -7.941930400954558
+          },
+          "p95": {
+            "achieved_sones": 40.000379541493444,
+            "capped": false,
+            "delta_reference_db": 5.753719512510962,
+            "gain_db": 7.889216625548073,
+            "lufs_m_max": -12.246280487489038,
+            "peak_dbtp": -6.291799404006344
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-26",
+      "family": "scifi_activate",
+      "source_sha256": "43fb51f2199a2a08508575a9bf7dbb0ed1ba5bdab2be647c7694e01e2f9dacf8",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 3.1008958333333334,
+      "reference_gain_db": 10.536042108290701,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 24.484456793711757,
+      "reference_p95_sones": 12.77706185797052,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -28.5360421082907,
+      "source_true_peak_dbtp": -13.145006845462923,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.996997767037387,
+            "capped": false,
+            "delta_reference_db": -17.119105690999465,
+            "gain_db": -6.583063582708763,
+            "lufs_m_max": -35.11910569099946,
+            "peak_dbtp": -19.728070428171687
+          },
+          "p95": {
+            "achieved_sones": 8.00368649025921,
+            "capped": false,
+            "delta_reference_db": -6.892062924883315,
+            "gain_db": 3.643979183407386,
+            "lufs_m_max": -24.892062924883316,
+            "peak_dbtp": -9.501027662055538
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.11523563553036,
+            "capped": true,
+            "delta_reference_db": 1.6089647371722222,
+            "gain_db": 12.145006845462923,
+            "lufs_m_max": -16.391035262827778,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 14.238311307198167,
+            "capped": true,
+            "delta_reference_db": 1.6089647371722222,
+            "gain_db": 12.145006845462923,
+            "lufs_m_max": -16.391035262827778,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.11523563553036,
+            "capped": true,
+            "delta_reference_db": 1.6089647371722222,
+            "gain_db": 12.145006845462923,
+            "lufs_m_max": -16.391035262827778,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 14.238311307198167,
+            "capped": true,
+            "delta_reference_db": 1.6089647371722222,
+            "gain_db": 12.145006845462923,
+            "lufs_m_max": -16.391035262827778,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.11523563553036,
+            "capped": true,
+            "delta_reference_db": 1.6089647371722222,
+            "gain_db": 12.145006845462923,
+            "lufs_m_max": -16.391035262827778,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 14.238311307198167,
+            "capped": true,
+            "delta_reference_db": 1.6089647371722222,
+            "gain_db": 12.145006845462923,
+            "lufs_m_max": -16.391035262827778,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.11523563553036,
+            "capped": true,
+            "delta_reference_db": 1.6089647371722222,
+            "gain_db": 12.145006845462923,
+            "lufs_m_max": -16.391035262827778,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 14.238311307198167,
+            "capped": true,
+            "delta_reference_db": 1.6089647371722222,
+            "gain_db": 12.145006845462923,
+            "lufs_m_max": -16.391035262827778,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-27",
+      "family": "scifi_data",
+      "source_sha256": "c1a3bb2c390509b0414920d4c0df4f8d67a2c7146c8eaf56bf56f04f08cda27f",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 4.1675625,
+      "reference_gain_db": 7.96612326578547,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 31.535949404185214,
+      "reference_p95_sones": 18.15576824179066,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -25.96612326578547,
+      "source_true_peak_dbtp": -19.435135174575553,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.000559718549853,
+            "capped": false,
+            "delta_reference_db": -20.01885764078547,
+            "gain_db": -12.052734375,
+            "lufs_m_max": -38.01885764078547,
+            "peak_dbtp": -31.487869549575553
+          },
+          "p95": {
+            "achieved_sones": 7.997972272960376,
+            "capped": false,
+            "delta_reference_db": -11.86553732828547,
+            "gain_db": -3.8994140625,
+            "lufs_m_max": -29.86553732828547,
+            "peak_dbtp": -23.334549237075553
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.998515275750073,
+            "capped": false,
+            "delta_reference_db": -1.8002297110979697,
+            "gain_db": 6.1658935546875,
+            "lufs_m_max": -19.80022971109797,
+            "peak_dbtp": -13.269241619888053
+          },
+          "p95": {
+            "achieved_sones": 28.010704093867176,
+            "capped": false,
+            "delta_reference_db": 6.31097634358953,
+            "gain_db": 14.277099609375,
+            "lufs_m_max": -11.68902365641047,
+            "peak_dbtp": -5.158035565200553
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 32.000346996717745,
+            "capped": false,
+            "delta_reference_db": 0.2212546639020303,
+            "gain_db": 8.1873779296875,
+            "lufs_m_max": -17.77874533609797,
+            "peak_dbtp": -11.247757244888053
+          },
+          "p95": {
+            "achieved_sones": 32.01422624152322,
+            "capped": false,
+            "delta_reference_db": 8.26507790608953,
+            "gain_db": 16.231201171875,
+            "lufs_m_max": -9.73492209391047,
+            "peak_dbtp": -3.203934002700553
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 35.98496254353505,
+            "capped": false,
+            "delta_reference_db": 1.9816306404645303,
+            "gain_db": 9.94775390625,
+            "lufs_m_max": -16.01836935953547,
+            "peak_dbtp": -9.487381268325553
+          },
+          "p95": {
+            "achieved_sones": 35.99386643422664,
+            "capped": false,
+            "delta_reference_db": 9.98333962483953,
+            "gain_db": 17.949462890625,
+            "lufs_m_max": -8.01666037516047,
+            "peak_dbtp": -1.485672283950553
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.98161863214021,
+            "capped": false,
+            "delta_reference_db": 3.5314353279645303,
+            "gain_db": 11.49755859375,
+            "lufs_m_max": -14.46856467203547,
+            "peak_dbtp": -7.937576580825553
+          },
+          "p95": {
+            "achieved_sones": 36.11685145146303,
+            "capped": true,
+            "delta_reference_db": 10.03387673421453,
+            "gain_db": 18.0,
+            "lufs_m_max": -7.96612326578547,
+            "peak_dbtp": -1.435135174575553
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-28",
+      "family": "scifi_data",
+      "source_sha256": "35d21a2546685b778233060084e3d4fe51a839086a26d9513113027e9a985701",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 2.5675625,
+      "reference_gain_db": 2.9142381656913336,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 7.555758913065104,
+      "reference_p95_sones": 7.276573811257276,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -20.914238165691334,
+      "source_true_peak_dbtp": -13.892804991251015,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.002271678331523,
+            "capped": false,
+            "delta_reference_db": 0.9103200005951644,
+            "gain_db": 3.824558166286498,
+            "lufs_m_max": -17.089679999404837,
+            "peak_dbtp": -10.068246824964518
+          },
+          "p95": {
+            "achieved_sones": 7.998196860844048,
+            "capped": false,
+            "delta_reference_db": 1.4943215850293736,
+            "gain_db": 4.408559750720707,
+            "lufs_m_max": -16.505678414970625,
+            "peak_dbtp": -9.484245240530308
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 14.059890330408152,
+            "capped": true,
+            "delta_reference_db": 9.978566825559682,
+            "gain_db": 12.892804991251015,
+            "lufs_m_max": -8.021433174440318,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 13.554548202540992,
+            "capped": true,
+            "delta_reference_db": 9.978566825559682,
+            "gain_db": 12.892804991251015,
+            "lufs_m_max": -8.021433174440318,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 14.059890330408152,
+            "capped": true,
+            "delta_reference_db": 9.978566825559682,
+            "gain_db": 12.892804991251015,
+            "lufs_m_max": -8.021433174440318,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 13.554548202540992,
+            "capped": true,
+            "delta_reference_db": 9.978566825559682,
+            "gain_db": 12.892804991251015,
+            "lufs_m_max": -8.021433174440318,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 14.059890330408152,
+            "capped": true,
+            "delta_reference_db": 9.978566825559682,
+            "gain_db": 12.892804991251015,
+            "lufs_m_max": -8.021433174440318,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 13.554548202540992,
+            "capped": true,
+            "delta_reference_db": 9.978566825559682,
+            "gain_db": 12.892804991251015,
+            "lufs_m_max": -8.021433174440318,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 14.059890330408152,
+            "capped": true,
+            "delta_reference_db": 9.978566825559682,
+            "gain_db": 12.892804991251015,
+            "lufs_m_max": -8.021433174440318,
+            "peak_dbtp": -1.0
+          },
+          "p95": {
+            "achieved_sones": 13.554548202540992,
+            "capped": true,
+            "delta_reference_db": 9.978566825559682,
+            "gain_db": 12.892804991251015,
+            "lufs_m_max": -8.021433174440318,
+            "peak_dbtp": -1.0
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-29",
+      "family": "scifi_data",
+      "source_sha256": "deb878415e53c270e5b0f0a2adc72d6aea9bc1106706f2f0b4a8d7b0655b8f7b",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 23.166666666666668,
+      "reference_gain_db": 0.19490147639075417,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 35.43919014499207,
+      "reference_p95_sones": 31.88405534364077,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -18.194901476390754,
+      "source_true_peak_dbtp": -9.290533243631028,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 8.002496380906862,
+            "capped": false,
+            "delta_reference_db": -21.925480565284225,
+            "gain_db": -21.73057908889347,
+            "lufs_m_max": -39.925480565284225,
+            "peak_dbtp": -31.0211123325245
+          },
+          "p95": {
+            "achieved_sones": 7.996199159678033,
+            "capped": false,
+            "delta_reference_db": -20.500378206254634,
+            "gain_db": -20.30547672986388,
+            "lufs_m_max": -38.50037820625464,
+            "peak_dbtp": -29.59600997349491
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.986328027315064,
+            "capped": false,
+            "delta_reference_db": -3.4774522253187263,
+            "gain_db": -3.282550748927972,
+            "lufs_m_max": -21.477452225318725,
+            "peak_dbtp": -12.573083992559
+          },
+          "p95": {
+            "achieved_sones": 27.999206855116757,
+            "capped": false,
+            "delta_reference_db": -1.9583870733860835,
+            "gain_db": -1.7634855969953294,
+            "lufs_m_max": -19.958387073386085,
+            "peak_dbtp": -11.054018840626357
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.99351226379269,
+            "capped": false,
+            "delta_reference_db": -1.504233574354675,
+            "gain_db": -1.309332097963921,
+            "lufs_m_max": -19.504233574354675,
+            "peak_dbtp": -10.599865341594949
+          },
+          "p95": {
+            "achieved_sones": 32.01529959561148,
+            "capped": false,
+            "delta_reference_db": 0.06181297402949282,
+            "gain_db": 0.256714450420247,
+            "lufs_m_max": -17.938187025970507,
+            "peak_dbtp": -9.03381879321078
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.004319022636146,
+            "capped": false,
+            "delta_reference_db": 0.23407809435175125,
+            "gain_db": 0.4289795707425054,
+            "lufs_m_max": -17.76592190564825,
+            "peak_dbtp": -8.861553672888522
+          },
+          "p95": {
+            "achieved_sones": 35.9883539749642,
+            "capped": false,
+            "delta_reference_db": 1.8157851082197607,
+            "gain_db": 2.010686584610515,
+            "lufs_m_max": -16.18421489178024,
+            "peak_dbtp": -7.279846659020514
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 39.99035160902738,
+            "capped": false,
+            "delta_reference_db": 1.7844641772520773,
+            "gain_db": 1.9793656536428315,
+            "lufs_m_max": -16.215535822747924,
+            "peak_dbtp": -7.311167589988196
+          },
+          "p95": {
+            "achieved_sones": 39.983045933065455,
+            "capped": false,
+            "delta_reference_db": 3.39749212208777,
+            "gain_db": 3.592393598478524,
+            "lufs_m_max": -14.602507877912231,
+            "peak_dbtp": -5.698139645152504
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-30",
+      "family": "wind",
+      "source_sha256": "955bce92a72a29690b622ecc11ebf7f6898a5d1d23119e9e33a7775ebf5e9e0d",
+      "source_sample_rate": 48000
+    },
+    {
+      "channels": 2,
+      "duration": 3.5675625,
+      "reference_gain_db": 3.7077112940194077,
+      "reference_lufs_m_max": -18.0,
+      "reference_max_sones": 51.612756642483205,
+      "reference_p95_sones": 44.99735787586807,
+      "reference_peak_capped": false,
+      "source_lufs_m_max": -21.707711294019408,
+      "source_true_peak_dbtp": -12.503122577288188,
+      "targets": [
+        {
+          "max": {
+            "achieved_sones": 7.999901266307069,
+            "capped": false,
+            "delta_reference_db": -27.9778685828795,
+            "gain_db": -24.27015728886009,
+            "lufs_m_max": -45.977868582879495,
+            "peak_dbtp": -36.77327986614828
+          },
+          "p95": {
+            "achieved_sones": 7.998752401111415,
+            "capped": false,
+            "delta_reference_db": -25.78668496083362,
+            "gain_db": -22.078973666814214,
+            "lufs_m_max": -43.786684960833625,
+            "peak_dbtp": -34.5820962441024
+          },
+          "target_sones": 8.0
+        },
+        {
+          "max": {
+            "achieved_sones": 27.98873885332108,
+            "capped": false,
+            "delta_reference_db": -9.685899811295041,
+            "gain_db": -5.978188517275633,
+            "lufs_m_max": -27.68589981129504,
+            "peak_dbtp": -18.48131109456382
+          },
+          "p95": {
+            "achieved_sones": 27.999876434281163,
+            "capped": false,
+            "delta_reference_db": -7.502742502883031,
+            "gain_db": -3.7950312088636227,
+            "lufs_m_max": -25.50274250288303,
+            "peak_dbtp": -16.29815378615181
+          },
+          "target_sones": 28.0
+        },
+        {
+          "max": {
+            "achieved_sones": 31.99930761261645,
+            "capped": false,
+            "delta_reference_db": -7.583005639221708,
+            "gain_db": -3.8752943452023,
+            "lufs_m_max": -25.583005639221707,
+            "peak_dbtp": -16.378416922490487
+          },
+          "p95": {
+            "achieved_sones": 31.98960989848264,
+            "capped": false,
+            "delta_reference_db": -5.415900958077432,
+            "gain_db": -1.7081896640580245,
+            "lufs_m_max": -23.415900958077433,
+            "peak_dbtp": -14.211312241346214
+          },
+          "target_sones": 32.0
+        },
+        {
+          "max": {
+            "achieved_sones": 36.01786173224123,
+            "capped": false,
+            "delta_reference_db": -5.720900876164404,
+            "gain_db": -2.013189582144996,
+            "lufs_m_max": -23.720900876164404,
+            "peak_dbtp": -14.516312159433184
+          },
+          "p95": {
+            "achieved_sones": 35.99120663690154,
+            "capped": false,
+            "delta_reference_db": -3.5537961950201287,
+            "gain_db": 0.15391509899927902,
+            "lufs_m_max": -21.55379619502013,
+            "peak_dbtp": -12.349207478288909
+          },
+          "target_sones": 36.0
+        },
+        {
+          "max": {
+            "achieved_sones": 40.00583756567408,
+            "capped": false,
+            "delta_reference_db": -4.06748026758766,
+            "gain_db": -0.3597689735682529,
+            "lufs_m_max": -22.067480267587662,
+            "peak_dbtp": -12.86289155085644
+          },
+          "p95": {
+            "achieved_sones": 40.01765565664199,
+            "capped": false,
+            "delta_reference_db": -1.8682703319079146,
+            "gain_db": 1.839440962111493,
+            "lufs_m_max": -19.868270331907915,
+            "peak_dbtp": -10.663681615176696
+          },
+          "target_sones": 40.0
+        }
+      ],
+      "id": "effect-31",
+      "family": "scifi_activate",
+      "source_sha256": "3ab794cb465436960ab9e652a2710746ef1094daa56897e758abe7879ff4fed0",
+      "source_sample_rate": 48000
+    }
+  ],
+  "engine_sha256": {
+    "tools/calibrate_loudness_defaults.cpp": "5274881653e00fa239a81811ae4f0c99f1328d82b3a51afd0718056e68083edc",
+    "native/zwicker.cpp": "7d15fbb5fb2c31dafa8b1d640cc843c869cc1936adf5908be76fd262cb8019c7",
+    "native/lufs_meter.cpp": "fb742af9f3ada334b0cc1b119da857e32febf3d9fae368833e43d7be25ce387a"
+  },
+  "summary": [
+    {
+      "target_sones": 8.0,
+      "max": {
+        "family_mae_db": 22.959620069131653,
+        "family_bias_db": -22.912936992178054,
+        "median_lufs_m_max": -41.25229293613332,
+        "min_lufs_m_max": -48.085767615053854,
+        "max_lufs_m_max": -17.089679999404837,
+        "peak_capped_count": 0,
+        "families": {
+          "door": {
+            "mae_db": 27.779494559143714,
+            "bias_db": -27.779494559143714
+          },
+          "keys": {
+            "mae_db": 21.995400001050726,
+            "bias_db": -21.995400001050726
+          },
+          "footsteps": {
+            "mae_db": 25.471581855470983,
+            "bias_db": -25.471581855470983
+          },
+          "sliding_door": {
+            "mae_db": 29.65440153614462,
+            "bias_db": -29.65440153614462
+          },
+          "diesel_train": {
+            "mae_db": 25.795203959256774,
+            "bias_db": -25.795203959256774
+          },
+          "ui_click": {
+            "mae_db": 24.820149889862353,
+            "bias_db": -24.820149889862353
+          },
+          "ui_comical": {
+            "mae_db": 20.67792600732593,
+            "bias_db": -20.67792600732593
+          },
+          "ui_confirm": {
+            "mae_db": 24.665596430056734,
+            "bias_db": -24.665596430056734
+          },
+          "ui_lockon": {
+            "mae_db": 21.88745855073858,
+            "bias_db": -21.88745855073858
+          },
+          "ui_question": {
+            "mae_db": 19.495285810038947,
+            "bias_db": -19.495285810038947
+          },
+          "scifi_activate": {
+            "mae_db": 21.624320623544524,
+            "bias_db": -21.624320623544524
+          },
+          "scifi_data": {
+            "mae_db": 12.682761110793367,
+            "bias_db": -12.07588111039659
+          },
+          "wind": {
+            "mae_db": 21.925480565284225,
+            "bias_db": -21.925480565284225
+          }
+        }
+      },
+      "p95": {
+        "family_mae_db": 18.88680836225325,
+        "family_bias_db": -18.810176486097898,
+        "median_lufs_m_max": -38.26416177079082,
+        "min_lufs_m_max": -43.786684960833625,
+        "max_lufs_m_max": -16.505678414970625,
+        "peak_capped_count": 0,
+        "families": {
+          "door": {
+            "mae_db": 23.713418067506616,
+            "bias_db": -23.713418067506616
+          },
+          "keys": {
+            "mae_db": 14.586117305848699,
+            "bias_db": -14.586117305848699
+          },
+          "footsteps": {
+            "mae_db": 20.066743612418197,
+            "bias_db": -20.066743612418197
+          },
+          "sliding_door": {
+            "mae_db": 18.83711397336218,
+            "bias_db": -18.83711397336218
+          },
+          "diesel_train": {
+            "mae_db": 24.82173116060312,
+            "bias_db": -24.82173116060312
+          },
+          "ui_click": {
+            "mae_db": 18.263847118852055,
+            "bias_db": -18.263847118852055
+          },
+          "ui_comical": {
+            "mae_db": 18.189768672687276,
+            "bias_db": -18.189768672687276
+          },
+          "ui_confirm": {
+            "mae_db": 22.924049475482338,
+            "bias_db": -22.924049475482338
+          },
+          "ui_lockon": {
+            "mae_db": 17.846290870787808,
+            "bias_db": -17.846290870787808
+          },
+          "ui_question": {
+            "mae_db": 19.116045617006193,
+            "bias_db": -19.116045617006193
+          },
+          "scifi_activate": {
+            "mae_db": 19.91236401575042,
+            "bias_db": -19.91236401575042
+          },
+          "scifi_data": {
+            "mae_db": 6.750640612732719,
+            "bias_db": -5.754426222713137
+          },
+          "wind": {
+            "mae_db": 20.500378206254634,
+            "bias_db": -20.500378206254634
+          }
+        }
+      },
+      "combined_family_mae_db": 20.923214215692454
+    },
+    {
+      "target_sones": 28.0,
+      "max": {
+        "family_mae_db": 5.443563924892021,
+        "family_bias_db": -4.609908963815099,
+        "median_lufs_m_max": -22.755710904883323,
+        "min_lufs_m_max": -29.83362587333255,
+        "max_lufs_m_max": -8.021433174440318,
+        "peak_capped_count": 2,
+        "families": {
+          "door": {
+            "mae_db": 8.654413346693511,
+            "bias_db": -8.654413346693511
+          },
+          "keys": {
+            "mae_db": 3.2978571996291386,
+            "bias_db": -3.2978571996291386
+          },
+          "footsteps": {
+            "mae_db": 7.147861958292031,
+            "bias_db": -7.147861958292031
+          },
+          "sliding_door": {
+            "mae_db": 11.212869895719146,
+            "bias_db": -11.212869895719146
+          },
+          "diesel_train": {
+            "mae_db": 7.865869130322411,
+            "bias_db": -7.865869130322411
+          },
+          "ui_click": {
+            "mae_db": 5.844188424356974,
+            "bias_db": -5.844188424356974
+          },
+          "ui_comical": {
+            "mae_db": 2.50092443603163,
+            "bias_db": -2.50092443603163
+          },
+          "ui_confirm": {
+            "mae_db": 6.055687850399406,
+            "bias_db": -6.055687850399406
+          },
+          "ui_lockon": {
+            "mae_db": 2.779731760422044,
+            "bias_db": -2.779731760422044
+          },
+          "ui_question": {
+            "mae_db": 2.528394313691445,
+            "bias_db": -1.1918308867629694
+          },
+          "scifi_activate": {
+            "mae_db": 4.938493391443182,
+            "bias_db": -3.162563366192942
+          },
+          "scifi_data": {
+            "mae_db": 4.462587091276625,
+            "bias_db": 3.262433950544645
+          },
+          "wind": {
+            "mae_db": 3.4774522253187263,
+            "bias_db": -3.4774522253187263
+          }
+        }
+      },
+      "p95": {
+        "family_mae_db": 2.9808991677715557,
+        "family_bias_db": -1.3483276556196555,
+        "median_lufs_m_max": -19.511886981286917,
+        "min_lufs_m_max": -25.50274250288303,
+        "max_lufs_m_max": -8.021433174440318,
+        "peak_capped_count": 7,
+        "families": {
+          "door": {
+            "mae_db": 5.357987048116295,
+            "bias_db": -5.357987048116295
+          },
+          "keys": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "footsteps": {
+            "mae_db": 1.9773798450193119,
+            "bias_db": -1.9773798450193119
+          },
+          "sliding_door": {
+            "mae_db": 1.113292754711733,
+            "bias_db": -1.113292754711733
+          },
+          "diesel_train": {
+            "mae_db": 6.863337442156711,
+            "bias_db": -6.863337442156711
+          },
+          "ui_click": {
+            "mae_db": 0.907967266946371,
+            "bias_db": -0.3233089996612266
+          },
+          "ui_comical": {
+            "mae_db": 1.6263500460690254,
+            "bias_db": 0.18615377289774238
+          },
+          "ui_confirm": {
+            "mae_db": 4.3530417331236375,
+            "bias_db": -4.3530417331236375
+          },
+          "ui_lockon": {
+            "mae_db": 2.022405756523797,
+            "bias_db": 0.4441001020935917
+          },
+          "ui_question": {
+            "mae_db": 2.5314611980076904,
+            "bias_db": -0.7379466938937023
+          },
+          "scifi_activate": {
+            "mae_db": 4.073909714862426,
+            "bias_db": -1.4400011100852992
+          },
+          "scifi_data": {
+            "mae_db": 5.9661693021071445,
+            "bias_db": 5.9661693021071445
+          },
+          "wind": {
+            "mae_db": 1.9583870733860835,
+            "bias_db": -1.9583870733860835
+          }
+        }
+      },
+      "combined_family_mae_db": 4.212231546331788
+    },
+    {
+      "target_sones": 32.0,
+      "max": {
+        "family_mae_db": 3.8796081322608233,
+        "family_bias_db": -2.676060542313337,
+        "median_lufs_m_max": -20.767917936133323,
+        "min_lufs_m_max": -27.753526252686942,
+        "max_lufs_m_max": -8.021433174440318,
+        "peak_capped_count": 2,
+        "families": {
+          "door": {
+            "mae_db": 6.548766592095729,
+            "bias_db": -6.548766592095729
+          },
+          "keys": {
+            "mae_db": 1.3075204756238874,
+            "bias_db": -1.3075204756238874
+          },
+          "footsteps": {
+            "mae_db": 5.082598564605194,
+            "bias_db": -5.082598564605194
+          },
+          "sliding_door": {
+            "mae_db": 9.118239620917308,
+            "bias_db": -9.118239620917308
+          },
+          "diesel_train": {
+            "mae_db": 5.802687974966917,
+            "bias_db": -5.802687974966917
+          },
+          "ui_click": {
+            "mae_db": 3.782046533309389,
+            "bias_db": -3.782046533309389
+          },
+          "ui_comical": {
+            "mae_db": 1.529608663641124,
+            "bias_db": -0.5205114125690531
+          },
+          "ui_confirm": {
+            "mae_db": 4.04911693758534,
+            "bias_db": -4.04911693758534
+          },
+          "ui_lockon": {
+            "mae_db": 1.0749261856839898,
+            "bias_db": -0.6747396835343883
+          },
+          "ui_question": {
+            "mae_db": 2.509165325697608,
+            "bias_db": 0.7632090282167684
+          },
+          "scifi_activate": {
+            "mae_db": 4.189733195364897,
+            "bias_db": -1.0977967842729117
+          },
+          "scifi_data": {
+            "mae_db": 3.936262075544645,
+            "bias_db": 3.936262075544645
+          },
+          "wind": {
+            "mae_db": 1.504233574354675,
+            "bias_db": -1.504233574354675
+          }
+        }
+      },
+      "p95": {
+        "family_mae_db": 2.1847526580602894,
+        "family_bias_db": 0.21531827024623199,
+        "median_lufs_m_max": -17.947320143956873,
+        "min_lufs_m_max": -23.415900958077433,
+        "max_lufs_m_max": -8.021433174440318,
+        "peak_capped_count": 8,
+        "families": {
+          "door": {
+            "mae_db": 3.252340293518513,
+            "bias_db": -3.252340293518513
+          },
+          "keys": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "footsteps": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "sliding_door": {
+            "mae_db": 0.07324294438892981,
+            "bias_db": -0.07324294438892981
+          },
+          "diesel_train": {
+            "mae_db": 4.785626842045195,
+            "bias_db": -4.785626842045195
+          },
+          "ui_click": {
+            "mae_db": 0.7042788909637734,
+            "bias_db": 0.7042788909637734
+          },
+          "ui_comical": {
+            "mae_db": 2.1906689933971597,
+            "bias_db": 2.1906689933971597
+          },
+          "ui_confirm": {
+            "mae_db": 2.3238680580519184,
+            "bias_db": -2.3238680580519184
+          },
+          "ui_lockon": {
+            "mae_db": 1.8184541555894238,
+            "bias_db": 1.8184541555894238
+          },
+          "ui_question": {
+            "mae_db": 2.500305397095736,
+            "bias_db": 1.2207118326007804
+          },
+          "scifi_activate": {
+            "mae_db": 4.073649516096478,
+            "bias_db": 0.6207523150177975
+          },
+          "scifi_data": {
+            "mae_db": 6.6175364896071445,
+            "bias_db": 6.6175364896071445
+          },
+          "wind": {
+            "mae_db": 0.06181297402949282,
+            "bias_db": 0.06181297402949282
+          }
+        }
+      },
+      "combined_family_mae_db": 3.032180395160556
+    },
+    {
+      "target_sones": 36.0,
+      "max": {
+        "family_mae_db": 2.9172534049275702,
+        "family_bias_db": -0.9904730651734828,
+        "median_lufs_m_max": -18.948581998633323,
+        "min_lufs_m_max": -25.893155465208125,
+        "max_lufs_m_max": -8.021433174440318,
+        "peak_capped_count": 3,
+        "families": {
+          "door": {
+            "mae_db": 4.675467065591498,
+            "bias_db": -4.675467065591498
+          },
+          "keys": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "footsteps": {
+            "mae_db": 3.2370440425871694,
+            "bias_db": -3.2370440425871694
+          },
+          "sliding_door": {
+            "mae_db": 7.25797284531097,
+            "bias_db": -7.25797284531097
+          },
+          "diesel_train": {
+            "mae_db": 3.9574484909517924,
+            "bias_db": -3.9574484909517924
+          },
+          "ui_click": {
+            "mae_db": 1.9450279548793352,
+            "bias_db": -1.9450279548793352
+          },
+          "ui_comical": {
+            "mae_db": 1.4821875226665042,
+            "bias_db": 1.2461997837002181
+          },
+          "ui_confirm": {
+            "mae_db": 2.2560538021223753,
+            "bias_db": -2.2560538021223753
+          },
+          "ui_lockon": {
+            "mae_db": 1.6254035701801584,
+            "bias_db": 1.1790023534888803
+          },
+          "ui_question": {
+            "mae_db": 2.5388112602377966,
+            "bias_db": 2.5388112602377966
+          },
+          "scifi_activate": {
+            "mae_db": 4.191745547446918,
+            "bias_db": 0.7317187946770732
+          },
+          "scifi_data": {
+            "mae_db": 4.5230540677321445,
+            "bias_db": 4.5230540677321445
+          },
+          "wind": {
+            "mae_db": 0.23407809435175125,
+            "bias_db": 0.23407809435175125
+          }
+        }
+      },
+      "p95": {
+        "family_mae_db": 2.3106526516248493,
+        "family_bias_db": 1.3754753075333805,
+        "median_lufs_m_max": -17.491869754715733,
+        "min_lufs_m_max": -21.55379619502013,
+        "max_lufs_m_max": -8.01666037516047,
+        "peak_capped_count": 10,
+        "families": {
+          "door": {
+            "mae_db": 1.4080841705259735,
+            "bias_db": -1.4080841705259735
+          },
+          "keys": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "footsteps": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "sliding_door": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "diesel_train": {
+            "mae_db": 2.940387358030071,
+            "bias_db": -2.940387358030071
+          },
+          "ui_click": {
+            "mae_db": 1.2349185394012734,
+            "bias_db": 1.2349185394012734
+          },
+          "ui_comical": {
+            "mae_db": 3.9893019226396684,
+            "bias_db": 3.9893019226396684
+          },
+          "ui_confirm": {
+            "mae_db": 1.1652894904712068,
+            "bias_db": -0.5181748280957355
+          },
+          "ui_lockon": {
+            "mae_db": 3.047250968660793,
+            "bias_db": 3.047250968660793
+          },
+          "ui_question": {
+            "mae_db": 3.011859489054671,
+            "bias_db": 3.011859489054671
+          },
+          "scifi_activate": {
+            "mae_db": 4.235317028262479,
+            "bias_db": 2.4584189307524147
+          },
+          "scifi_data": {
+            "mae_db": 7.1902903958571445,
+            "bias_db": 7.1902903958571445
+          },
+          "wind": {
+            "mae_db": 1.8157851082197607,
+            "bias_db": 1.8157851082197607
+          }
+        }
+      },
+      "combined_family_mae_db": 2.61395302827621
+    },
+    {
+      "target_sones": 40.0,
+      "max": {
+        "family_mae_db": 2.746699470182321,
+        "family_bias_db": 0.4168971503663569,
+        "median_lufs_m_max": -17.453921988375576,
+        "min_lufs_m_max": -24.223216333140524,
+        "max_lufs_m_max": -8.021433174440318,
+        "peak_capped_count": 5,
+        "families": {
+          "door": {
+            "mae_db": 2.9909496619132714,
+            "bias_db": -2.9909496619132714
+          },
+          "keys": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "footsteps": {
+            "mae_db": 1.5672566179041953,
+            "bias_db": -1.5672566179041953
+          },
+          "sliding_door": {
+            "mae_db": 5.5808036027834955,
+            "bias_db": -5.5808036027834955
+          },
+          "diesel_train": {
+            "mae_db": 2.2865623440089617,
+            "bias_db": -2.2865623440089617
+          },
+          "ui_click": {
+            "mae_db": 1.244089853740861,
+            "bias_db": -0.4300659695403164
+          },
+          "ui_comical": {
+            "mae_db": 2.8548040233011607,
+            "bias_db": 2.8548040233011607
+          },
+          "ui_confirm": {
+            "mae_db": 1.0865504193845947,
+            "bias_db": -0.6418393279280861
+          },
+          "ui_lockon": {
+            "mae_db": 2.706786614114691,
+            "bias_db": 2.706786614114691
+          },
+          "ui_question": {
+            "mae_db": 4.156687478388585,
+            "bias_db": 4.156687478388585
+          },
+          "scifi_activate": {
+            "mae_db": 4.408482689346137,
+            "bias_db": 2.374742555552307
+          },
+          "scifi_data": {
+            "mae_db": 5.0396556302321445,
+            "bias_db": 5.0396556302321445
+          },
+          "wind": {
+            "mae_db": 1.7844641772520773,
+            "bias_db": 1.7844641772520773
+          }
+        }
+      },
+      "p95": {
+        "family_mae_db": 2.6546420968406537,
+        "family_bias_db": 2.3513706613530236,
+        "median_lufs_m_max": -16.165643293757164,
+        "min_lufs_m_max": -19.868270331907915,
+        "max_lufs_m_max": -7.456091096150189,
+        "peak_capped_count": 13,
+        "families": {
+          "door": {
+            "mae_db": 0.24738982964055856,
+            "bias_db": 0.24738982964055856
+          },
+          "keys": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "footsteps": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "sliding_door": {
+            "mae_db": 0.0,
+            "bias_db": 0.0
+          },
+          "diesel_train": {
+            "mae_db": 1.2985601005992873,
+            "bias_db": -1.2985601005992873
+          },
+          "ui_click": {
+            "mae_db": 1.4791812347137734,
+            "bias_db": 1.4791812347137734
+          },
+          "ui_comical": {
+            "mae_db": 5.589872096561664,
+            "bias_db": 5.589872096561664
+          },
+          "ui_confirm": {
+            "mae_db": 1.5018793764080414,
+            "bias_db": 1.0906060822213828
+          },
+          "ui_lockon": {
+            "mae_db": 4.150110103672081,
+            "bias_db": 4.150110103672081
+          },
+          "ui_question": {
+            "mae_db": 4.613654793585655,
+            "bias_db": 4.613654793585655
+          },
+          "scifi_activate": {
+            "mae_db": 5.025071502677523,
+            "bias_db": 4.0909363367235665
+          },
+          "scifi_data": {
+            "mae_db": 7.2071360989821445,
+            "bias_db": 7.2071360989821445
+          },
+          "wind": {
+            "mae_db": 3.39749212208777,
+            "bias_db": 3.39749212208777
+          }
+        }
+      },
+      "combined_family_mae_db": 2.7006707835114874
+    }
+  ],
+  "selection": {
+    "target_lufs": -18,
+    "target_sones": 36,
+    "objective": "Minimize equal-family mean absolute gain difference from the capped -18 LUFS-M Max reference, averaging Max and P95.",
+    "old_target_sones": 8,
+    "family_count": 13,
+    "source_count": 31,
+    "selection_scope": "Measured starting point on local rendered stereo sound effects; not a universal LUFS-to-sones conversion or a listening-panel validation."
+  },
+  "leave_one_family_out": {
+    "door": 36.0,
+    "keys": 36.0,
+    "footsteps": 36.0,
+    "sliding_door": 36.0,
+    "diesel_train": 36.0,
+    "ui_click": 36.0,
+    "ui_comical": 40.0,
+    "ui_confirm": 36.0,
+    "ui_lockon": 36.0,
+    "ui_question": 40.0,
+    "scifi_activate": 36.0,
+    "scifi_data": 36.0,
+    "wind": 40.0
+  },
+  "native_validation": {
+    "status": "PASS",
+    "host_version": "7.82/macOS-arm64",
+    "case_count": 29,
+    "corpus_case_count": 12,
+    "max_gain_error_db": 0.014835942488760523,
+    "cases": [
+      {
+        "name": "corpus effect-01 zwicker_max",
+        "target_gain_db": -7.863733282084127,
+        "normalized_lufs_m_max": -22.690303008080257,
+        "calibration_gain_error_db": -0.014835942488760523
+      },
+      {
+        "name": "corpus effect-01 zwicker_p95",
+        "target_gain_db": -4.5787330643375865,
+        "normalized_lufs_m_max": -19.405302790333717,
+        "calibration_gain_error_db": 0.002781380192255156
+      },
+      {
+        "name": "corpus effect-03 zwicker_max",
+        "target_gain_db": -3.2536587430346833,
+        "normalized_lufs_m_max": -21.441415348801403,
+        "calibration_gain_error_db": -0.006953147841612939
+      },
+      {
+        "name": "corpus effect-03 zwicker_p95",
+        "target_gain_db": -0.009661552605900847,
+        "normalized_lufs_m_max": -18.19741815837262,
+        "calibration_gain_error_db": 0
+      },
+      {
+        "name": "corpus effect-06 zwicker_max",
+        "target_gain_db": -13.435299748741876,
+        "normalized_lufs_m_max": -21.951696080378113,
+        "calibration_gain_error_db": 0.005752410573681033
+      },
+      {
+        "name": "corpus effect-06 zwicker_p95",
+        "target_gain_db": -12.434227005671488,
+        "normalized_lufs_m_max": -20.950623337307725,
+        "calibration_gain_error_db": -0.010235979277652518
+      },
+      {
+        "name": "corpus effect-07 zwicker_max",
+        "target_gain_db": 16.84688104610315,
+        "normalized_lufs_m_max": -18.18525383529994,
+        "calibration_gain_error_db": -0.007611141396850485
+      },
+      {
+        "name": "corpus effect-07 zwicker_p95",
+        "target_gain_db": 18,
+        "normalized_lufs_m_max": -17.03213488140309,
+        "calibration_gain_error_db": 0
+      },
+      {
+        "name": "corpus effect-24 zwicker_max",
+        "target_gain_db": 2.7868703127702243,
+        "normalized_lufs_m_max": -19.18566745938179,
+        "calibration_gain_error_db": 0.013485169993498136
+      },
+      {
+        "name": "corpus effect-24 zwicker_p95",
+        "target_gain_db": 4.284869361477627,
+        "normalized_lufs_m_max": -17.687668410674384,
+        "calibration_gain_error_db": -0.006828924756671739
+      },
+      {
+        "name": "corpus effect-30 zwicker_max",
+        "target_gain_db": 0.4165037452043978,
+        "normalized_lufs_m_max": -17.778397731186356,
+        "calibration_gain_error_db": -0.01247582553810761
+      },
+      {
+        "name": "corpus effect-30 zwicker_p95",
+        "target_gain_db": 2.0238019915350915,
+        "normalized_lufs_m_max": -16.171099484855663,
+        "calibration_gain_error_db": 0.013115406924576689
+      }
+    ]
+  },
+  "tools": {
+    "decoder": "FFmpeg; all source files are 48 kHz stereo, no rate conversion was needed.",
+    "source_audio_included": false,
+    "source_paths_included": false
+  }
+}

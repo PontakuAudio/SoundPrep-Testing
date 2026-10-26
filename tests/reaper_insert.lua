@@ -1,0 +1,91 @@
+-- Isolated REAPER integration: actual offline FX render, source replacement,
+-- handles, reverse/rate, cached reuse, and nested native insertion undo.
+local root=debug.getinfo(1,'S').source:sub(2):match('^(.*)[/\\]tests[/\\]')
+local r=reaper;assert(r.file_exists(r.GetResourcePath()..'/.audition-macro-test'))
+package.path=root..'/lib/?.lua;'..package.path
+local U=require('am.util');local J=require('am.json');local Model=require('am.model')
+local E=require('am.export');local L=require('am.loudness');local Insert=require('am.insert')
+local data=r.GetResourcePath()..'/insert-test';r.RecursiveCreateDirectory(data,0)
+local f=assert(io.open(data..'/insert.txt','w'));f:setvbuf('no')
+local function log(...)for _,v in ipairs({...})do f:write(tostring(v),'\t')end;f:write('\n')end
+local original=r.EnumProjects(-1)
+local ok,err=xpcall(function()
+ r.Main_OnCommand(41929,0);local project=r.EnumProjects(-1)
+ r.SetMediaTrackInfo_Value(r.GetMasterTrack(project),'D_VOL',0)
+ r.InsertTrackAtIndex(0,false);local track=r.GetTrack(project,0);r.SetOnlyTrackSelected(track)
+ local path='/tmp/audition-macro-dev/test.wav';local identity=assert(L.identity(r,path))
+ local macro=Model.macro('test','Test Saturation');macro.source_transform.rate=.5
+ macro.export.tail_seconds=0;macro.output_gain_db=-3
+ local chain='SHOW -1\nBYPASS 0 0 0\n<JS "loser/saturation" ""\n100 - - - - - - - - - - - - - - -\n>\nWAK 0 0\n'
+ local snapshot=E.snapshot(r,path,macro,chain,-6,identity,{.2,.6},{fade_ms=0})
+ local plan=Insert.prepare(r,snapshot,1,true,data)
+ assert(math.abs(plan.offset-.4)<1e-8 and math.abs(plan.duration-.8)<1e-8)
+ local again=Insert.prepare(r,snapshot,1,true,data);assert(again.target==plan.target,'Cache not reused')
+ for _,reverse in ipairs{false,true}do
+  for _,handles in ipairs{true,false}do
+   snapshot.macro.source_transform.reverse=reverse
+   plan=Insert.prepare(r,snapshot,1,handles,data)
+   r.Undo_BeginBlock2(project)
+   r.SetEditCurPos(2,false,false)
+   assert(r.InsertMediaSection(path,0,.2,.6,0)==1)
+   local item=r.GetMediaItem(project,0);assert(item)
+   local position=r.GetMediaItemInfo_Value(item,'D_POSITION');local target=r.GetMediaItem_Track(item)
+   Insert.replace(r,project,item,plan)
+   r.Undo_EndBlock2(project,'Insert Audition Macro',-1)
+   local take=r.GetActiveTake(item);local src=r.GetMediaItemTake_Source(take)
+   assert(r.CountTakes(item)==2 and take==r.GetTake(item,1),'Source and rendered takes must coexist')
+   assert(r.TakeFX_GetCount(take)==0,'Rendered audio must not be processed twice')
+   local editable=r.GetTake(item,0);local original_source=r.GetMediaItemTake_Source(editable)
+   local source_length=r.GetMediaSourceLength(original_source)
+   assert(math.abs(source_length-1)<1e-8,'Original take lost full source handles')
+   while r.GetMediaSourceParent(original_source)do original_source=r.GetMediaSourceParent(original_source)end
+   assert(r.GetMediaSourceFileName(original_source,'')==path,'Original audio was replaced')
+   assert(r.TakeFX_GetCount(editable)==2,'Original take lost Macro FX / post-FX gain')
+   assert(r.TakeFX_GetChainVisible(editable)==-1,'Drop opened a Take FX editor')
+   for i=0,1 do assert(not r.TakeFX_GetFloatingWindow(editable,i),'Drop opened a plugin GUI')end
+   assert(select(2,r.TakeFX_GetFXName(editable,0,'')):lower():find('saturation'))
+   assert(math.abs(r.TakeFX_GetParam(editable,1,0)+3)<1e-8)
+   assert(math.abs(r.GetMediaItemTakeInfo_Value(editable,'D_VOL')-U.gain(-6))<1e-8)
+   assert(r.GetMediaItemTakeInfo_Value(editable,'D_PLAYRATE')==.5)
+   assert(math.abs(r.GetMediaItemTakeInfo_Value(editable,'D_STARTOFFS')-(reverse and .4 or .2))<1e-8)
+   local duration=r.GetMediaSourceLength(src)
+   assert(math.abs(duration-(handles and 2 or .8))<1/48000)
+   assert(r.GetMediaSourceParent(src)==nil,'Section wrapper prevents full handles')
+   assert(r.GetMediaItemInfo_Value(item,'D_POSITION')==position and r.GetMediaItem_Track(item)==target)
+   assert(r.GetMediaItemTakeInfo_Value(take,'D_PLAYRATE')==1 and r.GetMediaItemTakeInfo_Value(take,'D_VOL')==1)
+   local offset=r.GetMediaItemTakeInfo_Value(take,'D_STARTOFFS')
+   assert(math.abs(offset-(handles and (reverse and .8 or .4) or 0))<1e-8)
+   assert(math.abs(r.GetMediaItemInfo_Value(item,'D_LENGTH')-.8)<1e-8)
+   log('insert',reverse,handles,'source',duration,'offset',offset,'position',position,plan.target)
+   -- Extending the visible item exposes the entire processed source, no loop.
+   r.SetMediaItemTakeInfo_Value(take,'D_STARTOFFS',0);r.SetMediaItemInfo_Value(item,'D_LENGTH',duration)
+   assert(r.GetMediaItemInfo_Value(item,'B_LOOPSRC')==0)
+   assert(r.Undo_DoUndo2(project)==1);assert(r.CountMediaItems(project)==0,'One Undo must remove the complete insertion')
+   assert(r.Undo_DoRedo2(project)==1);assert(r.CountMediaItems(project)==1)
+   local restored=r.GetActiveTake(r.GetMediaItem(project,0))
+   assert(r.CountTakes(r.GetMediaItem(project,0))==2 and r.TakeFX_GetCount(r.GetTake(r.GetMediaItem(project,0),0))==2,'Redo lost editable FX take')
+   assert(r.GetMediaSourceFileName(r.GetMediaItemTake_Source(restored),'')==plan.target,'Redo lost the processed source')
+   r.Undo_DoUndo2(project)
+  end
+ end
+ snapshot.macro.export.tail_seconds=.125
+ local tail=Insert.prepare(r,snapshot,1,true,data)
+ local src=assert(r.PCM_Source_CreateFromFile(tail.target));local duration=r.GetMediaSourceLength(src);r.PCM_Source_Destroy(src)
+ assert(math.abs(duration-2.125)<1/48000,'Time-selection renders lost the FX tail');log('tail',duration)
+ local crop=Insert.prepare(r,snapshot,1,false,data)
+ src=assert(r.PCM_Source_CreateFromFile(crop.target));duration=r.GetMediaSourceLength(src);r.PCM_Source_Destroy(src)
+ assert(math.abs(duration-.8)<1/48000,'Hard crop retained the FX tail');log('crop excludes tail',duration)
+ r.SelectProjectInstance(project)
+ if r.CountTracks(project)==0 then r.InsertTrackAtIndex(0,false)end
+ r.SetOnlyTrackSelected(r.GetTrack(project,0));assert(r.InsertMedia(path,0)==1)
+ Insert.replace(r,project,r.GetMediaItem(project,0),crop)
+ r.Main_SaveProjectEx(project,data..'/integration.rpp',8);r.Main_OnCommand(40860,0)
+ r.Main_OnCommand(41929,0);r.Main_openProject(data..'/integration.rpp')
+ local restored=r.GetMediaItem(0,0);assert(restored and r.CountTakes(restored)==2,'Saved project lost alternate takes')
+ assert(r.GetActiveTake(restored)==r.GetTake(restored,1) and r.TakeFX_GetCount(r.GetTake(restored,0))==2)
+ assert(r.GetMediaSourceFileName(r.GetMediaItemTake_Source(r.GetTake(restored,1)),'')==crop.target)
+ log('save/reopen: original + Take FX and active rendered take retained')
+ r.Main_OnCommand(40860,0)
+end,debug.traceback)
+r.SelectProjectInstance(original)
+log(ok and 'PASS' or 'FAIL',err or '');f:close()

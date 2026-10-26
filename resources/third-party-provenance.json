@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "verified_on": "2026-10-22",
+  "files": [
+    {
+      "path": "native/vendor/json.hpp",
+      "url": "https://raw.githubusercontent.com/nlohmann/json/v3.12.0/single_include/nlohmann/json.hpp",
+      "sha256": "aaf127c04cb31c406e5b04a63f1ae89369fccde6d8fa7cdda1ed4f32dfc5de63"
+    },
+    {
+      "path": "native/vendor/json.LICENSE.MIT",
+      "url": "https://raw.githubusercontent.com/nlohmann/json/v3.12.0/LICENSE.MIT",
+      "sha256": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603"
+    },
+    {
+      "path": "native/vendor/ebur128.LICENSE.MIT",
+      "url": "https://raw.githubusercontent.com/jiixyj/libebur128/v1.2.6/COPYING",
+      "sha256": "d6b4754bb67bdd08b97d5d11b2d7434997a371585a78fe77007149df3af8d09c"
+    },
+    {
+      "path": "native/vendor/mosqito.LICENSE.md",
+      "url": "https://pypi.org/project/mosqito/1.2.1/",
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+      "source": "mosqito-1.2.1-py3-none-any.whl: mosqito-1.2.1.dist-info/LICENSE",
+      "archive_sha256": "c5370a729b12cb986ff39c71499e51201551b445623b5ca86aed66539d3cfe83"
+    },
+    {
+      "path": "native/vendor/abseil.LICENSE",
+      "url": "https://raw.githubusercontent.com/abseil/abseil-cpp/10cb35e459f5ecca5b2ff107635da0bfa41011b4/LICENSE",
+      "sha256": "c79a7fea0e3cac04cd43f20e7b648e5a0ff8fa5344e644b0ee09ca1162b62747"
+    }
+  ]
+}
