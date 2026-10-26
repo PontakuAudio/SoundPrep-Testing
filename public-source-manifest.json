@@ -100,6 +100,7 @@
     "lib/am/render_channels.lua",
     "lib/am/render_item.lua",
     "lib/am/settings_panel.lua",
+    "lib/am/setup.lua",
     "lib/am/take_fx.lua",
     "lib/am/timeline.lua",
     "lib/am/util.lua",
@@ -146,7 +147,7 @@
   ],
   "privacy": {
     "status": "pass",
-    "scanned_files": 307,
+    "scanned_files": 309,
     "findings": [],
     "synthetic_fixture_exceptions": [
       {
@@ -224,8 +225,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "bb3a3208e0c0b1f041863a77290b5e21f0800cd427a95b514faa64ca8bb41174",
-      "bytes": 1050
+      "sha256": "a58b9ea04bea4180504e156a93b425a1b701f719d59ffc17701acb21e957f0bf",
+      "bytes": 1852
     },
     {
       "path": "SoundPrep - Diagnostics.lua",
@@ -234,8 +235,8 @@
     },
     {
       "path": "SoundPrep - Install actions.lua",
-      "sha256": "94c77afb489d7e4fb7a5e2580d349e44bdc3ea7f7dfb7e4fa040ce5185f4cf1e",
-      "bytes": 2300
+      "sha256": "962ef2c34373a7b26632ba61b27c4a3c5fc56ca0a3244b54b0cf17695afc15ae",
+      "bytes": 1552
     },
     {
       "path": "SoundPrep - Offline inactive source FX.lua",
@@ -259,8 +260,8 @@
     },
     {
       "path": "SoundPrep.lua",
-      "sha256": "a85da617977c7145a7ad973d84a15c0502a976dd7b700b1dd33e6c3d624329a4",
-      "bytes": 1468
+      "sha256": "ef4f22a5cbdebcfc5908f5bae4bc5876dd96308e18a0df3b110842913635ea2f",
+      "bytes": 1712
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -469,8 +470,8 @@
     },
     {
       "path": "docs/install.md",
-      "sha256": "bab9e5ece3efc36f8333ab7ba68a959e43a3462ed3b83a3be248fe45fc4031f5",
-      "bytes": 13024
+      "sha256": "1ad3a0cea5f75c2a40ac682059a5b5b36265a8d24ed463fab35c27a02a4a5f84",
+      "bytes": 14968
     },
     {
       "path": "docs/license-audit-2026-10-22.md",
@@ -499,8 +500,8 @@
     },
     {
       "path": "docs/release-readme.md",
-      "sha256": "bb3a3208e0c0b1f041863a77290b5e21f0800cd427a95b514faa64ca8bb41174",
-      "bytes": 1050
+      "sha256": "a58b9ea04bea4180504e156a93b425a1b701f719d59ffc17701acb21e957f0bf",
+      "bytes": 1852
     },
     {
       "path": "docs/releases/0.10.25.md",
@@ -549,8 +550,8 @@
     },
     {
       "path": "docs/windows.md",
-      "sha256": "a0d470eaec3abccb8e7c3ff805d685f222e7bf1b081d0d3aad6bebcf12e9ce9f",
-      "bytes": 14939
+      "sha256": "aa09c6235bada5bad830ad215afe9810f9d1064061fef49b0cfd39c880267c17",
+      "bytes": 15136
     },
     {
       "path": "internal/Process waveform drop.lua",
@@ -716,6 +717,11 @@
       "path": "lib/am/settings_panel.lua",
       "sha256": "d4e03a60a33b7f5abfd655f56b829a6f02dbc2ca0f85e5a04c75fb507deab13f",
       "bytes": 3807
+    },
+    {
+      "path": "lib/am/setup.lua",
+      "sha256": "cd4cdbc01bb57c4847bc9687fa269e6975382e9e9f0ae09d3b2a77c40fcbd409",
+      "bytes": 1696
     },
     {
       "path": "lib/am/take_fx.lua",
@@ -1069,8 +1075,8 @@
     },
     {
       "path": "resources/public-source-files.json",
-      "sha256": "9bca1e1cbfe265cea720bae7ed870c34d047d0ea2093892383d7ef5a604217eb",
-      "bytes": 10869
+      "sha256": "80d10e8cff26cfad61d49c6b48e25faa0f70ec498d4c5dbfb049439644640dce",
+      "bytes": 10916
     },
     {
       "path": "resources/public-workflows/release.yml",
@@ -1084,8 +1090,8 @@
     },
     {
       "path": "resources/release-manifest.json",
-      "sha256": "7a22a24b9492816b2e6af81900d647c2e81b10a301567c05bb227f2e48b2c166",
-      "bytes": 4443
+      "sha256": "801714a55f1a17ab54ac223d0718fefcc77635c71569fff5409c17c73cdbbcee",
+      "bytes": 4465
     },
     {
       "path": "resources/third-party-provenance.json",
@@ -1184,13 +1190,13 @@
     },
     {
       "path": "tests/entrypoint_compatibility.lua",
-      "sha256": "486554e16a1f14ad6cff7382ede3af6dee9e53e863ff9e3e13b431a3b72ba65b",
-      "bytes": 4468
+      "sha256": "cac309c2561ed00390611a571aae352e9308c2f05b3127efef451adf295dae79",
+      "bytes": 4527
     },
     {
       "path": "tests/launcher_lifecycle.lua",
-      "sha256": "c927182fa3514b38ada762c8401f980e9491a98c8bb31d336bd19f94971a7e8d",
-      "bytes": 3174
+      "sha256": "a7dfdb79c015b899472fa88991c0b6cde292e8ec4663d807e0aef42669588a6d",
+      "bytes": 3208
     },
     {
       "path": "tests/live_normalization.lua",
@@ -1284,8 +1290,8 @@
     },
     {
       "path": "tests/project_lifecycle.lua",
-      "sha256": "e7e15d520ddaed2700262be6bfad0eec22b004a813137fac33894651c7fe5d97",
-      "bytes": 6451
+      "sha256": "64ec5a4469e1a15d1b2e3899ae075248646a5677ef621dc6a1cf2032207f49c9",
+      "bytes": 6485
     },
     {
       "path": "tests/reaper_audio.lua",
@@ -1519,8 +1525,8 @@
     },
     {
       "path": "tests/run.lua",
-      "sha256": "943e985117d2e320699d8259d115969e59bf58c2ac461264f5274371f55706d3",
-      "bytes": 25517
+      "sha256": "b735d9fdb480f1a2ba1b7d8029080c6419af359c4a280b0f115834302abbdfad",
+      "bytes": 25643
     },
     {
       "path": "tests/search_omission.lua",
@@ -1531,6 +1537,11 @@
       "path": "tests/settings_panel.lua",
       "sha256": "747ebb2cdb1f8b1a3393a8d634086087c983b09eefe2700e68fb4b7de91343be",
       "bytes": 3458
+    },
+    {
+      "path": "tests/setup.lua",
+      "sha256": "4863f758a5efe2dc59a6fd11bb96665dcdc09b6c9a89b7f5c3780326302016e5",
+      "bytes": 3777
     },
     {
       "path": "tests/source_buffers.lua",
@@ -1564,8 +1575,8 @@
     },
     {
       "path": "tests/test_package_release.py",
-      "sha256": "43875186379173523bb18dcd50f7eae8a8481e5b687f77c3d68429c53eca8355",
-      "bytes": 18114
+      "sha256": "835f86a04abb2743fe12e32ef3edd911796c8b28f00486ed062f704df3567cca",
+      "bytes": 18691
     },
     {
       "path": "tests/test_package_windows.py",
@@ -1644,8 +1655,8 @@
     },
     {
       "path": "tools/install_native.ps1",
-      "sha256": "b58683141b1f50eae3ccfd05a694099a62e2a4e8caaf715713a58fe65a01bc76",
-      "bytes": 1801
+      "sha256": "e789791f6aa01bf01573b632100e208e2ba9f40639cc90ab699d4b601a76c6f5",
+      "bytes": 1761
     },
     {
       "path": "tools/install_native.sh",

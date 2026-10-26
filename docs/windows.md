@@ -13,8 +13,8 @@ ReaPackのImport URLと導入手順は[導入ガイド](install.md)を参照。R
 1. [Releaseページ](https://github.com/PontakuAudio/SoundPrep-Testing/releases)から `soundprep-0.11.6-windows-x64.zip` を選ぶ。
 2. ZIPの `SoundPrep` フォルダーを書込み可能な固定の場所に展開する。例: `Documents/SoundPrep`。`Program Files` 配下は避ける。スクリプトと `lib` / `resources` / `build` / `native/vendor` の配置を維持する。
 3. REAPER **x64** にSWS、JS_ReaScriptAPIのWindows x64版を導入する。REAPER 7.35以降が必要。
-4. REAPERのMain Action List → New action → Load ReaScriptから `SoundPrep - Install actions.lua` を実行する。初回は `build/reaper_audition_macro.dll` をResource Pathの `UserPlugins` に配置する。作業を保存し、REAPERを再起動する。
-5. Mainの `SoundPrep.lua` を実行する。Media ExplorerのAction ListでSlot 0〜9、Reverse、AB等のキーを割り当てる。既存のキー割当は自動で変更しない。
+4. 開発版では、REAPERのMain Action List → New action → Load ReaScriptから `SoundPrep.lua` だけを読み込んで実行する。初回は `build/reaper_audition_macro.dll` をResource Pathの `UserPlugins` に配置する。案内に従い作業を保存してREAPERを再起動する。公開済みv0.11.6のZIPでは、この初回セットアップに `SoundPrep - Install actions.lua` を使う。
+5. Mainの `SoundPrep.lua` を実行する。キー操作・診断用Actionsが必要な場合だけ、[追加Actionsの手順](install.md#追加actions任意)で登録する。既存のキー割当は自動で変更しない。
 
 Normalizeは追加の実行環境なしで利用できる。Editの `Loudness meter` で既定のLUFS MaxMまたはZwickerを選ぶ。ZwickerはMaxが既定、P95も選択可能。目標sones・校正値・原音Peak guardの設定は[導入ガイド](install.md#normalizeの設定)を参照。
 
@@ -34,7 +34,7 @@ ReaPack版はReaPackから更新する。Native helperを更新した場合はRE
 ./tools/install_native.ps1 -ResourcePath 'D:\REAPER portable'
 ```
 
-Resource PathはREAPERのOptions → Show REAPER resource path in explorer/finderで確認できる。更新ツールは起動中のREAPERがあると停止し、x64 DLLを確認してから置換する。以前のDLLを `.backup` に保持する。再起動後にAction Installerを再実行して追加Actionsを登録する。
+Resource PathはREAPERのOptions → Show REAPER resource path in explorer/finderで確認できる。更新ツールは起動中のREAPERがあると停止し、x64 DLLを確認してから置換する。以前のDLLを `.backup` に保持する。再起動後は `SoundPrep.lua` を実行する。追加Actionsの登録は任意。
 
 PowerShellの実行ポリシーでスクリプトを実行できない場合は、REAPER終了中に `build/reaper_audition_macro.dll` をResource Pathの `UserPlugins` へ手動コピーしてもよい。システムの実行ポリシーを変える必要はない。旧先読みworker用DLLは現在の実行に不要で、公開用ZIPに含めない。
 

@@ -1,4 +1,4 @@
--- @description SoundPrep - Media Explorer companion
+-- @description SoundPrep - Start here
 -- @version 0.11.6
 -- @author Pontaku Audio
 local script=debug.getinfo(1,'S').source:sub(2)
@@ -11,8 +11,16 @@ if heartbeat and reaper.time_precise()-heartbeat<3 then
   return
 end
 local app
-local ok,err=xpcall(function()app=App.new(reaper,root,root..'/data')end,debug.traceback)
+local ok,err=xpcall(function()
+  local Setup=require('am.setup')
+  if Setup.install_native_if_missing(reaper,root)then
+    reaper.ShowMessageBox(Setup.restart_notice,'SoundPrep',0)
+    return
+  end
+  app=App.new(reaper,root,root..'/data')
+end,debug.traceback)
 if not ok then reaper.ShowMessageBox(tostring(err),'SoundPrep',0);return end
+if not app then return end -- First ZIP launch installed the helper; wait for restart.
 reaper.atexit(function()app:close()end)
 local Bar=require('am.bar')
 ok,err=xpcall(function()

@@ -106,8 +106,9 @@ class PackageReleaseTests(unittest.TestCase):
                 self.assertEqual(source.get("main"), "mediaexplorer")
             else:
                 self.assertIsNone(source.get("main"))
-        self.assertEqual(len([source for source in sources if source.get("main") == "main"]), 7 * 3)
-        self.assertEqual(len([source for source in sources if source.get("main") == "mediaexplorer"]), 19 * 3)
+        self.assertEqual({source.get("file") for source in sources if source.get("main")}, {"SoundPrep.lua"})
+        self.assertEqual(len([source for source in sources if source.get("main") == "main"]), 3)
+        self.assertFalse(any(source.get("main") == "mediaexplorer" for source in sources))
 
     def test_manual_zips_preserve_runtime_layout_and_exclude_user_or_host_data(self):
         for name in ("data/bank.json", "data/inserted-media/private.wav", "build/host/reaper-license.rk",
@@ -311,6 +312,13 @@ class PackageReleaseTests(unittest.TestCase):
         self.assertNotIn("worker/prepare.py", listed)
         self.assertNotIn("worker/prepare.lua", listed)
         self.assertEqual(manifest["package_name"], "SoundPrep.lua")
+        self.assertEqual(manifest["main_actions"], ["SoundPrep.lua"])
+        self.assertEqual(manifest["media_explorer_actions"], [])
+        # Optional actions and old aliases stay at their original paths, so an
+        # update does not delete existing action registrations or shortcuts.
+        self.assertIn("SoundPrep - Install actions.lua", manifest["support_files"])
+        for path in ROOT.glob("SoundPrep - *.lua"):
+            self.assertIn(path.name, manifest["support_files"])
         for group in ("main_actions", "media_explorer_actions"):
             for name in manifest[group]:
                 self.assertIn("SoundPrep", name)

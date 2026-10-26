@@ -312,6 +312,7 @@ test('Deferred drops preserve item edits, skip removed items and roll back faile
 test('Raw and Item Volume drops preserve native items; signal processing alone renders or defers',function()dofile('tests/drop_playback.lua')end)
 test('Range audition and completed-drop transport regressions',function()dofile('tests/audition_gestures.lua')end)
 test('Native launcher keeps panels and edits across drag waits and closes on startup failure',function()dofile('tests/launcher_lifecycle.lua')end)
+test('Single-entry ZIP setup waits for restart and never replaces an existing helper',function()dofile('tests/setup.lua')end)
 test('Project closure stops before stale track access and preserves saved FX without false warnings',function()dofile('tests/project_lifecycle.lua')end)
 test('Waveform clicks replay after EOF but preserve explicit Stop/Pause',function()dofile('tests/preview_eof.lua')end)
 test('Native multichannel preview supports downmix and original channels; older helpers fail without stopping playback',function()dofile('tests/preview_channels.lua')end)

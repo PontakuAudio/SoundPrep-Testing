@@ -25,4 +25,4 @@ if (Test-Path -LiteralPath $Target) {
   [IO.File]::Replace($Temp, $Target, $Backup, $true)
 } else { [IO.File]::Move($Temp, $Target) }
 Write-Output "Installed: $Target"
-Write-Output 'Start REAPER x64, run SoundPrep - Install actions.lua, then launch SoundPrep.lua.'
+Write-Output 'Start REAPER x64, then run SoundPrep.lua.'

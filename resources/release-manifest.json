@@ -6,15 +6,16 @@
     "README.md": "docs/release-readme.md"
   },
   "main_actions": [
-    "SoundPrep.lua",
+    "SoundPrep.lua"
+  ],
+  "media_explorer_actions": [],
+  "support_files": [
     "SoundPrep - Install actions.lua",
     "SoundPrep - Diagnostics.lua",
     "SoundPrep - Restore native preview.lua",
     "SoundPrep - Render selected drops.lua",
     "SoundPrep - Restore selected source FX.lua",
-    "SoundPrep - Offline inactive source FX.lua"
-  ],
-  "media_explorer_actions": [
+    "SoundPrep - Offline inactive source FX.lua",
     "actions/SoundPrep - AB.lua",
     "actions/SoundPrep - Analyse.lua",
     "actions/SoundPrep - Edit.lua",
@@ -33,9 +34,8 @@
     "actions/SoundPrep - Slot 7.lua",
     "actions/SoundPrep - Slot 8.lua",
     "actions/SoundPrep - Slot 9.lua",
-    "actions/SoundPrep - Stop.lua"
-  ],
-  "support_files": [
+    "actions/SoundPrep - Stop.lua",
+    "lib/am/setup.lua",
     "internal/Process waveform drop.lua",
     "lib/am/action.lua",
     "lib/am/analysis_policy.lua",

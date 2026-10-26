@@ -97,7 +97,7 @@ for _,modal in ipairs{false,true}do
   end,publish=function()end,tick=function(self)self.closed=true;self.cleaned=true end,
     close=function(self)self.closed=true;self.cleaned=true end}
   App.new=function()return fake end
-  _G.reaper={GetExtState=function()return ''end,atexit=function()end,
+  _G.reaper={GetOS=function()return 'Linux'end,GetExtState=function()return ''end,atexit=function()end,
     APIExists=function()return true end,AM_DropContext=function()return modal and 'drag' or ''end,
     defer=function(fn)callback=fn end,ShowMessageBox=function(text)error('Unexpected error dialog: '..text)end}
   local Bar=require('am.bar');local new=Bar.new

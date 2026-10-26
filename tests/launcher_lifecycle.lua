@@ -6,7 +6,7 @@ local ok,err=xpcall(function()
     local project,window,list={},{},{};local callback,at_exit,dialog,modal
     local attached,updated,polled,ticks,published,detached=0,0,0,0,0,0
     local app={project=project,draft={name='Unsaved value'},explorer={window=function()return window end,control=function()return list end}}
-    local r={GetExtState=function()return ''end,atexit=function(fn)at_exit=fn end,
+    local r={GetOS=function()return 'Linux'end,GetExtState=function()return ''end,atexit=function(fn)at_exit=fn end,
       APIExists=function(name)return name=='AM_DropContext'end,AM_DropContext=function()return modal and 'drag' or ''end,
       EnumProjects=function()return project end,defer=function(fn)callback=fn end,
       ShowMessageBox=function(text)dialog=text end,

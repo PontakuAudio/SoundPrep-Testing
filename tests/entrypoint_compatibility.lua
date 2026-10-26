@@ -24,7 +24,7 @@ for _,action in ipairs(actions)do check_alias('./actions/',' - '..action[1])end
 
 local old_reaper,old_path=reaper,package.path
 local modules={}
-for _,name in ipairs{'am.action','am.app','am.platform','am.native'}do modules[name]=package.loaded[name]end
+for _,name in ipairs{'am.action','am.app','am.platform','am.native','am.setup'}do modules[name]=package.loaded[name]end
 local ok,err=xpcall(function()
   local sent={}
   reaper={}
@@ -57,7 +57,7 @@ local ok,err=xpcall(function()
   local calls,new_id=0,100
   package.loaded['am.platform']={windows=function()return false end}
   package.loaded['am.native']={inspect=function()return true end}
-  reaper={GetOS=function()return 'Linux' end,
+  reaper={GetOS=function()return 'Linux' end,APIExists=function()return false end,
     AddRemoveReaScript=function(add,section,path,commit)
       assert(add==true and commit==true,'Installer removed an existing action')
       assert(section==0 or section==32063,'Incorrect action section')
@@ -78,5 +78,5 @@ local ok,err=xpcall(function()
   assert(shortcuts[41]=='Ctrl+Alt+A' and shortcuts[42]=='Space','Legacy shortcuts were changed')
 end,debug.traceback)
 reaper,package.path=old_reaper,old_path
-for _,name in ipairs{'am.action','am.app','am.platform','am.native'}do package.loaded[name]=modules[name]end
+for _,name in ipairs{'am.action','am.app','am.platform','am.native','am.setup'}do package.loaded[name]=modules[name]end
 if not ok then error(err,0)end

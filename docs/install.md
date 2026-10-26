@@ -1,6 +1,8 @@
 # SoundPrepの導入
 
-以下は**SoundPrep v0.11.6**の導入手順です。
+以下は**SoundPrep開発版**の導入手順です。起動入口の整理は次回配布から適用されます。公開済みv0.11.6のZIPでは `SoundPrep - Install actions.lua` でセットアップ後、`SoundPrep.lua` を起動してください。
+
+**普段使うのは `SoundPrep.lua` だけです。** 起動後はMedia Explorerの操作バーから操作できます。
 
 配布先は[SoundPrep Releases](https://github.com/PontakuAudio/SoundPrep-Testing/releases)です。掲載されたReaPack indexとOS別ZIPを利用してください。
 
@@ -31,7 +33,7 @@ v0.11.0の解析はmacOS arm64の実REAPERでLUFS・Zwicker Max/P95、44.1／48�
 4. Native helperも導入されるため、作業を保存してREAPERを再起動します。
 5. Main Action Listで `SoundPrep.lua` を実行します。Media Explorerの一覧上に操作バーが表示されます。
 
-Main／Media ExplorerのActionsはReaPackが登録します。Media ExplorerのAction ListでSlot 0〜9、Reverse、AB等へキーを割り当てます。既存のキー割当は変更しません。
+新規導入時にReaPackが登録するActionは、Mainの `SoundPrep.lua` ひとつです。キー操作・診断用Actionsは同梱しますが、自動登録しません。必要な場合は下記の「追加Actions」を参照してください。
 
 ## ZIPから導入
 
@@ -56,11 +58,22 @@ SoundPrep/
 ```
 
 1. REAPERにSWS、JS_ReaScriptAPIを導入します。
-2. Main Action Listの `New action → Load ReaScript` から `SoundPrep - Install actions.lua` を読み込み、実行します。
-3. helperが未導入なら、Installerが同梱のhelperをREAPER Resource Pathの `UserPlugins` へ配置します。作業を保存してREAPERを再起動します。
-4. Main Action Listの `SoundPrep.lua` を実行します。
+2. Main Action Listの `New action → Load ReaScript` から **`SoundPrep.lua` だけ**を読み込み、実行します。フォルダー内のLuaをまとめて読み込む必要はありません。
+3. helperが未導入なら、自動で同梱helperをREAPER Resource Pathの `UserPlugins` へ配置し、再起動を案内します。作業を保存してREAPERを再起動します。
+4. 同じ `SoundPrep.lua` を実行します。以後も、このActionから起動します。
 
-既存helperがある場合、Action Installerは上書きしません。下記のZIP更新手順で、REAPER終了中に更新してください。
+既存helperがある場合は上書きしません。下記のZIP更新手順で、REAPER終了中に更新してください。
+
+## 追加Actions（任意）
+
+通常の試聴・Preset選択・解析・書き出しはSoundPrepの画面から行えます。専用キーやメンテナンス用Actionが必要な場合だけ、Main Action Listの `New action → Load ReaScript` から、`SoundPrep.lua` と同じフォルダーの `SoundPrep - Install actions.lua` を読み込んで実行します。ReaPack版の場所はREAPER Resource Path内の `Scripts/SoundPrep/Media Explorer/` です。
+
+- Media ExplorerにSlot 0〜9、Play Stop、Replay、Stop、Reverse、AB、Analyse、Export、Edit、Quitの19個を登録します。必要なものにキーを割り当ててください。
+- MainにDiagnostics、Restore native preview、Render selected drops、Restore selected source FX、Offline inactive source FXの5個を登録します。
+
+これらは起動後の操作や診断のためのものです。起動するのは引き続き `SoundPrep.lua` です。必要なActionのLuaだけを、それぞれのセクションで個別に読み込むこともできます。
+
+既存のAction登録やキー割当は自動で削除・変更しません。そのため、以前の版から更新した環境では登録済みの追加Actionsが残ります。不要なものだけREAPERのAction Listから手動で登録解除できます。スクリプトファイル自体は削除しないでください。
 
 ## Normalizeの設定
 
@@ -107,7 +120,7 @@ Windows PowerShell:
 ./tools/install_native.ps1 -ResourcePath 'D:\REAPER portable'
 ```
 
-Resource PathはREAPERの `Options → Show REAPER resource path in explorer/finder` で確認できます。更新ツールは起動中のREAPERがあると置換を拒否し、既存helperのバックアップを残します。REAPERを起動し直した後、Action Installerを再実行すると追加Actionsを登録できます。
+Resource PathはREAPERの `Options → Show REAPER resource path in explorer/finder` で確認できます。更新ツールは起動中のREAPERがあると置換を拒否し、既存helperのバックアップを残します。REAPERを起動し直した後は `SoundPrep.lua` を実行します。追加Actionsを使う場合だけAction Installerを実行してください。
 
 v0.11.6にはNative helper 0.11.6を同梱します。**v0.11.0以前からの更新ではLuaパッケージとNative helperをともに更新し、REAPERを再起動してください。** bar revision 9・waveform revision 7のhelperが必要です。互換性は機能revisionと必要APIで判定し、不足するhelperでは更新を案内します。旧FFmpeg解析キャッシュは新しい解析結果として再利用しません。
 
@@ -125,7 +138,7 @@ v0.11.6にはNative helper 0.11.6を同梱します。**v0.11.0以前からの�
 2. ReaPackの `Browse packages…` で旧Audition Macroパッケージを選び、`Uninstall` をApplyします。作業を保存してREAPERを再起動し、旧パッケージの削除が完了したことを確認します。
 3. このページのSoundPrep用ReaPack URLを登録し、新パッケージを導入します。新しいhelperを読み込むため、作業を保存してREAPERを再起動します。
 4. SoundPrepを起動する前に、バックアップした `data/` 全体を、新しい `SoundPrep.lua` と同じ階層の `data/` へ引き継ぎます。
-5. 新しく登録されたSoundPrepのActionsに、必要なキーを手動で割り当て、`SoundPrep.lua` を実行します。
+5. `SoundPrep.lua` を実行します。専用キーを使う場合は「追加Actions」の手順で登録し、必要なキーを手動で割り当てます。
 
 旧パッケージのアンインストールでは旧Actionsの登録も解除されます。この切替では、同じフォルダーの旧名互換スクリプトによるAction ID・キー割当の維持は適用されません。
 
