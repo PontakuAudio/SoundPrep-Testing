@@ -31,8 +31,8 @@ static bool stale_scroll=false;
 #ifndef _WIN32
 static int backing_scale=1;
 extern "C" int AMWavePixelScale(void*){return backing_scale;}
-extern "C" bool AMDrawWaveLabel(void*,const char*,int,int,int,int,unsigned int,unsigned int,int,void*(*)(const char*)){return false;}
 #endif
+extern "C" bool AMDrawWaveLabel(void*,const char*,int,int,int,int,unsigned int,unsigned int,int,void*(*)(const char*)){return false;}
 class Peaks final:public PCM_source {
 public:
   PCM_source* Duplicate()override{return new Peaks;}

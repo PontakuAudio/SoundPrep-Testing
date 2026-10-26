@@ -1,6 +1,6 @@
 # SoundPrep — Windows 10/11・REAPER x64
 
-**SoundPrep v0.11.5** の通常利用の解析は同梱C++ helperがREAPERのデコーダーで行い、Python／FFmpegは不要。同梱DLLは0.11.5。更新後はDLLを読み直すためREAPER再起動が必要。新版の解析経路のWindows実機確認は未完了。以下の版番号付き説明は変更履歴である。
+**SoundPrep v0.11.6** の通常利用の解析は同梱C++ helperがREAPERのデコーダーで行い、Python／FFmpegは不要。同梱DLLは0.11.6。更新後はDLLを読み直すためREAPER再起動が必要。新版の解析経路のWindows実機確認は未完了。以下の版番号付き説明は変更履歴である。
 
 v0.10.0でWindows用ネイティブhelper、埋め込み操作バー、D&Dアダプター、解析／先読みworkerの起動処理を追加した。MacroのJSON、FX bank、試聴・書き出しのLua処理はmacOSと共有する。
 
@@ -10,7 +10,7 @@ Windows CIにはMSVCビルドと自動試験がある。2026-09-30にWindows実R
 
 ReaPackのImport URLと導入手順は[導入ガイド](install.md)を参照。ReaPack版ではNative helperも導入されるため、インストール後にREAPERを再起動する。以下はZIPを使う場合の手順。
 
-1. [Releaseページ](https://github.com/PontakuAudio/SoundPrep-Testing/releases)から `soundprep-0.11.5-windows-x64.zip` を選ぶ。
+1. [Releaseページ](https://github.com/PontakuAudio/SoundPrep-Testing/releases)から `soundprep-0.11.6-windows-x64.zip` を選ぶ。
 2. ZIPの `SoundPrep` フォルダーを書込み可能な固定の場所に展開する。例: `Documents/SoundPrep`。`Program Files` 配下は避ける。スクリプトと `lib` / `resources` / `build` / `native/vendor` の配置を維持する。
 3. REAPER **x64** にSWS、JS_ReaScriptAPIのWindows x64版を導入する。REAPER 7.35以降が必要。
 4. REAPERのMain Action List → New action → Load ReaScriptから `SoundPrep - Install actions.lua` を実行する。初回は `build/reaper_audition_macro.dll` をResource Pathの `UserPlugins` に配置する。作業を保存し、REAPERを再起動する。

@@ -313,6 +313,9 @@
     "docs/app-settings.md",
     "docs/releases/0.11.3.md",
     "docs/releases/0.11.4.md",
-    "docs/releases/0.11.5.md"
+    "docs/releases/0.11.5.md",
+    "native/windows/wave_label.cpp",
+    "native/windows/test_wave_label.cpp",
+    "docs/releases/0.11.6.md"
   ]
 }

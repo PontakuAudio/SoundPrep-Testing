@@ -16,8 +16,8 @@
 extern "C" int AMPreviewWavePosition(char*,int,double*,double*,double*);
 #ifndef _WIN32
 extern "C" int AMWavePixelScale(void*);
-extern "C" bool AMDrawWaveLabel(void*,const char*,int,int,int,int,unsigned int,unsigned int,int,void*(*)(const char*));
 #endif
+extern "C" bool AMDrawWaveLabel(void*,const char*,int,int,int,int,unsigned int,unsigned int,int,void*(*)(const char*));
 namespace {
 void*(*font_lookup)(const char*);
 void *wave=nullptr,*clock_view=nullptr,*bitmap=nullptr;
@@ -89,7 +89,7 @@ unsigned int (*window_dpi)(void*)=+[](void* window){return GetDpiForWindow(stati
 void* peak_bitmap=nullptr;
 std::vector<std::string> peak_names;
 std::string peak_names_json;
-bool labels_dirty=true;
+bool labels_dirty=true,label_native=false;
 std::string peak_path,peak_stamp;
 std::vector<double> peak_values;
 std::vector<int> peak_channels;
@@ -194,8 +194,12 @@ bool paint_peaks(const char* path,int width,int height,double start,double span,
     std::string label=role+" "+number;
     if(channel<static_cast<int>(peak_names.size()) && !peak_names[channel].empty())label=role+" "+number+"  "+peak_names[channel];
     if(peak_building)label+=" ...";
-#ifndef _WIN32
-    if(AMDrawWaveLabel(peak_bitmap,label.c_str(),8*scale_factor,top+2*scale_factor,width-16*scale_factor,14*scale_factor,style.text,style.background,scale_factor,font_lookup))continue;
+#ifdef _WIN32
+    label_native=AMDrawWaveLabel(peak_bitmap,label.c_str(),text_px(8),top+text_px(2),width-text_px(16),label_height,style.text,style.background,text_dpi,font_lookup);
+    if(label_native){label_font_height=font_height;continue;}
+#else
+    label_native=AMDrawWaveLabel(peak_bitmap,label.c_str(),8*scale_factor,top+2*scale_factor,width-16*scale_factor,14*scale_factor,style.text,style.background,scale_factor,font_lookup);
+    if(label_native){label_font_height=font_height;continue;}
 #endif
     if(label_font && label_dpi!=text_dpi) {
       destroy_font(label_font);delete_gdi(label_gdi);label_font=label_gdi=nullptr;
@@ -373,7 +377,7 @@ extern "C" void AMCursorDetach() {
   if(label_font){destroy_font(label_font);label_font=nullptr;}
   if(label_gdi){delete_gdi(label_gdi);label_gdi=nullptr;}
   if(registered){host_register("-timer",reinterpret_cast<void*>(tick));registered=false;}
-  clear_peaks();AMCursorClear();wave=clock_view=nullptr;suspended=false;
+  clear_peaks();AMCursorClear();wave=clock_view=nullptr;suspended=false;label_native=false;label_font_height=0;
   view_span=0;view_at=view_page=view_width=view_units=-1;*view_path=0;
   actual_width=scroll_at=scroll_page=scroll_min=scroll_max=0;
   viewport_dirty=true;
@@ -457,5 +461,11 @@ extern "C" const char* AMCursorState() {
   static std::string json;
   auto value=nlohmann::json::parse(result);value["selected_names"]=nlohmann::json::array();
   for(int channel:peak_channels)value["selected_names"].push_back(channel<=static_cast<int>(peak_names.size())?peak_names[channel-1]:"");
-  value["name_font"]=label_font!=nullptr;value["name_font_pixels"]=std::abs(label_font_height);value["name_dpi"]=peak_label_dpi;json=value.dump();return json.c_str();
+  value["name_font"]=label_native || label_font!=nullptr;
+#ifdef _WIN32
+  value["name_renderer"]=label_native?"DirectWrite":"LICE";
+#else
+  value["name_renderer"]=label_native?"Cocoa":"LICE";
+#endif
+  value["name_font_pixels"]=std::abs(label_font_height);value["name_dpi"]=peak_label_dpi;json=value.dump();return json.c_str();
 }
