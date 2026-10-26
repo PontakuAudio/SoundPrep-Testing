@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.11.6",
+  "version": "0.11.7",
   "git_history_included": false,
   "runtime_files": [
     "Audition Macro - Diagnostics.lua",
@@ -65,6 +65,7 @@
     "docs/loudness-defaults.md",
     "docs/media-explorer-workflow.md",
     "docs/releases/0.11.1.md",
+    "docs/releases/0.11.7.md",
     "docs/source-distribution.md",
     "docs/windows.md",
     "internal/Process waveform drop.lua",
@@ -147,7 +148,7 @@
   ],
   "privacy": {
     "status": "pass",
-    "scanned_files": 309,
+    "scanned_files": 310,
     "findings": [],
     "synthetic_fixture_exceptions": [
       {
@@ -165,8 +166,8 @@
     },
     {
       "path": ".github/workflows/release.yml",
-      "sha256": "0503ca30965d8090fa7bf84a7af41a4a11515a81989ca76b8f8d9ad0cc33b993",
-      "bytes": 5926
+      "sha256": "eaaf79710a2e8c6126d5952c6e4651c73eff7f6d443e956c7bacd17a7525e912",
+      "bytes": 6397
     },
     {
       "path": ".github/workflows/windows.yml",
@@ -210,7 +211,7 @@
     },
     {
       "path": "Audition Macro.lua",
-      "sha256": "c6824d2e1860616e154af337dce78454e141f2415f3339fedd10ef32140cf7b5",
+      "sha256": "a4a1215d0a29bfe281dd6ccc879c3c5a4c376978a5fc031db38762dc76e6afb9",
       "bytes": 338
     },
     {
@@ -260,7 +261,7 @@
     },
     {
       "path": "SoundPrep.lua",
-      "sha256": "ef4f22a5cbdebcfc5908f5bae4bc5876dd96308e18a0df3b110842913635ea2f",
+      "sha256": "0e8648493debee8b10bcc562109b48c504eab99af46123980be2445ab98a2664",
       "bytes": 1712
     },
     {
@@ -470,8 +471,8 @@
     },
     {
       "path": "docs/install.md",
-      "sha256": "1ad3a0cea5f75c2a40ac682059a5b5b36265a8d24ed463fab35c27a02a4a5f84",
-      "bytes": 14968
+      "sha256": "f60905885e28e32cd95ac4a14227e348a05dcfe47a1dde1959b5b919fc4adad3",
+      "bytes": 15006
     },
     {
       "path": "docs/license-audit-2026-10-22.md",
@@ -544,14 +545,19 @@
       "bytes": 825
     },
     {
+      "path": "docs/releases/0.11.7.md",
+      "sha256": "da16b87d71e7b75122cb2c117bdcb34364d335106bff27a702a31b74de66ce35",
+      "bytes": 1104
+    },
+    {
       "path": "docs/source-distribution.md",
-      "sha256": "0f6d8704b8d3880f6fec258c7a228cc1d4d455a16e066dc8b4acc4d8b6060555",
-      "bytes": 4657
+      "sha256": "d1f4acc5ed68b66749fffd026013d9b369dede57004f48c0016fb924c4605f06",
+      "bytes": 5204
     },
     {
       "path": "docs/windows.md",
-      "sha256": "aa09c6235bada5bad830ad215afe9810f9d1064061fef49b0cfd39c880267c17",
-      "bytes": 15136
+      "sha256": "44eed94618e83f715ede007b0b9621ee2ad97eb9537bc5939219d6dee15baa81",
+      "bytes": 15196
     },
     {
       "path": "internal/Process waveform drop.lua",
@@ -1025,7 +1031,7 @@
     },
     {
       "path": "prebuilt/manifest.json",
-      "sha256": "aeb7e19dcd7cf224be400463e27bb8a39e51f769cbc6279d90fe494b74ba798e",
+      "sha256": "94aabcaa11188d80f705c131194f373ee5f029d9d67ef1aaa591d2e3c96ee23e",
       "bytes": 489
     },
     {
@@ -1075,13 +1081,13 @@
     },
     {
       "path": "resources/public-source-files.json",
-      "sha256": "80d10e8cff26cfad61d49c6b48e25faa0f70ec498d4c5dbfb049439644640dce",
-      "bytes": 10916
+      "sha256": "f5bbe785a636eda471d5db17f5cd22ef9d3f403ec2bec31621417d3b321e3ca9",
+      "bytes": 10947
     },
     {
       "path": "resources/public-workflows/release.yml",
-      "sha256": "0503ca30965d8090fa7bf84a7af41a4a11515a81989ca76b8f8d9ad0cc33b993",
-      "bytes": 5926
+      "sha256": "eaaf79710a2e8c6126d5952c6e4651c73eff7f6d443e956c7bacd17a7525e912",
+      "bytes": 6397
     },
     {
       "path": "resources/public-workflows/windows.yml",
@@ -1090,8 +1096,8 @@
     },
     {
       "path": "resources/release-manifest.json",
-      "sha256": "801714a55f1a17ab54ac223d0718fefcc77635c71569fff5409c17c73cdbbcee",
-      "bytes": 4465
+      "sha256": "56fc57c39f4935a4fbbb65ef093e59dc54eae6b8a49f227b83475f3ea24124dd",
+      "bytes": 4496
     },
     {
       "path": "resources/third-party-provenance.json",
@@ -1575,8 +1581,8 @@
     },
     {
       "path": "tests/test_package_release.py",
-      "sha256": "835f86a04abb2743fe12e32ef3edd911796c8b28f00486ed062f704df3567cca",
-      "bytes": 18691
+      "sha256": "12379231a173fd266a493a452c4d6ab99572abb5cc31fe8338e3ed63dea30363",
+      "bytes": 20112
     },
     {
       "path": "tests/test_package_windows.py",
@@ -1665,8 +1671,8 @@
     },
     {
       "path": "tools/package_release.py",
-      "sha256": "94264aee1cb19b7e4d49a7900e0f8b160f41ffd9983984e031537a8aa725a5f5",
-      "bytes": 20284
+      "sha256": "f4035bd15d97b38cddaf27358426d5bcfbe61f5d43760b82d4c5399f10349615",
+      "bytes": 20595
     },
     {
       "path": "tools/package_windows.py",

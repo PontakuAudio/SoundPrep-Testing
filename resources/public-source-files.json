@@ -318,6 +318,7 @@
     "native/windows/test_wave_label.cpp",
     "docs/releases/0.11.6.md",
     "lib/am/setup.lua",
-    "tests/setup.lua"
+    "tests/setup.lua",
+    "docs/releases/0.11.7.md"
   ]
 }

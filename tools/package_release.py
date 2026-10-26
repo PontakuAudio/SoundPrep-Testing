@@ -13,6 +13,7 @@ and https://github.com/cfillion/reapack/wiki/Index-Format.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
@@ -225,9 +226,13 @@ def build_index(previous, index_name, category_name, manifest, version, sources,
     if package.get("type") != "script":
         raise ValueError("Previous package has a different type")
     attributes = {"name": version, "author": author}
-    if release_time:
+    if release_time is not None:
         if not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", release_time):
             raise ValueError("Release time must be UTC YYYY-MM-DDTHH:MM:SSZ")
+        try:
+            datetime.strptime(release_time, "%Y-%m-%dT%H:%M:%SZ")
+        except ValueError as error:
+            raise ValueError("Release time must be a valid UTC date and time") from error
         attributes["time"] = release_time
     candidate = ET.Element("version", attributes)
     for source in sources:
@@ -312,6 +317,7 @@ def package_release(*, root, output, repository=None, base=None, version=None, t
     index = build_index(Path(previous_index) if previous_index else None, index_name, category, manifest,
                         version, sources, author, release_time, website)
     report = {"schema": 1, "version": version, "helper_version": helper_version, "tag": tag,
+              "release_time": release_time,
               "download_base": base, "platforms": list(selected), "publish_ready": platform == "all",
               "index_name": index_name, "category": category, "package": manifest["package_name"],
               "script_install_root": f"Scripts/{index_name}/{category}", "files": files,
@@ -358,7 +364,7 @@ def main(argv=None):
     parser.add_argument("--category", default="Media Explorer")
     parser.add_argument("--author", default="Pontaku Audio")
     parser.add_argument("--website")
-    parser.add_argument("--release-time", help="Optional fixed UTC timestamp; omitted by default for deterministic builds")
+    parser.add_argument("--release-time", help="Fixed UTC YYYY-MM-DDTHH:MM:SSZ for ReaPack Last Update; release workflows use the commit time")
     args = vars(parser.parse_args(argv))
     args["base"] = args.pop("download_base")
     try:

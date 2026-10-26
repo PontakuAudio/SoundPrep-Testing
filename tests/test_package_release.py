@@ -148,15 +148,34 @@ class PackageReleaseTests(unittest.TestCase):
             names.add(name)
         self.assertEqual(names, {path.name for path in first.iterdir()} - {"SHA256SUMS"})
 
+    def test_fixed_release_time_sets_last_update_and_keeps_builds_reproducible(self):
+        timestamp = "2026-10-26T07:54:30Z"
+        first, report = self.package(release_time=timestamp)
+        second, _ = self.package(release_time=timestamp, previous_index=first / "index.xml")
+        self.assertEqual(ET.parse(first / "index.xml").find("./category/reapack/version").get("time"), timestamp)
+        self.assertEqual(report["release_time"], timestamp)
+        self.assertEqual(json.loads((first / "release.json").read_text())["release_time"], timestamp)
+        self.assertEqual({p.name: p.read_bytes() for p in first.iterdir()},
+                         {p.name: p.read_bytes() for p in second.iterdir()})
+        with self.assertRaisesRegex(ValueError, "immutable"):
+            self.package(release_time="2026-10-27T07:54:30Z", previous_index=first / "index.xml")
+
+    def test_invalid_release_time_fails_before_creating_output(self):
+        for timestamp in ("", "2026-10-26", "2026-10-26T16:54:30+09:00", "2026-02-30T00:00:00Z",
+                          "2026-13-01T00:00:00Z", "2026-10-26T24:00:00Z", "2026-10-26T07:54:60Z"):
+            with self.subTest(timestamp=timestamp), self.assertRaisesRegex(ValueError, "Release time"):
+                self.package(release_time=timestamp)
+        self.assertFalse(any(self.temp.glob("release-*")))
+
     def test_previous_versions_and_other_packages_are_preserved(self):
         previous = self.temp / "previous.xml"
         previous.write_text('''<index version="1" name="SoundPrep">
 <category name="Media Explorer"><reapack name="SoundPrep.lua" type="script" desc="SoundPrep">
-<version name="0.10.24" author="old"><source file="old.lua" main="main" hash="1220abc">https://old.invalid/v0.10.24/old.lua</source><changelog>Old release notes</changelog></version>
+<version name="0.10.24" author="old" time="2026-10-01T09:00:00Z"><source file="old.lua" main="main" hash="1220abc">https://old.invalid/v0.10.24/old.lua</source><changelog>Old release notes</changelog></version>
 </reapack><reapack name="Other.lua" type="script"><version name="1"><source>https://other.invalid/file.lua</source></version></reapack></category>
 <metadata><link rel="website">https://example.com</link></metadata></index>''')
         before = ET.parse(previous).getroot()
-        output, _ = self.package(previous_index=previous, website="https://example.com")
+        output, _ = self.package(previous_index=previous, website="https://example.com", release_time="2026-10-26T07:54:30Z")
         after = ET.parse(output / "index.xml").getroot()
         old = "./category/reapack[@name='SoundPrep.lua']/version[@name='0.10.24']"
         other = "./category/reapack[@name='Other.lua']"

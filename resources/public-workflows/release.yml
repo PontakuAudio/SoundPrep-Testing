@@ -57,11 +57,14 @@ jobs:
         id: version
         run: |
           python - <<'PY'
-          import os, pathlib, re
+          import datetime, os, pathlib, re, subprocess
           text = pathlib.Path("SoundPrep.lua").read_text()
           version = re.search(r"^-- @version (\d+\.\d+\.\d+)$", text, re.M)[1]
+          epoch = int(subprocess.check_output(["git", "show", "-s", "--format=%ct", "HEAD"], text=True))
+          release_time = datetime.datetime.fromtimestamp(epoch, datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
           with open(os.environ["GITHUB_OUTPUT"], "a") as out:
               out.write(f"tag=v{version}\n")
+              out.write(f"release_time={release_time}\n")
           PY
       - name: Load previous public index and reject existing version
         if: inputs.publish
@@ -93,7 +96,9 @@ jobs:
         env:
           DOWNLOAD_REPOSITORY: ${{ inputs.download_repository }}
           RELEASE_TAG: ${{ steps.version.outputs.tag }}
+          RELEASE_TIME: ${{ steps.version.outputs.release_time }}
         run: |
+          : "${RELEASE_TIME:?Missing release timestamp}"
           args=()
           if [ -f build/previous/index.xml ]; then
             args+=(--previous-index build/previous/index.xml)
@@ -102,6 +107,7 @@ jobs:
             --output build/release \
             --repository "${DOWNLOAD_REPOSITORY:-$GITHUB_REPOSITORY}" \
             --tag "$RELEASE_TAG" \
+            --release-time "$RELEASE_TIME" \
             --macos-helper prebuilt/reaper_audition_macro.dylib \
             --windows-helper prebuilt/reaper_audition_macro.dll \
             "${args[@]}"

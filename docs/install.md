@@ -1,6 +1,6 @@
 # SoundPrepの導入
 
-以下は**SoundPrep開発版**の導入手順です。起動入口の整理は次回配布から適用されます。公開済みv0.11.6のZIPでは `SoundPrep - Install actions.lua` でセットアップ後、`SoundPrep.lua` を起動してください。
+以下は**SoundPrep v0.11.7**の導入手順です。v0.11.6以前のZIPでは `SoundPrep - Install actions.lua` でセットアップ後、`SoundPrep.lua` を起動してください。
 
 **普段使うのは `SoundPrep.lua` だけです。** 起動後はMedia Explorerの操作バーから操作できます。
 
@@ -37,7 +37,7 @@ v0.11.0の解析はmacOS arm64の実REAPERでLUFS・Zwicker Max/P95、44.1／48�
 
 ## ZIPから導入
 
-[Releaseページ](https://github.com/PontakuAudio/SoundPrep-Testing/releases)から、`soundprep-0.11.6-macos-universal.zip` または `soundprep-0.11.6-windows-x64.zip` を選びます。ZIP内の `SoundPrep` フォルダーを、書き込み可能な固定の場所へ展開します。Windowsの例は `Documents/SoundPrep` です。
+[Releaseページ](https://github.com/PontakuAudio/SoundPrep-Testing/releases)から、`soundprep-0.11.7-macos-universal.zip` または `soundprep-0.11.7-windows-x64.zip` を選びます。ZIP内の `SoundPrep` フォルダーを、書き込み可能な固定の場所へ展開します。Windowsの例は `Documents/SoundPrep` です。
 
 フォルダー内の配置を維持してください。主な内容は次のとおりです。
 
@@ -122,7 +122,7 @@ Windows PowerShell:
 
 Resource PathはREAPERの `Options → Show REAPER resource path in explorer/finder` で確認できます。更新ツールは起動中のREAPERがあると置換を拒否し、既存helperのバックアップを残します。REAPERを起動し直した後は `SoundPrep.lua` を実行します。追加Actionsを使う場合だけAction Installerを実行してください。
 
-v0.11.6にはNative helper 0.11.6を同梱します。**v0.11.0以前からの更新ではLuaパッケージとNative helperをともに更新し、REAPERを再起動してください。** bar revision 9・waveform revision 7のhelperが必要です。互換性は機能revisionと必要APIで判定し、不足するhelperでは更新を案内します。旧FFmpeg解析キャッシュは新しい解析結果として再利用しません。
+v0.11.7にはNative helper 0.11.6を同梱します。0.11.6からの更新ではhelperの変更はなく、SoundPrepの終了・再起動で反映できます。**v0.11.0以前からの更新ではLuaパッケージとNative helperをともに更新し、REAPERを再起動してください。** bar revision 9・waveform revision 7のhelperが必要です。互換性は機能revisionと必要APIで判定し、不足するhelperでは更新を案内します。旧FFmpeg解析キャッシュは新しい解析結果として再利用しません。
 
 ## 旧Audition Macroからの切替
 

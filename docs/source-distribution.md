@@ -33,6 +33,8 @@ python3 -m unittest discover -s tests -p 'test_prebuilt_helpers.py' -v
 3. 出力の `public-source-manifest.json` と差分を確認します。未レビューのファイルは自動追加されず、解析実装・内部試験・参照実装・個人データは除外されます。
 4. 公開リポジトリへ反映し、公開CIを通した後、必要に応じて手動のReaPack releaseを実行します。スナップショット作成自体はpush・タグ作成・リリース公開を行いません。
 
+Release workflowは配布対象コミットの日時をUTCで `--release-time` に渡し、ReaPack indexの各新規versionの `time` と `release.json` に記録します。これがReaPackのLast Update表示に使われます。同じコミットからの再実行で日時を変えず、既存バージョンの日時・内容も保持します。手動で配布用パッケージを作る場合も `--release-time YYYY-MM-DDTHH:MM:SSZ` を指定してください。省略はローカル試験用で、Last Updateは空欄になります。
+
 ```sh
 python3 tools/prepare_public_source.py \
   --output build/public-candidate \
