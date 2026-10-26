@@ -13,13 +13,15 @@ static void* test_clock=&test_storage[2];
 static bool rounded=false;
 static double cursor=0;
 static bool selected=false;
+static int selection_flag=256;
 static bool invalid_selection=false;
 static int nested=0;
 static bool real_window=false;
+static bool cursor_suspended=false;
 extern "C" bool AMCursorAttach(void*,void*,void*(*)(const char*)){return true;}
-extern "C" void AMCursorDetach(){}
+extern "C" void AMCursorDetach(){cursor_suspended=false;}
 extern "C" void AMCursorRestoreClock(){}
-extern "C" void AMCursorSuspend(bool){}
+extern "C" void AMCursorSuspend(bool on){cursor_suspended=on;}
 extern "C" void AMCursorClear(){}
 extern "C" void AMCursorRefresh(){}
 extern "C" void AMCursorAnchor(const char*,double,int){}
@@ -31,6 +33,7 @@ extern "C" bool AMPreviewWaveSeek(const char* path,double where,double a,double 
 static std::intptr_t native_proc(Window,unsigned msg,std::uintptr_t,std::intptr_t) {
   ++forwarded;
   if(msg==0x201 && nested) {
+    assert(cursor_suspended);
     const int before=applied;
     if(nested==3)observe(0x200,1,60,0,true); // Drag returns to origin.
     if(nested==4)observe(0x100,27,0,0,true); // Escape cancels the modal loop.
@@ -38,13 +41,14 @@ static std::intptr_t native_proc(Window,unsigned msg,std::uintptr_t,std::intptr_
     if(nested==2)test_proc(test_wave,0x202,0,20); // Both paths, still one seek.
     test_proc(test_wave,0x215,0,0); // Native ReleaseCapture after the consumed UP.
     assert(applied==before); // Clock/source is not finalized until native returns.
+    assert(cursor_suspended); // The native handler still owns selection paint.
     cursor=1.25;
   }
   if(msg==0x202)cursor=1.25;return 42;
 }
 static std::intptr_t other_proc(Window w,unsigned m,std::uintptr_t p,std::intptr_t l){return other_previous(w,m,p,l);}
 static void* api(const char* name) {
-  if(!std::strcmp(name,"MediaExplorerGetLastPlayedFileInfo"))return reinterpret_cast<void*>(+[](char* path,int size,int* mode,double* a,double* b,double*,double*,double*,double*,char*,int){std::snprintf(path,size,"/素材.wav");*mode=selected?256:0;*a=invalid_selection?NAN:(selected?.2:0);*b=selected?.8:1;return true;});
+  if(!std::strcmp(name,"MediaExplorerGetLastPlayedFileInfo"))return reinterpret_cast<void*>(+[](char* path,int size,int* mode,double* a,double* b,double*,double*,double*,double*,char*,int){std::snprintf(path,size,"/素材.wav");*mode=selected?selection_flag:0;*a=invalid_selection?NAN:(selected?.2:0);*b=selected?.8:1;return true;});
   if(!std::strcmp(name,"JS_Window_GetTitle"))return reinterpret_cast<void*>(+[](Window,char* out,int size){return std::snprintf(out,size,rounded?"0:%02.0f / 0:02.000":"0:%06.3f / 0:02.000",cursor);});
   if(!std::strcmp(name,"JS_Window_GetLongPtr"))return reinterpret_cast<void*>(+[](Window w,const char*)->void*{
 #ifdef _WIN32
@@ -71,6 +75,7 @@ static void* api(const char* name) {
 static bool use_drag_detect=false,dispatch_up=false;
 static LRESULT CALLBACK modal_proc(HWND w,UINT msg,WPARAM p,LPARAM l) {
   if(msg!=WM_LBUTTONDOWN)return DefWindowProcW(w,msg,p,l);
+  assert(cursor_suspended);
   const int before=applied;
   if(use_drag_detect) {
     POINT point{static_cast<short>(LOWORD(l)),static_cast<short>(HIWORD(l))};
@@ -85,7 +90,7 @@ static LRESULT CALLBACK modal_proc(HWND w,UINT msg,WPARAM p,LPARAM l) {
     }
     ReleaseCapture();
   }
-  assert(applied==before);cursor=1.25;return 42;
+  assert(applied==before && cursor_suspended);cursor=1.25;return 42;
 }
 static void test_windows_modal() {
   WNDCLASSW cls{};cls.lpfnWndProc=modal_proc;cls.hInstance=GetModuleHandleW(nullptr);cls.lpszClassName=L"AMWaveSeekTest";
@@ -105,7 +110,7 @@ static void test_windows_modal() {
     }
     std::cerr<<"Windows modal mode="<<mode<<" applied="<<applied-before<<" cancelled="<<gesture.cancelled
       <<" dragged="<<gesture.dragged<<" released="<<gesture.released<<" "<<AMWaveDiagnostics()<<"\n";
-    assert(applied==before+1 && !gesture.pressed && !gesture.cancelled);
+    assert(applied==before+1 && !gesture.pressed && !gesture.cancelled && !cursor_suspended);
     const std::string event=AMWavePoll();assert(!event.empty());
     if(mode<2)assert(event.find("queued")!=std::string::npos);
   }
@@ -145,8 +150,8 @@ int main() {
     assert(clock_fraction("1e308:0 / 1")==-1 && clock_fraction("1 / 1e308:0")==-1);
     assert(clock_fraction("nan / 1")==-1 && clock_fraction("1 / inf")==-1);
     test_proc=native_proc;assert(AMWaveAttach(test_parent,test_wave,test_clock,api));
-    test_proc(test_wave,0x201,1,20);assert(!*AMWavePoll());
-    assert(test_proc(test_wave,0x202,0,20)==42);assert(applied==1 && forwarded==2);
+    test_proc(test_wave,0x201,1,20);assert(!*AMWavePoll() && cursor_suspended);
+    assert(test_proc(test_wave,0x202,0,20)==42);assert(applied==1 && forwarded==2 && !cursor_suspended);
     assert(std::string(AMWavePoll()).find("素材.wav")!=std::string::npos);assert(!*AMWavePoll());
     const int changes=viewport_changes;
     for(unsigned msg:{0x205u,0x20au,0x114u,0x7bu,0x111u}) {
@@ -158,8 +163,14 @@ int main() {
     assert(rounded && applied==2 && *AMWavePoll());
     selected=true;test_proc(test_wave,0x201,1,20);test_proc(test_wave,0x202,0,20);
     assert(rounded && applied==3 && *AMWavePoll());selected=false;
+    for(int flag:{128,384}) {
+      selection_flag=flag;selected=true;const int before=applied;
+      test_proc(test_wave,0x201,1,20);test_proc(test_wave,0x202,0,20);
+      assert(applied==before+1 && *AMWavePoll());
+    }
+    selected=false;selection_flag=256;
     test_proc(test_wave,0x201,1,20);test_proc(test_wave,0x200,1,60);test_proc(test_wave,0x202,0,20);
-    assert(!*AMWavePoll()); // A range drag returning to its origin is still a drag.
+    assert(!*AMWavePoll() && !cursor_suspended); // A range drag returning to its origin is still a drag.
     test_proc(test_wave,0x201,5,20);test_proc(test_wave,0x202,4,20);assert(!*AMWavePoll());
     test_proc(test_wave,0x201,1,20);test_proc(test_wave,0x215,0,0);test_proc(test_wave,0x202,0,20);assert(!*AMWavePoll());
     other_previous=test_proc;test_proc=other_proc;AMWaveDetach();assert(test_proc==other_proc);
@@ -169,7 +180,7 @@ int main() {
     const int before=applied;
     for(int mode:{1,2,3,4}) {
       nested=mode;cursor=0;test_proc(test_wave,0x201,1,20);
-      assert(!gesture.pressed);
+      assert(!gesture.pressed && !cursor_suspended);
       if(mode<=2){assert(applied==before+mode && *AMWavePoll());}
       else assert(applied==before+2 && !*AMWavePoll());
     }

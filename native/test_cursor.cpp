@@ -4,6 +4,7 @@
 #include <string>
 static int storage[4],state=1,paints=0,unlinks=0,timers=0;
 static bool shown=true,exists=true,native_file=true;
+static int native_selection=0;
 static double fraction=.5,position=6,length=12;
 static int scrollbar_at=0,scrollbar_page=800,scrollbar_max=800;
 static std::string label="0:00.000  /  0:12.000",file="/test.wav";
@@ -86,7 +87,7 @@ static void* api(const char* name) {
   if(!std::strcmp(name,"JS_LICE_Clear"))return reinterpret_cast<void*>(+[](void*,int color){cleared_colors.push_back(color);});
   if(!std::strcmp(name,"JS_Composite"))return reinterpret_cast<void*>(+[](void*,int,int,int w,int,void*,int,int,int sw,int,bool automatic){assert(!automatic);composite_width=w;composite_source_width=sw;++paints;return 1;});
   if(!std::strcmp(name,"JS_Composite_Unlink"))return reinterpret_cast<void*>(+[](void*,void*,bool){++unlinks;});
-  if(!std::strcmp(name,"MediaExplorerGetLastPlayedFileInfo"))return reinterpret_cast<void*>(+[](char* path,int size,int*,double*,double*,double*,double*,double*,double*,char*,int){std::snprintf(path,size,"%s",file.c_str());return native_file;});
+  if(!std::strcmp(name,"MediaExplorerGetLastPlayedFileInfo"))return reinterpret_cast<void*>(+[](char* path,int size,int* mode,double* a,double* b,double*,double*,double*,double*,char*,int){std::snprintf(path,size,"%s",file.c_str());*mode=native_selection;*a=.25;*b=.75;return native_file;});
   if(!std::strcmp(name,"GetToggleCommandStateEx"))return reinterpret_cast<void*>(+[](int,int){return 0;});
   return nullptr;
 }
@@ -97,9 +98,15 @@ int main() {
   tick();assert(paints==1); // No repaint/allocations when position is unchanged.
   AMCursorRestoreClock();assert(label=="0:00.000  /  0:12.000");
   label="0:03.000  /  0:12.000";tick();AMCursorRestoreClock();assert(label=="0:03.000  /  0:12.000");
-  AMCursorSuspend(true);fraction=.75;tick();assert(last_x==400);AMCursorSuspend(false);tick();assert(last_x==600);
+  // A native range drag must own the entire waveform, including repainting.
+  // Pausing cursor movement alone leaves the old composite over its selection.
+  AMCursorSuspend(true);assert(!linked);const int before_drag=paints;
+  fraction=.75;tick();assert(!linked && paints==before_drag);
+  label="native range drag";tick();assert(label=="native range drag" && paints==before_drag);
+  label="0:03.000  /  0:12.000";
+  AMCursorSuspend(false);tick();assert(last_x==600);
   state=-1;fraction=.2;tick();assert(last_x==600);state=0;tick();assert(last_x==600);
-  file="/different.wav";tick();assert(!linked && unlinks==1 && label=="0:03.000  /  0:12.000");
+  file="/different.wav";tick();assert(!linked && unlinks==2 && label=="0:03.000  /  0:12.000");
   file="/test.wav";state=1;tick();shown=false;tick();assert(!linked);shown=true;tick();
   label="native changed it";AMCursorDetach();assert(label=="native changed it" && timers==0);
   assert(pixel(.5,200,400,0,800,800)==400 && pixel(.1,200,400,0,800,800)<0);
@@ -142,7 +149,29 @@ int main() {
   assert(paint_peaks("/test.wav",800,100,0,1,.25,.75,-999999,wave_style()));
   assert(fills.back().mode=="MUL" && fills.back().alpha==.5 && peak_reads==reads);
   theme["col_explorer_seldm"]=0x26600;
+  // Both native selection flags tint selected channels and anchor zoom.
+  for(int flag:{128,256,384}) {
+    native_selection=flag;fills.clear();tick();
+    assert(peak_a==.25 && peak_b==.75);
+    AMCursorZoom(42092);
+    assert(std::abs(view_start-.225)<1e-9 && std::abs(view_span-.55)<1e-9);
+    AMCursorZoom(42093);
+  }
+  native_selection=0;tick();
   state=1;fraction=.25;tick();fraction=.3;tick();assert(peak_reads==reads);
+  // Native selection feedback is transient during the modal Windows mouse
+  // loop. A full opaque channel overlay must not hide it, even if the timer
+  // runs while the audio thread holds its lock or the source changes.
+  for(int playing:{1,0,-1}) {
+    state=playing;const int before=paints,opened=peak_opens;
+    AMCursorSuspend(true);assert(!linked && !peak_linked);
+    AMCursorSuspend(true); // Repeated suspend must not clear source ownership.
+    fraction=.6;tick();tick();
+    assert(!linked && !peak_linked && paints==before && peak_reads==reads && peak_opens==opened);
+    assert(peak_source && peak_channels==std::vector<int>({5,2}));
+    AMCursorSuspend(false);state=1;tick();
+    assert(peak_linked && peak_reads==reads && peak_opens==opened && peak_cursor==480);
+  }
   assert(AMWaveSetChannels("/test.wav",4,4,"v1"));painted_channels.clear();tick();
   assert(painted_channels.size()==800 && peak_left==peak_right && peak_opens==1);
   scrollbar_at=400;scrollbar_page=800;tick();assert(peak_start==.25 && peak_span==.5);

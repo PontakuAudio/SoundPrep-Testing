@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.11.3",
+  "version": "0.11.4",
   "features": {
     "bar": {
       "revision": 9,
@@ -30,7 +30,7 @@
       ]
     },
     "waveform": {
-      "revision": 4,
+      "revision": 5,
       "apis": [
         "AM_WaveAttach",
         "AM_WaveDiagnostics",

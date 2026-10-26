@@ -1,4 +1,26 @@
 local App=require('am.app');local Drop=require('am.drop');local U=require('am.util')
+-- REAPER reports loop selections (128) as well as time selections (256).
+-- Exercise the real reader: a mocked range bypassed the reported Windows bug.
+do
+  local mode,a,b=576,0,1
+  local native={MediaExplorerGetLastPlayedFileInfo=function()return true,'/source.wav',mode,a,b end,
+    PCM_Source_CreateFromFile=function()return {}end,GetMediaSourceLength=function()return 10,false end,
+    PCM_Source_Destroy=function()end}
+  local explorer=require('am.media_explorer').new(native)
+  local starts=0
+  local app=setmetatable({explorer=explorer,path='/source.wav',preview={playing=function()return false end},
+    play=function(self,position,immediate)
+      assert(position==0 and immediate and self.range[1]==2 and self.range[2]==7)
+      starts=starts+1
+    end},App)
+  for _,selection in ipairs{128,256,384}do
+    mode,a,b=576,0,1;app:sync_range(false)
+    mode,a,b=576|selection,.2,.7;app:sync_range(true)
+    assert(starts>0 and app.range and app.range[1]==2 and app.range[2]==7,'Native selection was ignored: '..mode)
+    local before=starts;app:sync_range(true);assert(starts==before,'Unchanged selection replayed')
+  end
+  assert(starts==3)
+end
 local valid,range=true,nil;local playing,starts,stops=false,0,0
 local ext={};local project={};local now=1
 local r={GetExtState=function(section,key)return ext[section..key] or ''end,

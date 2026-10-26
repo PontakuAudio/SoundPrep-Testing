@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.11.3",
+  "version": "0.11.4",
   "git_history_included": false,
   "runtime_files": [
     "Audition Macro - Diagnostics.lua",
@@ -146,7 +146,7 @@
   ],
   "privacy": {
     "status": "pass",
-    "scanned_files": 302,
+    "scanned_files": 303,
     "findings": [],
     "synthetic_fixture_exceptions": [
       {
@@ -209,12 +209,12 @@
     },
     {
       "path": "Audition Macro.lua",
-      "sha256": "7ad2f5329c89ac017cbb8736b356c2679388c56b94feac365159e6768d79a6fd",
+      "sha256": "48cf228e3a4090c8247dffb41e94145a97dcd8c8dd4e1302d58375d77a1f33a9",
       "bytes": 338
     },
     {
       "path": "CMakeLists.txt",
-      "sha256": "d6ebc9c6a8d8ef59bcff55dfde58e1c880665458dda59a3890870833f8cacc73",
+      "sha256": "c9f01ef2e2cbee2df87f10f90632a9694652c4e1f2ea209daff7d6c81eaf27d6",
       "bytes": 4950
     },
     {
@@ -259,7 +259,7 @@
     },
     {
       "path": "SoundPrep.lua",
-      "sha256": "7bba5be530c5e8a87b9e6527464d156d64414226f23cd95803d387b2bc4a62bc",
+      "sha256": "da12e65ee9ee35fe3908abfa2929ed3048e97f663cf846e47a0cbe6ea66bfc22",
       "bytes": 1468
     },
     {
@@ -469,8 +469,8 @@
     },
     {
       "path": "docs/install.md",
-      "sha256": "e5602ae27820bb922ec9beba2dbcb6b04ec9f76b6ec3b023c60efdab59aa3893",
-      "bytes": 13028
+      "sha256": "52c3d3ca74e77425ca88da3f8a19101d5efb502085e97d23be72d097918e1c40",
+      "bytes": 13024
     },
     {
       "path": "docs/license-audit-2026-10-22.md",
@@ -489,8 +489,8 @@
     },
     {
       "path": "docs/media-explorer-workflow.md",
-      "sha256": "b9a7848ef54a0eaf8cf704905107d2a2a56245cc82850039d829e677f77a5cc5",
-      "bytes": 20614
+      "sha256": "ea8b9bbbf17902284e590f6abae19f2e38858327bf631caf1c57ec19ed329be8",
+      "bytes": 20674
     },
     {
       "path": "docs/preset-tools.md",
@@ -528,14 +528,19 @@
       "bytes": 578
     },
     {
+      "path": "docs/releases/0.11.4.md",
+      "sha256": "19f3b5f9895d95a682a94ed8756414f9ecbed39ad0bd90984356f066c8afeb09",
+      "bytes": 1044
+    },
+    {
       "path": "docs/source-distribution.md",
       "sha256": "0f6d8704b8d3880f6fec258c7a228cc1d4d455a16e066dc8b4acc4d8b6060555",
       "bytes": 4657
     },
     {
       "path": "docs/windows.md",
-      "sha256": "6445b7f2c872c8c8a844790db7f4e3b3f9dc04b1f8b9665d17d449778648c773",
-      "bytes": 14956
+      "sha256": "27b95569a77548c3fe2274ac9557e1c737c9f4b50f2e5972c650873dad4c9fa9",
+      "bytes": 14939
     },
     {
       "path": "internal/Process waveform drop.lua",
@@ -649,8 +654,8 @@
     },
     {
       "path": "lib/am/media_explorer.lua",
-      "sha256": "a347e2d8ec4749e2fbba7d4f542e7fa736a17ec8623194b04625a18471e9bd60",
-      "bytes": 14049
+      "sha256": "0e125dbe71f90c426fbe0793eb89eca6c15a4b1818b27d171863ed2edc644f11",
+      "bytes": 14127
     },
     {
       "path": "lib/am/model.lua",
@@ -664,7 +669,7 @@
     },
     {
       "path": "lib/am/native_contract.lua",
-      "sha256": "4a68867cea90fa0307be498d51a72757344525c5568ba84048b7fa1258c12ca0",
+      "sha256": "8f766f29ee853fe0bdaf802e1847bcce2886272f43535b77eb7bfbb273a952c9",
       "bytes": 9099
     },
     {
@@ -754,13 +759,13 @@
     },
     {
       "path": "native/contract.h",
-      "sha256": "14ad30ce6750eb3b4ca05e9bac96f24956d61ac82f1fd6089e7df539993982ca",
+      "sha256": "275df9101bbe54179acdebd1e0b3f56cff33cc8121be13893c9ac4f270937c16",
       "bytes": 10396
     },
     {
       "path": "native/cursor.cpp",
-      "sha256": "11b4c56852d7a94fb26c30a27bf6844f3297fe73ae9543af029958296e5d8e5f",
-      "bytes": 24681
+      "sha256": "f49bad891af51b25057a6f6d58876dc3c0e15f9aeaa33953b1b783993db92999",
+      "bytes": 24961
     },
     {
       "path": "native/drop.mm",
@@ -849,8 +854,8 @@
     },
     {
       "path": "native/test_cursor.cpp",
-      "sha256": "65508ef0142ee93d919e404b694da5d9b60d62c53c06b9517cf8e5918cad69ab",
-      "bytes": 14905
+      "sha256": "5d9476f62342a60fc1b02394b0dee0a98bc1dab8d270a7665a03a2deac8c8cf4",
+      "bytes": 16472
     },
     {
       "path": "native/test_preview.cpp",
@@ -869,8 +874,8 @@
     },
     {
       "path": "native/test_wave.cpp",
-      "sha256": "fe9ab5c85155bc4d6fb6645852db720c01d350e264c8199183c19968183733f3",
-      "bytes": 10571
+      "sha256": "d77ec29565552b0957efe83a513dfdb2e261ec5a7373a563b266d461e70c4c93",
+      "bytes": 11219
     },
     {
       "path": "native/transport.cpp",
@@ -914,7 +919,7 @@
     },
     {
       "path": "native/wave.cpp",
-      "sha256": "f7ec40974120cfbf3dd59c12fbbe3d94cb85a135430a4aa4415737975d14f0b1",
+      "sha256": "a5c768adcd85e73a724a75d95148921623e4e22d7d47d57d42c91e584650be1b",
       "bytes": 9914
     },
     {
@@ -994,17 +999,17 @@
     },
     {
       "path": "prebuilt/manifest.json",
-      "sha256": "2061cffaadce33e04c5a17a127b0bdc5a14a133ffb328a02a06f3c20f66e0c3b",
+      "sha256": "25c2573a409060947f65a38467f27834294ace47c86c08898df44379074495c1",
       "bytes": 489
     },
     {
       "path": "prebuilt/reaper_audition_macro.dll",
-      "sha256": "09b5755eb0039bb279882d2f303c73f91ff4499f675d2aa5c6a3d6a969a7c1e6",
-      "bytes": 780800
+      "sha256": "86cb7f70c38fa94aa321b064eb829c5b1216a9439144d71d4c8287ede47f195c",
+      "bytes": 781312
     },
     {
       "path": "prebuilt/reaper_audition_macro.dylib",
-      "sha256": "b7b6dd36a424fe06a7df71bbe632a2ff97b79bf3ab78e9e42a5720bf01312f42",
+      "sha256": "5bd6571a832392683c6d3a493802eb4d643530f5c3ae84871e6366c88c262c0b",
       "bytes": 1031328
     },
     {
@@ -1039,13 +1044,13 @@
     },
     {
       "path": "resources/native-contract.json",
-      "sha256": "edd99735da17cc4f0cec561b87adc309489d98d0b340eba9149f2bfa251ddecc",
+      "sha256": "d524991c30ddf743476dc3274ec40264f99a5c59187b96394f5bffc71d8e4a31",
       "bytes": 15204
     },
     {
       "path": "resources/public-source-files.json",
-      "sha256": "13a8d7b3650c1bcba6e6bbd25ddd8b01247c047588e49764d34eb465d526e07a",
-      "bytes": 10697
+      "sha256": "c7d1fa8ea4f271344701b2c009aa507bc82f3bf33e4f0b37777464f883a2abce",
+      "bytes": 10728
     },
     {
       "path": "resources/public-workflows/release.yml",
@@ -1089,8 +1094,8 @@
     },
     {
       "path": "tests/audition_gestures.lua",
-      "sha256": "fdf88652c0ae9ff37c22ca00aa29875fd64390a3243228ca50f3fa5dd4cef326",
-      "bytes": 3283
+      "sha256": "6063ae2a8e3fae083bcb2a0c7da5b791bf9cb567dc4418e93060515a03b788f4",
+      "bytes": 4436
     },
     {
       "path": "tests/bank_channels.lua",

@@ -111,7 +111,7 @@ void capture() {
   if(rounded)send_message(parent,0x111,40032,0);
   const double relative=clock_fraction(text);if(relative<0)return;
   if(!std::isfinite(a) || !std::isfinite(b))return;
-  if(!(mode&256) || b<=a){a=0;b=1;}
+  if(!(mode&384) || b<=a){a=0;b=1;}
   const double where=a+relative*(b-a); // Native clock is relative to the selected section.
   AMCursorAnchor(path,where,gesture.x);
   ++sequence;

@@ -247,6 +247,10 @@ void format(char* out,int size,double t,bool rounded) {
   else std::snprintf(out,size,"%lld:%02lld.%03lld",seconds/60,seconds%60,ms%1000);
 }
 void tick() {
+  // REAPER owns transient range feedback inside its native mouse loop. Do not
+  // cover it with the old playhead or an opaque selected-channel composite,
+  // even when its last-played API still reports the pre-drag range.
+  if(suspended)return;
   if(!wave || !window_valid(wave) || !window_valid(clock_view) || !visible(wave)) {
     unpaint();hide_peaks();restore_clock();return;
   }
@@ -287,7 +291,7 @@ void tick() {
     double start=0,span=1;viewport(path,at,page,minimum,maximum,width,start,span);
     const int x=!*last_path || suspended?-999999 : view_span>0 && am_path_equal(path,view_path)?
       rounded_pixel((last_fraction-start)/span*width):pixel(last_fraction,at,page,minimum,maximum,width);
-    const bool selected=paint_peaks(path,width,height,start,span,(mode&256)?a:0,(mode&256)?b:0,x,style);
+    const bool selected=paint_peaks(path,width,height,start,span,(mode&384)?a:0,(mode&384)?b:0,x,style);
     if(!*last_path || suspended){if(!suspended)unpaint();return;}
     if(selected){unpaint();last_x=x;}
     // Do not clamp an offscreen source position
@@ -324,7 +328,7 @@ extern "C" void AMCursorZoom(int command) {
   int mode=0;double a=0,b=1,p=0,g=0,r=1,bpm=0;char extra[128]{};
   if(!file_info(view_path,sizeof(view_path),&mode,&a,&b,&p,&g,&r,&bpm,extra,sizeof(extra)))return;
   if(command==42093){view_start=0;view_span=1;}
-  else if((mode&256) && b>a) {
+  else if((mode&384) && b>a) {
     view_span=std::min(1.0,(b-a)*1.1);
     view_start=std::clamp(a-(b-a)*.05,0.0,1-view_span);
   }
@@ -342,7 +346,10 @@ extern "C" void AMCursorRefresh(){
     last_fraction=fraction;last_position=position;last_length=length;
   }
 }
-extern "C" void AMCursorSuspend(bool on){suspended=on;if(on)restore_clock();}
+extern "C" void AMCursorSuspend(bool on){
+  suspended=on;
+  if(on){unpaint();hide_peaks();restore_clock();}
+}
 extern "C" void AMCursorClear(){unpaint();restore_clock();*last_path=0;last_fraction=-1;}
 extern "C" void AMCursorDetach() {
   if(label_font){destroy_font(label_font);label_font=nullptr;}

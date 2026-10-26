@@ -311,6 +311,7 @@
     "tests/native-settings-state.json",
     "docs/preset-tools.md",
     "docs/app-settings.md",
-    "docs/releases/0.11.3.md"
+    "docs/releases/0.11.3.md",
+    "docs/releases/0.11.4.md"
   ]
 }

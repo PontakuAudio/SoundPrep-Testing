@@ -67,7 +67,7 @@ companionが所有する別PCM sourceで、欠けている波形だけを `PCM_S
 
 ## 試聴との関係と残る制限
 
-`MediaExplorerGetLastPlayedFileInfo` から同じファイルの範囲だけを読み、試聴範囲へ自動追従する。古いファイルの情報は流用しない。範囲変更時は範囲先頭から加工再生し、手動の「Use ME time selection」は不要にした。[公式API](https://www.reaper.fm/sdk/reascript/reascripthelp.html#MediaExplorerGetLastPlayedFileInfo)
+`MediaExplorerGetLastPlayedFileInfo` から同じファイルの範囲だけを読み、ループ選択（128）・時間選択（256）の両方に試聴範囲が自動追従する。古いファイルの情報は流用しない。範囲変更時は範囲先頭から加工再生し、手動の「Use ME time selection」は不要にした。[公式API](https://www.reaper.fm/sdk/reascript/reascripthelp.html#MediaExplorerGetLastPlayedFileInfo)
 
 v0.7の音声試聴は公開SDKの低遅延Previewと既存FX bankを使う（旧helperはSWS CF Previewへフォールバック）。v0.4ではMacro / Raw A/B・Reverse切替で元ファイルの時間位置を保持する。v0.7.1で標準波形のクリックシークを連携した。v0.8では加工音の実位置を標準波形へ描画し、時計も更新する。音声は同じ低遅延Previewで再生し、二重再生やFXの再生成は行わない。バー操作後は直前のコントロールとテキストカーソルへ復帰する。
 

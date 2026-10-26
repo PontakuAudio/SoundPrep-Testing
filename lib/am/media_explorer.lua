@@ -185,7 +185,7 @@ function M:capture_range(path)
   local ok,file,mode,a,b=self.r.MediaExplorerGetLastPlayedFileInfo()
   self:command(1009)
   assert(ok and U.path_equal(file,path),'Native preview did not resolve the same file')
-  assert((mode&256)~=0 and b>a,'Select a time range in the Media Explorer waveform first')
+  assert((mode&384)~=0 and b>a,'Select a time range in the Media Explorer waveform first')
   local source=assert(self.r.PCM_Source_CreateFromFile(path))
   local length=self.r.GetMediaSourceLength(source);self.r.PCM_Source_Destroy(source)
   return {a*length,b*length}
@@ -200,7 +200,8 @@ function M:preview_range(path,identity)
   if not path then return false end
   local ok,file,mode,a,b=self.r.MediaExplorerGetLastPlayedFileInfo()
   if not ok or not U.path_equal(file,path) then return false end
-  if (mode&256)==0 or b<=a then return true,nil end
+  -- REAPER exposes loop selection (128) and time selection (256) separately.
+  if (mode&384)==0 or b<=a then return true,nil end
   local key=path..':'..tostring(identity and identity.mtime)..':'..tostring(identity and identity.size)
   if self.range_key~=key then
     local source=self.r.PCM_Source_CreateFromFile(path);if not source then return false end
